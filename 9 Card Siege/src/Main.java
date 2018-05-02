@@ -7,6 +7,6 @@ class Main {
 
         jogo.start();
 
-
+        System.out.println("Fim!\n");
     }
 }
