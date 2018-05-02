@@ -1,8 +1,12 @@
-public class Main {
+import logicaJogo.Jogo;
 
-    public static void main(String[] args){
-        System.out.println("Teste");
+class Main {
+    public static void main(String[] args) {
+
+        Jogo jogo = new Jogo();
+
+        jogo.start();
+
 
     }
-
 }
