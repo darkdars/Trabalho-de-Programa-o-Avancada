@@ -9,15 +9,8 @@ package logicaJogo;
  *
  * @author jhssi
  */
-
-
-
-public class Jogo {
-    
-    public void start(){
-        System.out.println("Inicio do Jogo!\n");
-        
-        
-    }
+public interface IEstado {
+    IEstado lancaDados();
+    IEstado escolheAcao();
     
 }
