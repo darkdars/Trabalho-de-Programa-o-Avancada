@@ -12,7 +12,8 @@ package logicaJogo;
 
 
 
-public class Jogo {
+public class Jogo extends EstadoAdapter {
+    
     
     public void start(){
         System.out.println("Inicio do Jogo!\n");
@@ -23,9 +24,11 @@ public class Jogo {
         
     }
     
-    public int dado(){
+    
+    public IEstado lancaDados(int numero){
         int min = 1, max = 6;
-        return min + (int)(Math.random() * max);  
+        numero =  min + (int)(Math.random() * max);  
+        return this;
     }
     
 }
