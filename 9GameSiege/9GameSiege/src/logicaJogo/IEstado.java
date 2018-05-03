@@ -12,5 +12,4 @@ package logicaJogo;
 public interface IEstado {
     IEstado lancaDados();
     IEstado escolheAcao();
-    
 }

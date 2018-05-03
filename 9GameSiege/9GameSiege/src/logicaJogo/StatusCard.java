@@ -9,21 +9,10 @@ package logicaJogo;
  *
  * @author jhssi
  */
-
-
-
-public class Jogo {
-    
-    
-    
-    
-    public void start(){
-        System.out.println("Inicio do Jogo!\n");
-        
-        
-        
-        
-        
-    }
-    
+public class StatusCard {
+    int Muralha;
+    int Moral;
+    int mantimentos;
 }
+
+

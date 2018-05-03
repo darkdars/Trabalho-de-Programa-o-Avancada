@@ -9,21 +9,10 @@ package logicaJogo;
  *
  * @author jhssi
  */
-
-
-
-public class Jogo {
-    
-    
-    
-    
-    public void start(){
-        System.out.println("Inicio do Jogo!\n");
-        
-        
-        
-        
-        
-    }
-    
+public class EnemyTracks {
+    //Ver se existe maneira melhor de declarar isto
+    int escada;
+    int ariete;
+    int torre;
+    int trincheiras;
 }
