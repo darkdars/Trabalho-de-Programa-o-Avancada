@@ -14,9 +14,6 @@ package logicaJogo;
 
 public class Jogo {
     
-    
-    
-    
     public void start(){
         System.out.println("Inicio do Jogo!\n");
         
@@ -24,6 +21,11 @@ public class Jogo {
         
         
         
+    }
+    
+    public int dado(){
+        int min = 1, max = 6;
+        return min + (int)(Math.random() * max);  
     }
     
 }
