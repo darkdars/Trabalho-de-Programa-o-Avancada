@@ -5,6 +5,9 @@
  */
 package pkg9gamesiege;
 
+import logicaJogo.Jogo;
+
+
 /**
  *
  * @author jhssi
@@ -14,8 +17,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Jogo jogo = new Jogo();
+        
+        jogo.start();
+        
+        
+        System.out.println("Fim do jogo!\n");
+        
     }
     
 }
