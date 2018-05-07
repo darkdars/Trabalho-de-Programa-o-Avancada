@@ -22,4 +22,11 @@ public class EnemyTracks {
         this.torre = 4;
         this.trincheiras = 4;
     }
+    
+    public EnemyTracks(int escada, int ariete, int torre, int trincheiras){
+        this.escada = escada;
+        this.ariete = ariete;
+        this.torre = torre;
+        this.trincheiras = trincheiras;
+    }
 }

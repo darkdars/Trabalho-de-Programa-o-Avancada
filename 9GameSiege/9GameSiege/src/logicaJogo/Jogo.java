@@ -14,25 +14,7 @@ package logicaJogo;
 
 public class Jogo extends EstadoAdapter {
     
-    
-    public void menu(){
-       boolean sair = false;
-       
-       do{
-           
-       }while(sair != true);
-       
-    }
-    
-    public void start(){
-        System.out.println("Inicio do Jogo!\n");
-        
-        
-        
-        
-        
-    }
-    
+ 
     
     public IEstado lancaDados(int numero){
         int min = 1, max = 6;
