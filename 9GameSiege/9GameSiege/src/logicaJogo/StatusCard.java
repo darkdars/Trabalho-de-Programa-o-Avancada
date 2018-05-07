@@ -13,6 +13,17 @@ public class StatusCard {
     int Muralha;
     int Moral;
     int mantimentos;
+    int mantimentosRoubados;
+    int tunel;
+    
+    public StatusCard(){
+        this.Muralha = 4;
+        this.Moral = 4;
+        this.mantimentos = 4;
+        this.mantimentosRoubados = 4;
+        this.tunel = 0;
+        
+    }
 }
 
 
