@@ -29,4 +29,37 @@ public class EnemyTracks {
         this.torre = torre;
         this.trincheiras = trincheiras;
     }
+
+    public int getEscada() {
+        return escada;
+    }
+
+    public void setEscada(int escada) {
+        this.escada = escada;
+    }
+
+    public int getAriete() {
+        return ariete;
+    }
+
+    public void setAriete(int ariete) {
+        this.ariete = ariete;
+    }
+
+    public int getTorre() {
+        return torre;
+    }
+
+    public void setTorre(int torre) {
+        this.torre = torre;
+    }
+
+    public int getTrincheiras() {
+        return trincheiras;
+    }
+
+    public void setTrincheiras(int trincheiras) {
+        this.trincheiras = trincheiras;
+    }
+ 
 }
