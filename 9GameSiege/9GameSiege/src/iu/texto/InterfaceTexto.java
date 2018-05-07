@@ -40,14 +40,32 @@ public class InterfaceTexto {
     }
 
     private void mostrarMenuInicial() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(jogo == null){
+            System.out.println("Deseja [c]arregar um jogo ou iniciar um [n]ovo?");
+        
+            switch(leCaracter()){
+                case 'c':
+                case 'C':
+                    mostrarMenuCarregar();
+                    break;
+            }
+        }
+        
     }
 
     private void mostrarMenuFinal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private int leCaracter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void mostrarMenuCarregar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
-    
+   
     
     
 }
