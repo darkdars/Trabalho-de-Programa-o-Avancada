@@ -9,6 +9,16 @@ package logicaJogo;
  *
  * @author jhssi
  */
-public class Dia1 {
+public class Dia1 implements IEstado{
+
+    @Override
+    public IEstado lancaDados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public IEstado escolheAcao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
