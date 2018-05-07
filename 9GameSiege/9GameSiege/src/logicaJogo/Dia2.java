@@ -9,8 +9,6 @@ package logicaJogo;
  *
  * @author jhssi
  */
-public interface IEstado {
-    IEstado lancaDados();
-    IEstado escolheAcao();
+public class Dia2 {
     
 }
