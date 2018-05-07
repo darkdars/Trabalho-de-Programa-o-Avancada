@@ -48,6 +48,12 @@ public class InterfaceTexto {
                 case 'C':
                     mostrarMenuCarregar();
                     break;
+                case 'n':
+                case 'N':
+                    jogo = new Jogo();
+                    break;
+                default:
+                    
             }
         }
         
