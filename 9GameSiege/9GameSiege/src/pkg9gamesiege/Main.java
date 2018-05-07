@@ -5,6 +5,7 @@
  */
 package pkg9gamesiege;
 
+import iu.texto.InterfaceTexto;
 import logicaJogo.Jogo;
 
 
@@ -22,10 +23,12 @@ public class Main {
 
         Jogo jogo = new Jogo();
         
-        jogo.start();
+        InterfaceTexto iT = new InterfaceTexto(jogo);
+        iT.iniciarInterface();
+      
         
         
-        System.out.println("Fim do jogo!\n");
+
         
     }
     
