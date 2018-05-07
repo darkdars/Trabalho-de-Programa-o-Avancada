@@ -18,7 +18,8 @@ public class Dia1 implements IEstado{
 
     @Override
     public IEstado escolheAcao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        throw new UnsupportedOperationException("Not adaddadasupported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
