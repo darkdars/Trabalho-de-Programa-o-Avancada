@@ -4,12 +4,25 @@
  * and open the template in the editor.
  */
 package iu.texto;
-import logicaJogo.*;
+
+import java.util.Scanner;
 
 /**
  *
  * @author jhssi
  */
-public class Iteracao {
+public class InterfaceTexto {
+    
+    Scanner scanner;
+    
+    
+    public InterfaceTexto(){
+        //inicia novo jogo
+        
+        scanner = new Scanner(System.in);
+    }
+   
+    
+    
     
 }
