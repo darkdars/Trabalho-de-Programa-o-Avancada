@@ -11,6 +11,13 @@ package logicaJogo;
  */
 public class Dia1 implements IEstado{
 
+    
+    Jogo pai;
+    
+    public Dia1(Jogo p){
+        this.pai = p;
+    }
+    
     @Override
     public IEstado lancaDados() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
