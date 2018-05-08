@@ -15,6 +15,5 @@ public class Card {
     private List<Eventos> eventos;
     
     Card(){
-        eventos = new List<Eventos>() {};
     }
 }
