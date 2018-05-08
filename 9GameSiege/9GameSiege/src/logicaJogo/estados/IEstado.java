@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package estados;
+package logicaJogo.estados;
 
 /**
  *
@@ -12,7 +12,8 @@ package estados;
 public interface IEstado {
 
     
-    /****** AwaitBeginning ******/
+    /****** AwaitBeginning
+     * @return  ******/
     
         IEstado start();
     

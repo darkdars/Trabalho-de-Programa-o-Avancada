@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package estados;
+package logicaJogo.estados;
 
 import logicaJogo.DadosJogo;
 
@@ -16,5 +16,11 @@ public class AwaitBeginning extends EstadoAdapter {
     public AwaitBeginning(DadosJogo dadosJogo){
         super(dadosJogo);
     }
+    
+   @Override
+   public IEstado start(){
+       dadosJogo.baralhaCartas();
+       return new AwaitCardSelect(dadosJogo);
+   }
     
 }

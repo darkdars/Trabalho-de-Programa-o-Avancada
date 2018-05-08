@@ -5,7 +5,7 @@
  */
 package iu.texto;
 
-import estados.AwaitBeginning;
+import logicaJogo.estados.AwaitBeginning;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -32,6 +32,21 @@ public class InterfaceTexto {
         this.jogo = j;
     }
 
+    public void run() {
+        int i = 1;
+        
+        //Estados
+        
+        
+        while(i == 1){
+            if(jogo.getEstado() instanceof AwaitBeginning)
+                mostrarMenuInicial();
+            
+            //if(jogo.getEstado() instanceof)
+            
+        }
+    }
+
 
     private void mostrarMenuInicial() {
         while(jogo == null){
@@ -55,21 +70,7 @@ public class InterfaceTexto {
         
     }
     
-     public void run() {
-        int i = 1;
-        
-        //Estados
-        
-        
-        while(i == 1){
-            if(jogo.getEstado() instanceof AwaitBeginning)
-                mostrarMenuInicial();
-            
-            //if(jogo.getEstado() instanceof)
-            
-        }
-    }
-
+     
     private void mostrarMenuFinal() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("Fim do JOGO!\n");
