@@ -24,7 +24,7 @@ public class DadosJogo {
     
     public void baralhaCartas(){
         //Collections.shuffle(cartas);
-        System.out.println("Falta implementar!\n");
+        System.out.println("Falta implementar! ESTOU NO DADOSJOGO BARALHA CARTAS!\n");
     }
     
     

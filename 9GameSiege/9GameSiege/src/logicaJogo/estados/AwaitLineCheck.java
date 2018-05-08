@@ -11,16 +11,17 @@ import logicaJogo.DadosJogo;
  *
  * @author jhssi
  */
-public class AwaitBeginning extends EstadoAdapter {
+public class AwaitLineCheck extends EstadoAdapter{
     
-    public AwaitBeginning(DadosJogo dadosJogo){
+    public AwaitLineCheck(DadosJogo dadosJogo) {
         super(dadosJogo);
     }
     
-   @Override
-   public IEstado start(){
-       dadosJogo.baralhaCartas();
-       return new AwaitLineCheck(dadosJogo);
-   }
+    @Override
+    public IEstado ResolveLine(){
+        
+        //ver se está alguem na linha da frente se estiver tem de lancar dado
+        
+    }
     
 }
