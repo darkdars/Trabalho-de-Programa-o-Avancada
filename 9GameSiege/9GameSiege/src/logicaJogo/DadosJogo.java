@@ -16,10 +16,14 @@ public class DadosJogo {
     
     public int dia;
     public int dice;
+    public EnemyTracks enemyTracks;
+    public StatusCard statusCard;
     //public List<Cards> cartas;
 
     public DadosJogo(){
         dia = 1;
+        enemyTracks = new EnemyTracks();
+        statusCard = new StatusCard();
     }
     
     public void baralhaCartas(){

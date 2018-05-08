@@ -19,9 +19,13 @@ public class AwaitLineCheck extends EstadoAdapter{
     
     @Override
     public IEstado ResolveLine(){
-        
+        System.out.println("Falta Implementar No AwaitLineCheck REsolveLine!\n");
         //ver se está alguem na linha da frente se estiver tem de lancar dado
         
+        
+        
+        
+        return new AwaitCardSelect(dadosJogo);
     }
     
 }
