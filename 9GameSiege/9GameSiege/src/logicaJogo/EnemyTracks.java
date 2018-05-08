@@ -29,7 +29,7 @@ public class EnemyTracks {
         this.torre = torre;
         this.trincheiras = trincheiras;
     }
-
+    
     public int getEscada() {
         return escada;
     }

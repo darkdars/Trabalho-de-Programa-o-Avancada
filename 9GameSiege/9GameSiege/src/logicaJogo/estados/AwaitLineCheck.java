@@ -21,11 +21,20 @@ public class AwaitLineCheck extends EstadoAdapter{
     public IEstado ResolveLine(){
         System.out.println("Falta Implementar No AwaitLineCheck REsolveLine!\n");
         //ver se está alguem na linha da frente se estiver tem de lancar dado
-        
-        
-        
-        
-        return new AwaitCardSelect(dadosJogo);
+        if(dadosJogo.enemyLineCheck() == 0){ // Se nao houver passa para CardPlayPhase
+            return new AwaitCardSelect(dadosJogo);
+        }else{ // se houver seguir os passos
+            //Rodar o dado
+            dadosJogo.rollDice();
+            
+            if(dadosJogo.getDice() == 1){ //Soldados capturados
+                
+            }
+            
+            return new AwaitCardSelect(dadosJogo);
+      
     }
     
+}
+
 }
