@@ -45,7 +45,7 @@ public class InterfaceTexto {
                 case 'n':
                 case 'N':
                     jogo = new Jogo();
-                    jogo.checkStart();
+                    jogo.CheckStart();
                     break;
                 default:
                     

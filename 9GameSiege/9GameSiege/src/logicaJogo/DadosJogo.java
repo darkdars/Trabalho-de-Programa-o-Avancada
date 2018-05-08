@@ -9,7 +9,32 @@ package logicaJogo;
  *
  * @author jhssi
  */
-class DadosJogo {
+public class DadosJogo {
+    
     public int dia;
+    public int dice;
+
+    public DadosJogo(){
+        dia = 1;
+    }
+    
+    
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getDice() {
+        return dice;
+    }
+
+    public void setDice(int dice) {
+        this.dice = dice;
+    }
+    
+    
     
 }

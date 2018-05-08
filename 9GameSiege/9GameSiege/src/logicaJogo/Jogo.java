@@ -5,6 +5,7 @@
  */
 package logicaJogo;
 
+import estados.AwaitBeginning;
 import estados.IEstado;
 import java.util.List;
 
@@ -22,11 +23,13 @@ public class Jogo {
     
     public Jogo(){
      dadosJogo = new DadosJogo();
-       
-      
-         
+     estado = new AwaitBeginning(dadosJogo);      
     }
     
+    public void CheckStart(){
+        setEstado(getEstado().start());
+    }
+
     public DadosJogo getDadosJogo() {
         return dadosJogo;
     }
@@ -42,10 +45,7 @@ public class Jogo {
     public void setEstado(IEstado estado) {
         this.estado = estado;
     }
-
-    public void CheckStart() {
-        setEstado(getEstado().start());
-    }
+    
   
     
 

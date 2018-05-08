@@ -6,7 +6,6 @@
 package pkg9gamesiege;
 
 import iu.texto.InterfaceTexto;
-import logicaJogo.Jogo;
 
 
 /**

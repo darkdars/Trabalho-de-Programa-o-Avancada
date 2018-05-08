@@ -5,10 +5,16 @@
  */
 package estados;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author jhssi
  */
-public class AwaitBeginning {
+public class AwaitBeginning extends EstadoAdapter {
+    
+    public AwaitBeginning(DadosJogo dadosJogo){
+        super(dadosJogo);
+    }
     
 }

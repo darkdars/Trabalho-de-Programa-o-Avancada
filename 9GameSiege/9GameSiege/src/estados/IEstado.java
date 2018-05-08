@@ -10,6 +10,11 @@ package estados;
  * @author jhssi
  */
 public interface IEstado {
- 
+
     
+    /****** AwaitBeginning ******/
+    
+        IEstado start();
+    
+       
 }
