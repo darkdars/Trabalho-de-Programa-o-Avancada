@@ -32,15 +32,20 @@ public class InterfaceTexto {
         this.jogo = j;
     }
 
-    public void run() {
+    public void runJogo() {
         int i = 1;
+        
+        if(jogo == null){
+            this.jogo = new Jogo();
+        }
+        
         
         //Estados
         
         
         while(i == 1){
-            if(jogo.getEstado() instanceof AwaitBeginning)
-                mostrarMenuInicial();
+           if(jogo.getEstado() instanceof AwaitBeginning)
+              mostrarMenuInicial();
             
             //if(jogo.getEstado() instanceof)
             
@@ -49,7 +54,10 @@ public class InterfaceTexto {
 
 
     private void mostrarMenuInicial() {
-        while(jogo == null){
+            jogo = null;
+       
+            while(jogo == null){
+            
             System.out.println("Deseja [c]arregar um jogo ou iniciar um [n]ovo?");
         
             switch(leCaracter()){

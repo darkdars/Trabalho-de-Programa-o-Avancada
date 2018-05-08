@@ -23,7 +23,7 @@ public class Main {
         //Jogo jogo = new Jogo();
         
         InterfaceTexto iT = new InterfaceTexto();
-        iT.run();
+        iT.runJogo();
       
         
         
