@@ -16,5 +16,6 @@ public interface IEstado {
     IEstado saltarEstado();
     IEstado avancar();
     IEstado processarEventos();
+    IEstado darCarta();
     
 }

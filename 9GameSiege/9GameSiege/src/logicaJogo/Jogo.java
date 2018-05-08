@@ -5,6 +5,9 @@
  */
 package logicaJogo;
 
+import java.util.List;
+import logicaJogo.eventos.IEventos;
+
 /**
  *
  * @author jhssi
@@ -12,14 +15,16 @@ package logicaJogo;
 
 
 
-public class Jogo extends EstadoAdapter {
+public class Jogo {
     
- 
+    IEstado estado;
     
-    public IEstado lancaDados(int numero){
-        int min = 1, max = 6;
-        numero =  min + (int)(Math.random() * max);  
-        return this;
-    }
+    List<IEventos> eventos;
+    IEventos ultimoEventoUtilizado;
+    int eventoAtual;
     
+    int dia;
+    
+    
+        
 }
