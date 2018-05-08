@@ -28,6 +28,18 @@ public class AwaitLineCheck extends EstadoAdapter{
             dadosJogo.rollDice();
             
             if(dadosJogo.getDice() == 1){ //Soldados capturados
+               
+                // Primeiro passo
+                dadosJogo.setEnemyLineSpace(1); 
+                
+                //Segundo passo
+                
+                if(dadosJogo.getSupliesS() != 0)
+                    dadosJogo.setSuplies(0);
+        
+                // Terceiro Passo
+                dadosJogo.reduceMoral(1);
+                
                 
             }
             

@@ -46,6 +46,11 @@ public class DadosJogo {
         setDice((int)(6 * Math.random()) + 1);
     }
     
+    //Set EnemyLineSpace
+    public void setEnemyLineSpace(int line){
+        statusCard.setTunel(line);
+    }
+    
     public int getDia() {
         return dia;
     }
@@ -61,8 +66,17 @@ public class DadosJogo {
     public void setDice(int dice) {
         this.dice = dice;
     }
-    
-    
-    
+
+    public int getSupliesS() {
+        return statusCard.getMantimentosRoubados();
+    }
+
+    public void setSuplies(int i) {
+        statusCard.setMantimentosRoubados(i);
+    }
+
+    public void reduceMoral(int i) {
+        statusCard.setMoral(statusCard.getMoral() - 1);
+    }
     
 }
