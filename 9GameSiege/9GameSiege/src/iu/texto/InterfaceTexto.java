@@ -45,6 +45,7 @@ public class InterfaceTexto {
                 case 'n':
                 case 'N':
                     jogo = new Jogo();
+                    jogo.checkStart();
                     break;
                 default:
                     
@@ -57,9 +58,15 @@ public class InterfaceTexto {
      public void run() {
         int i = 1;
         
+        //Estados
+        
+        
         while(i == 1){
             if(jogo.getEstado() instanceof AwaitBeginning)
                 mostrarMenuInicial();
+            
+            //if(jogo.getEstado() instanceof)
+            
         }
     }
 

@@ -42,6 +42,10 @@ public class Jogo {
     public void setEstado(IEstado estado) {
         this.estado = estado;
     }
+
+    public void CheckStart() {
+        setEstado(getEstado().start());
+    }
   
     
 
