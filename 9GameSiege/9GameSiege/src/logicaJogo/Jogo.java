@@ -5,8 +5,8 @@
  */
 package logicaJogo;
 
+import estados.IEstado;
 import java.util.List;
-import logicaJogo.eventos.IEventos;
 
 /**
  *
@@ -17,12 +17,15 @@ import logicaJogo.eventos.IEventos;
 
 public class Jogo {
 
-       public Jogo(){
-       dadosJogo = new DadosJogo();
+    private DadosJogo dadosJogo;
+    private IEstado estado;
+    
+    public Jogo(){
+     dadosJogo = new DadosJogo();
        
       
          
-       }
+    }
     
     public DadosJogo getDadosJogo() {
         return dadosJogo;
@@ -39,8 +42,7 @@ public class Jogo {
     public void setEstado(IEstado estado) {
         this.estado = estado;
     }
-    private DadosJogo dadosJogo;
-    private IEstado estado;
+  
     
 
    

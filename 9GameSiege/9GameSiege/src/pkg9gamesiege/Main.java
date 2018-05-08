@@ -21,10 +21,10 @@ public class Main {
     
     public static void main(String[] args) {
 
-        Jogo jogo = new Jogo();
+        //Jogo jogo = new Jogo();
         
         InterfaceTexto iT = new InterfaceTexto();
-        iT.iniciarInterface();
+        iT.run();
       
         
         

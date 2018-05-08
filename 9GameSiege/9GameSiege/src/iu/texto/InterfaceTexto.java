@@ -5,6 +5,7 @@
  */
 package iu.texto;
 
+import estados.AwaitBeginning;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -31,14 +32,6 @@ public class InterfaceTexto {
         this.jogo = j;
     }
 
-    public void iniciarInterface() {
-        
-        if(jogo == null){
-            mostrarMenuInicial();
-        }
-                
-        mostrarMenuFinal();
-    }
 
     private void mostrarMenuInicial() {
         while(jogo == null){
@@ -58,7 +51,6 @@ public class InterfaceTexto {
             }
         }
         
-        run();
         
     }
     
@@ -66,7 +58,8 @@ public class InterfaceTexto {
         int i = 1;
         
         while(i == 1){
-            
+            if(jogo.getEstado() instanceof AwaitBeginning)
+                mostrarMenuInicial();
         }
     }
 
@@ -99,6 +92,7 @@ public class InterfaceTexto {
     private void mostrarMenuCarregar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 
    
    
