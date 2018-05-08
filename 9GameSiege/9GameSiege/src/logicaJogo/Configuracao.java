@@ -7,23 +7,29 @@ package logicaJogo;
 
 /**
  *
- * @author jhssi
+ * @author Andre
  */
-public class EstadoAdapter implements IEstado {
+public class Configuracao implements IEstado {
+    Jogo pai;
+    
+    public Configuracao(Jogo p){
+        this.pai = p;
+    }
     
     @Override
-    public IEstado lancaDados(){
+    public IEstado configurar(){
+        //Inicia a configuracao
+        throw new UnsupportedOperationException("Not supported yet.");
+        
+    }
+
+    @Override
+    public IEstado lancaDados() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    
     }
 
     @Override
     public IEstado escolheAcao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public IEstado configurar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -41,5 +47,4 @@ public class EstadoAdapter implements IEstado {
     public IEstado processarEventos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }
