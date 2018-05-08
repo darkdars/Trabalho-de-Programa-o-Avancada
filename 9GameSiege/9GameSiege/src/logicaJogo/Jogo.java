@@ -16,14 +16,37 @@ import logicaJogo.eventos.IEventos;
 
 
 public class Jogo {
+
+       public Jogo(){
+       dadosJogo = new DadosJogo();
+       
+      
+         
+       }
     
-    IEstado estado;
+    public DadosJogo getDadosJogo() {
+        return dadosJogo;
+    }
+
+    public void setDadosJogo(DadosJogo dadosJogo) {
+        this.dadosJogo = dadosJogo;
+    }
+
+    public IEstado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(IEstado estado) {
+        this.estado = estado;
+    }
+    private DadosJogo dadosJogo;
+    private IEstado estado;
     
-    List<IEventos> eventos;
-    IEventos ultimoEventoUtilizado;
-    int eventoAtual;
+
+   
+
     
-    int dia;
+    
     
     
         

@@ -18,7 +18,7 @@ import logicaJogo.Jogo;
 public class InterfaceTexto {
     
     Scanner scanner;
-    Jogo jogo = null;
+    private Jogo jogo;
     
     public InterfaceTexto(){
         //inicia novo jogo
@@ -36,9 +36,7 @@ public class InterfaceTexto {
         if(jogo == null){
             mostrarMenuInicial();
         }
-        
-        
-        
+                
         mostrarMenuFinal();
     }
 
@@ -60,6 +58,16 @@ public class InterfaceTexto {
             }
         }
         
+        run();
+        
+    }
+    
+     public void run() {
+        int i = 1;
+        
+        while(i == 1){
+            
+        }
     }
 
     private void mostrarMenuFinal() {
@@ -91,6 +99,8 @@ public class InterfaceTexto {
     private void mostrarMenuCarregar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
    
    
     
