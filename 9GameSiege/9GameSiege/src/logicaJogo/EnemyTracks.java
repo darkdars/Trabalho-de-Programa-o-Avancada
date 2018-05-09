@@ -17,10 +17,10 @@ public class EnemyTracks {
     int trincheiras;
     
     public EnemyTracks(){
-        this.escada = 2;
-        this.ariete = 3;
+        this.escada = 4;
+        this.ariete = 4;
         this.torre = 4;
-        this.trincheiras = 4;
+        this.trincheiras = 1;
     }
     
     public EnemyTracks(int escada, int ariete, int torre, int trincheiras){
