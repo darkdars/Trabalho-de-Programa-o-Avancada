@@ -74,8 +74,7 @@ public class StatusCard {
             return "Inicio do Tunel";
         if(this.tunel == 3)
             return "Fim do Tunel";
-        if(this.tunel == 4)
-            return "Linhas Inimigas";
+        return "Linhas Inimigas";
         
     }
 
