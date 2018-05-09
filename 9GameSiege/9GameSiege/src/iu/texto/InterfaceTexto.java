@@ -7,7 +7,9 @@ package iu.texto;
 
 import logicaJogo.estados.AwaitBeginning;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import logicaJogo.Jogo;
@@ -47,7 +49,7 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitBeginning)
               mostrarMenuInicial();
            if(jogo.getEstado() instanceof AwaitLineCheck){
-               
+              lineCheck();
            }
            
            if(jogo.getEstado() instanceof AwaitCardSelect){
@@ -110,6 +112,12 @@ public class InterfaceTexto {
 
     private void mostrarMenuCarregar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void lineCheck() {
+        System.out.println("Line Check Phase!\n");
+        
+       jogo.setEstado(jogo.getEstado().ResolveLine());
     }
 
 }

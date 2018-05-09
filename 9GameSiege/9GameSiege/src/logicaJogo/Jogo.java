@@ -30,7 +30,7 @@ public class Jogo {
     public void CheckStart(){
         setEstado(getEstado().start());
     }
-
+    
     public DadosJogo getDadosJogo() {
         return dadosJogo;
     }

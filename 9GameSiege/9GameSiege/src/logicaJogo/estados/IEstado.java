@@ -21,5 +21,8 @@ public interface IEstado {
         
         IEstado ResolveLine();
         
+         /***** AwaitCardCheck  *****/  
        
+        IEstado cardChoose();
+        
 }

@@ -16,5 +16,7 @@ public class AwaitCardSelect extends EstadoAdapter {
     public AwaitCardSelect(DadosJogo dadosJogo) {
         super(dadosJogo);
     }
+
+    
     
 }
