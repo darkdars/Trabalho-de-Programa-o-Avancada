@@ -19,6 +19,8 @@ public class DadosJogo {
     public EnemyTracks enemyTracks;
     public StatusCard statusCard;
     //public List<Cards> cartas;
+    public int listaCards; // Vai de 0 a 6 // 7 cartas
+    
 
     public DadosJogo(){
         dia = 1;

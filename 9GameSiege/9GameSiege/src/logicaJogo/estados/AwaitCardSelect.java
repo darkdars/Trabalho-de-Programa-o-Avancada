@@ -17,6 +17,11 @@ public class AwaitCardSelect extends EstadoAdapter {
         super(dadosJogo);
     }
 
-    
+    @Override
+    public IEstado cardChoose(){
+        //Pegar na carta de cima do baralho
+        System.out.println("Falta implementar para pegar na primeira carta!\n");
+        return this;
+    }
     
 }
