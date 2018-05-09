@@ -65,7 +65,7 @@ public class InterfaceTexto {
                
            }
            if(jogo.getEstado() instanceof AwaitWinLosePhase){
-               
+               winLose();
            }
            
            if(jogo.getEstado() instanceof AwaitEndDayPhase){
@@ -175,6 +175,11 @@ public class InterfaceTexto {
 
     private void cardSelect() {
         jogo.setEstado(jogo.getEstado().cardChoose());
+    }
+
+    private void winLose() {
+        System.out.println("Win or Lose Check!");
+        
     }
 
 }
