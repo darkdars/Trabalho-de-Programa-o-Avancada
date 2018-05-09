@@ -66,6 +66,18 @@ public class StatusCard {
     public int getTunel() {
         return tunel;
     }
+    
+    public String getTunelString(){
+        if(this.tunel == 1)
+            return "Castle";
+        if(this.tunel == 2)
+            return "Inicio do Tunel";
+        if(this.tunel == 3)
+            return "Fim do Tunel";
+        if(this.tunel == 4)
+            return "Linhas Inimigas";
+        
+    }
 
     public void setTunel(int tunel) {
         this.tunel = tunel;
