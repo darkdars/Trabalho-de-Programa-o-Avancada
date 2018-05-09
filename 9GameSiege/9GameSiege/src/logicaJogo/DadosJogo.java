@@ -61,7 +61,7 @@ public class DadosJogo {
     
     public void baralhaCartas(){
         Collections.shuffle(cartas);
-        System.out.println(cartas.get(0).getNumCarta());
+        System.out.println(cartas.get(0).getEventos(0).getNome());
         //System.out.println("Falta implementar! ESTOU NO DADOSJOGO BARALHA CARTAS!\n");
     }
     

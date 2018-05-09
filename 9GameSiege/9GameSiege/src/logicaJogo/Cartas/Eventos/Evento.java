@@ -36,5 +36,46 @@ public class Evento {
         this.evento.addAll(Arrays.asList(evento));
         this.valores.addAll(Arrays.asList(valores));
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getActionP() {
+        return actionP;
+    }
+
+    public void setActionP(int actionP) {
+        this.actionP = actionP;
+    }
+
+    public List<String> getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(List<String> enemy) {
+        this.enemy = enemy;
+    }
+
+    public List<String> getEvento() {
+        return evento;
+    }
+
+    public void setEvento(List<String> evento) {
+        this.evento = evento;
+    }
+
+    public List<String> getValores() {
+        return valores;
+    }
+
+    public void setValores(List<String> valores) {
+        this.valores = valores;
+    }
+    
     
 }
