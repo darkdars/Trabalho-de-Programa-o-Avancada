@@ -5,6 +5,8 @@
  */
 package logicaJogo.estados;
 
+import java.util.HashSet;
+import java.util.Set;
 import logicaJogo.DadosJogo;
 
 /**
@@ -20,6 +22,7 @@ public class AwaitWinLosePhase extends EstadoAdapter{
     @Override
     public IEstado winLosePhase(){
         if(dadosJogo.checkEnemyCloseCombat() >= 2 || dadosJogo.check0SpaceStatusTrack() >= 1){
+            dadosJogo.setTexto("Perdeu!");
             return new AwaitEnd(dadosJogo);
         }
         
@@ -29,7 +32,8 @@ public class AwaitWinLosePhase extends EstadoAdapter{
     @Override
     public IEstado winLoseI(){
         if(dadosJogo.checkEnemyCloseCombat() >= 3 || dadosJogo.check0SpaceStatusTrack() >= 2){
-           return new AwaitEnd(dadosJogo); 
+            dadosJogo.setTexto("Perdeu!");
+            return new AwaitEnd(dadosJogo); 
         }
         
         return this;

@@ -106,6 +106,7 @@ public class InterfaceTexto {
     }
     
     private void mostrarMenuFinal() {
+        System.out.println(jogo.getTextoDadosJogo());
         System.out.println("Fim do JOGO!\n");
         tecla();
     }

@@ -46,6 +46,14 @@ public class Jogo {
     public void setEstado(IEstado estado) {
         this.estado = estado;
     }
+    
+    public String getTextoDadosJogo(){
+        return dadosJogo.getTexto();
+    }
+    
+    public void setTextoDadosJogo(String texto){
+        dadosJogo.setTexto(texto);
+    }
 
     public int lineCheck() {
         //ver se está alguem na linha da frente se estiver tem de lancar dado
