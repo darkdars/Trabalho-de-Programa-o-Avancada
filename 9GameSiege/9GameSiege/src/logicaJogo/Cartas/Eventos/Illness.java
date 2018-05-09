@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class Illness extends Evento{
     
     public Illness(){
-        super("Illness", 2, new String[]{"tower"}, new String[]{"reduceM", "reduceS"}, new String[]{"1", "1"});
+        super("Illness", 2, new String[]{"tower"}, new String[]{"reduce-morale", "reduce-supplies"}, new String[]{"1", "1"});
     }
 }

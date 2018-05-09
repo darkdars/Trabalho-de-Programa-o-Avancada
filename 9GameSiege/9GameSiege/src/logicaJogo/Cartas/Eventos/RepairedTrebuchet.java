@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class RepairedTrebuchet extends Evento{
     
     public RepairedTrebuchet(){
-        super("Repaired Trebuchet", 2, new String[]{"ladder"}, new String[]{"add-Trebuchet", "action-coupure"}, new String[]{"1", "1s"});
+        super("Repaired Trebuchet", 2, new String[]{"ladder"}, new String[]{"add-Trebuchet", "action-coupure"}, new String[]{"1", "1"});
     }
 }

@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class IronShields {
+public class IronShields extends Evento{
     
+    public IronShields(){
+        super("Iron Shields", 2, new String[]{"tower"}, new String[]{"attacks-tower"}, new String[]{"-1"});
+    }
 }

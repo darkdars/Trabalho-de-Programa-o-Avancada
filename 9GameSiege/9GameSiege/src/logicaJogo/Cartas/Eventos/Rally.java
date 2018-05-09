@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class Rally extends Evento{
     
     public Rally(){
-        super("Rally!", 3, new String[]{"ram", "tower"}, new String[]{"attacks"}, new String[]{""});
+        super("Rally!", 3, new String[]{"ram", "tower"}, new String[]{"attacks-close", "attacks-circle"}, new String[]{"1", "1"});
     }
 }

@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class Faith {
+public class Faith extends Evento{
     
+    public Faith(){
+        super("Faith", 3, new String[]{"ladder", "ram", "ladder"}, new String[]{"attacks-ram", "attacks-ladder", "attacks-tower"}, new String[]{"1", "1", "1"});
+    }
 }
