@@ -17,8 +17,8 @@ public class EnemyTracks {
     int trincheiras;
     
     public EnemyTracks(){
-        this.escada = 4;
-        this.ariete = 4;
+        this.escada = 2;
+        this.ariete = 3;
         this.torre = 4;
         this.trincheiras = 4;
     }
