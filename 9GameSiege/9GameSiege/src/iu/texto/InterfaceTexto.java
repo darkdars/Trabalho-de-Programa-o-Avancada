@@ -53,7 +53,7 @@ public class InterfaceTexto {
            }
            
            if(jogo.getEstado() instanceof AwaitCardSelect){
-               
+               //AQUUIII FIQUEI AQUIIII
            }
             
         }
