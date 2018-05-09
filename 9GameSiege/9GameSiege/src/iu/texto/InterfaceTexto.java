@@ -179,8 +179,8 @@ public class InterfaceTexto {
     }
 
     private void cardSelect() {
-     
         jogo.setEstado(jogo.getEstado().cardChoose());
+        System.out.println("Carta Selecionada!");
     }
 
     private void winLose() {

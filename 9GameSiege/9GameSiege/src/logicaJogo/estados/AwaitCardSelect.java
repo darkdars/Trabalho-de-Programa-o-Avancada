@@ -5,6 +5,8 @@
  */
 package logicaJogo.estados;
 
+import java.util.HashSet;
+import java.util.Set;
 import logicaJogo.DadosJogo;
 
 /**
@@ -21,7 +23,7 @@ public class AwaitCardSelect extends EstadoAdapter {
     public IEstado cardChoose(){
         //Pegar na carta de cima do baralho
         System.out.println("Falta implementar para pegar na primeira carta!\n");
-        
+        dadosJogo.setCartaSelecionada(dadosJogo.getCard(dadosJogo.getListaCards()));
         //Depois atribuir os eventos ao evento do turno para preencher o event Phase
         
         return this;

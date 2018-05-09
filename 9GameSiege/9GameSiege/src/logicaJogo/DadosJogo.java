@@ -34,13 +34,15 @@ import logicaJogo.Cartas.Eventos.VolleyArrows;
  */
 public class DadosJogo {
     
-    public int dia;
-    public int dice;
-    public EnemyTracks enemyTracks;
-    public StatusCard statusCard;
-    public List<Card> cartas;
-    public int listaCards; // Vai de 0 a 6 // 7 cartas
-    public String texto;
+    private int dia;
+    private int dice;
+    private EnemyTracks enemyTracks;
+    private StatusCard statusCard;
+    private List<Card> cartas;
+    private Card cartaSelecionada;
+    
+    private int listaCards; // Vai de 0 a 6 // 7 cartas
+    private String texto;
     
 
     public DadosJogo(){
@@ -48,6 +50,7 @@ public class DadosJogo {
         enemyTracks = new EnemyTracks();
         statusCard = new StatusCard();
         texto="";
+        listaCards = 0;
         
         cartas = new ArrayList<>();
         cartas.add(new Card(1, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1)));
@@ -61,8 +64,7 @@ public class DadosJogo {
     
     public void baralhaCartas(){
         Collections.shuffle(cartas);
-        System.out.println(cartas.get(0).getEventos(0).getNome());
-        //System.out.println("Falta implementar! ESTOU NO DADOSJOGO BARALHA CARTAS!\n");
+      //  System.out.println(cartas.get(0).getEventos(0).getNome());
     }
     
     /**Funcao para fazer EnemyLineCheck
@@ -151,6 +153,33 @@ public class DadosJogo {
     public void setTexto(String texto) {
         this.texto = texto;
     }
+
+    public Card getCartaSelecionada() {
+        return cartaSelecionada;
+    }
+
+    public void setCartaSelecionada(Card cartaSelecionada) {
+        this.cartaSelecionada = cartaSelecionada;
+    }
+
+    public int getListaCards() {
+        return listaCards;
+    }
+
+    public void setListaCards(int listaCards) {
+        this.listaCards = listaCards;
+    }
+
+    public List<Card> getCartas() {
+        return cartas;
+    }
+
+    public void setCartas(List<Card> cartas) {
+        this.cartas = cartas;
+    }
     
+    public Card getCard(int n){
+        return this.cartas.get(n);
+    }
     
 }
