@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class FlamingArrows {
+public class FlamingArrows extends Evento{
     
+    public FlamingArrows(){
+        super("Flaming Arrows", 2, new String[]{"tower"}, new String[]{"attack-tower"}, new String[]{"1"});
+    }
 }

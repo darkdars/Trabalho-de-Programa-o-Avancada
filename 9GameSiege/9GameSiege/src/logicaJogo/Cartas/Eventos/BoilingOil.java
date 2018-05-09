@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class BoilingOil {
+public class BoilingOil extends Evento{
     
+    public BoilingOil(){
+        super("Boiling Oil", 2, new String[]{"ladder-ram"}, new String[]{"attack-circle"}, new String[]{"2"});
+    }
 }

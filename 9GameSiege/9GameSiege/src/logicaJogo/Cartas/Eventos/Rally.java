@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class Rally {
+public class Rally extends Evento{
     
+    public Rally(){
+        super("Rally!", 3, new String[]{"ram", "tower"}, new String[]{"attacks"}, new String[]{""});
+    }
 }

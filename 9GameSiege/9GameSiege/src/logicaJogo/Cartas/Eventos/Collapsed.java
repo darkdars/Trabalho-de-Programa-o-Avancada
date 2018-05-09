@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class Collapsed {
+public class Collapsed extends Evento{
     
+    public Collapsed(){
+        super("Collapsed!", 2, new String[]{"ladder-ram"}, new String[]{"remove-tower"}, new String[]{"4"});
+    }
 }

@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class SuppliesSpoiled {
+public class SuppliesSpoiled extends Evento{
     
+    public SuppliesSpoiled(){
+        super("Supplies Spoiled", 2, new String[]{"ladder"}, new String[]{"reduce-supplies"}, new String[]{"1"});
+    }
 }

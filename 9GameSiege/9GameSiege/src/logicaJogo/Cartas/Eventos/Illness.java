@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class Illness {
+public class Illness extends Evento{
     
+    public Illness(){
+        super("Illness", 2, new String[]{"tower"}, new String[]{"reduceM", "reduceS"}, new String[]{"1", "1"});
+    }
 }

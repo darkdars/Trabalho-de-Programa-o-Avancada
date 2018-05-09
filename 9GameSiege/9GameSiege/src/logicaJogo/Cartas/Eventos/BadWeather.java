@@ -9,6 +9,10 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class BadWeather {
+public class BadWeather extends Evento{
     
+    public BadWeather(){
+        super("Bad Weather", 2, new String[]{"none"}, new String[]{"actions-raid", "actions-sabotage"}, new String[]{"only"});
+    }
 }
+

@@ -9,6 +9,9 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class VolleyArrows {
+public class VolleyArrows extends Evento{
     
+    public VolleyArrows(){
+        super("Volley Arrows", 3, new String[]{"ram"}, new String[]{"attacks-all"}, new String[]{"1"});
+    }
 }

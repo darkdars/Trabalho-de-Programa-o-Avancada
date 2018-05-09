@@ -9,6 +9,8 @@ package logicaJogo.Cartas.Eventos;
  *
  * @author Andre
  */
-public class GuardsDistracted {
-    
+public class GuardsDistracted extends Evento{
+    public GuardsDistracted(){
+        super("Guards Distracted", 2, new String[]{"sword"}, new String[]{"action-sabotage", "action-morale"},  new String[]{"1", ""});
+    }
 }
