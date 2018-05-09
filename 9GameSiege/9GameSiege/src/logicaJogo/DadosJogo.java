@@ -60,8 +60,9 @@ public class DadosJogo {
     }
     
     public void baralhaCartas(){
-        //Collections.shuffle(cartas);
-        System.out.println("Falta implementar! ESTOU NO DADOSJOGO BARALHA CARTAS!\n");
+        Collections.shuffle(cartas);
+        System.out.println(cartas.get(0).getNumCarta());
+        //System.out.println("Falta implementar! ESTOU NO DADOSJOGO BARALHA CARTAS!\n");
     }
     
     /**Funcao para fazer EnemyLineCheck

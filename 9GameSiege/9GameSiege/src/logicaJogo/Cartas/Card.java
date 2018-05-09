@@ -24,4 +24,21 @@ public class Card {
        eventos.add(ev2);
        eventos.add(ev3);              
     }
+    
+    public int getNumCarta() {
+        return numCarta;
+    }
+
+    public void setNumCarta(int numCarta) {
+        this.numCarta = numCarta;
+    }
+
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
+
 }

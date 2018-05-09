@@ -7,6 +7,7 @@ package logicaJogo.Cartas.Eventos;
  */
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +29,9 @@ public class Evento {
     public Evento(String nome, int actionP, String[] enemy, String[] evento, String[] valores){
         this.nome = nome;
         this.actionP = actionP;
+        this.enemy = new ArrayList<>();
+        this.evento = new ArrayList<>();
+        this.valores = new ArrayList<>();
         this.enemy.addAll(Arrays.asList(enemy));
         this.evento.addAll(Arrays.asList(evento));
         this.valores.addAll(Arrays.asList(valores));
