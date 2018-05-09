@@ -5,6 +5,7 @@
  */
 package logicaJogo.Cartas;
 
+import java.util.ArrayList;
 import logicaJogo.Cartas.Eventos.Evento;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Card {
     
     public Card(int num, Evento ev1, Evento ev2, Evento ev3){            
        this.numCarta = num;
+       eventos = new ArrayList<>();
        eventos.add(ev1);
        eventos.add(ev2);
        eventos.add(ev3);              

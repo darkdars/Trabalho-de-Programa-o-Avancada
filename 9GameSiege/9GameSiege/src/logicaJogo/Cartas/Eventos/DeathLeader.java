@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class DeathLeader extends Evento{
     
     public DeathLeader(){
-        super("Death of a Leader", 2, new String[]{"ladder-tower"}, new String[]{"reduce-morale"}, new String[]{"1"});
+        super("Death of a Leader", 2, new String[]{"ladder", "tower"}, new String[]{"reduce-morale"}, new String[]{"1"});
     }
 }
