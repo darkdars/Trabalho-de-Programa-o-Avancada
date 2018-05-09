@@ -5,8 +5,10 @@
  */
 package logicaJogo;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import logicaJogo.Cartas.Card;
 
 /**
  *
@@ -18,14 +20,19 @@ public class DadosJogo {
     public int dice;
     public EnemyTracks enemyTracks;
     public StatusCard statusCard;
-    //public List<Cards> cartas;
+    public List<Card> cartas;
     public int listaCards; // Vai de 0 a 6 // 7 cartas
+    public String texto;
     
 
     public DadosJogo(){
         dia = 1;
         enemyTracks = new EnemyTracks();
         statusCard = new StatusCard();
+        texto="";
+        
+        cartas = new ArrayList<>();
+        
     }
     
     public void baralhaCartas(){

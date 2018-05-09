@@ -14,7 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import logicaJogo.Jogo;
 import logicaJogo.estados.AwaitCardSelect;
+import logicaJogo.estados.AwaitEndDayPhase;
+import logicaJogo.estados.AwaitEnemyMovementPhase;
 import logicaJogo.estados.AwaitLineCheck;
+import logicaJogo.estados.AwaitPlayerAction;
+import logicaJogo.estados.AwaitWinLosePhase;
 
 /**
  *
@@ -51,10 +55,22 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitLineCheck){
               lineCheck();
            }
-           
            if(jogo.getEstado() instanceof AwaitCardSelect){
-               //AQUUIII FIQUEI AQUIIII
+               cardSelect();
            }
+           if(jogo.getEstado() instanceof AwaitEnemyMovementPhase){
+               
+           }
+           if(jogo.getEstado() instanceof AwaitPlayerAction){
+               
+           }
+           if(jogo.getEstado() instanceof AwaitWinLosePhase){
+               
+           }
+           
+           if(jogo.getEstado() instanceof AwaitEndDayPhase){
+               
+           } 
             
         }
     }
@@ -87,6 +103,7 @@ public class InterfaceTexto {
     private void mostrarMenuFinal() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("Fim do JOGO!\n");
+        tecla();
     }
 
     char leCaracter() {
@@ -113,11 +130,51 @@ public class InterfaceTexto {
     private void mostrarMenuCarregar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+     public void tecla()
+    {
+        System.out.print(" -> Prima qualquer tecla para avançar para a proxima carta");
+        
+         try
+            {
+                System.in.read();
+            }  
+            catch(IOException e)
+            {} 
+    }
+     
+     public static void clearScreen() {  
+    System.out.print("\033[H\033[2J");  
+    System.out.flush();  
+}  
 
-    private void lineCheck() {
+    private void lineCheck(){
         System.out.println("Line Check Phase!\n");
         
-       jogo.setEstado(jogo.getEstado().ResolveLine());
+        int i = jogo.lineCheck();
+        
+        if(i == 0){
+            System.out.println("Nao Existem Inimigos nas EnemyLines!\n");
+        }else{
+            System.out.println("Existem Inimigos nas EnemyLines!\n");
+            
+            System.out.println("Resultado do lancamento do dado: " + i);
+            
+            if(i == 1){
+                System.out.println("Inimigos Capturados!\n");
+            }else{
+                System.out.println("Soldados nao foram detetados!");
+            }
+            
+        }
+       
+        tecla();
+        clearScreen();
+        jogo.setEstado(jogo.getEstado().ResolveLine());
+    }
+
+    private void cardSelect() {
+        jogo.setEstado(jogo.getEstado().cardChoose());
     }
 
 }
