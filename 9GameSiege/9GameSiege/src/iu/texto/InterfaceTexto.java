@@ -182,7 +182,7 @@ public class InterfaceTexto {
         jogo.setEstado(jogo.getEstado().cardChoose());
         System.out.println("Carta Selecionada!");
         imprimirInformacaoCarta();
-        
+        jogo.setEstado(jogo.getEstado().eventPhase());
     }
 
     private void winLose() {
@@ -191,7 +191,7 @@ public class InterfaceTexto {
     }
 
     private void imprimirInformacaoCarta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Informacao da Carta!");
     }
 
 }

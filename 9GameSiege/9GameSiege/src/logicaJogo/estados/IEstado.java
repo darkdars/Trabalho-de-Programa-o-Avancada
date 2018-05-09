@@ -24,7 +24,7 @@ public interface IEstado {
          /***** AwaitCardSelect  *****/  
        
         IEstado cardChoose();
-        
+        IEstado eventPhase();
         
         /***** AwaitMovements  *****/ 
         IEstado enemyMovementPhase();

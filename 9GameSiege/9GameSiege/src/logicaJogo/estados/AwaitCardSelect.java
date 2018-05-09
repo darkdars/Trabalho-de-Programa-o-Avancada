@@ -24,9 +24,16 @@ public class AwaitCardSelect extends EstadoAdapter {
         //Pegar na carta de cima do baralho
         System.out.println("Falta implementar para pegar na primeira carta!\n");
         dadosJogo.setCartaSelecionada(dadosJogo.getCard(dadosJogo.getListaCards()));
-        //Depois atribuir os eventos ao evento do turno para preencher o event Phase
-        
         return this;
     }
+    
+    @Override
+    public IEstado eventPhase(){
+        //Determina evento e faz o que o evento faz
+        
+        
+        return new AwaitEnemyMovementPhase(dadosJogo);
+    }
+    
     
 }
