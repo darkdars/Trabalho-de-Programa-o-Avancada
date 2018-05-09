@@ -19,13 +19,20 @@ public class AwaitWinLosePhase extends EstadoAdapter{
     
     @Override
     public IEstado winLosePhase(){
-        //MUDAr
-        if(dadosJogo.checkEnemyCloseCombat() >= 2 || dadosJogo.check0SpaceStatusTrack()){
+        if(dadosJogo.checkEnemyCloseCombat() >= 2 || dadosJogo.check0SpaceStatusTrack() >= 1){
             return new AwaitEnd(dadosJogo);
         }
         
-        
         return new AwaitBeginning(dadosJogo);
+    }
+    
+    @Override
+    public IEstado winLoseI(){
+        if(dadosJogo.checkEnemyCloseCombat() >= 3 || dadosJogo.check0SpaceStatusTrack() >= 2){
+           return new AwaitEnd(dadosJogo); 
+        }
+        
+        return this;
     }
     
 }

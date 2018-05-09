@@ -34,6 +34,7 @@ public interface IEstado {
         
         /***** AwaitWinLosePhase  *****/ 
         IEstado winLosePhase();
+        IEstado winLoseI();
 
         /***** AwaitEnd *****/ 
         IEstado end();

@@ -103,12 +103,20 @@ public class DadosJogo {
         return x;
     }
 
-    public boolean check0SpaceStatusTrack() {
+    public int check0SpaceStatusTrack() {
+        int x = 0;
         
-        if(statusCard.getMoral() == 0 || statusCard.getMantimentos() == 0 || statusCard.getMuralha() == 0)
-            return true;
+        if(statusCard.getMoral() == 0)
+            x++;
         
-        return false;
+         if(statusCard.getMantimentos() == 0)
+             x++;
+         
+         if(statusCard.getMuralha() == 0)
+            x++;
+         
+        
+        return x;
     }
     
 }
