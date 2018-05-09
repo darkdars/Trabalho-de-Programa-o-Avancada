@@ -5,10 +5,18 @@
  */
 package logicaJogo.estados;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author jhssi
  */
-public class AwaitPlayerAction {
+public class AwaitPlayerAction extends EstadoAdapter{
+    
+    public AwaitPlayerAction(DadosJogo dadosJogo) {
+        super(dadosJogo);
+    }
+    
+    
     
 }

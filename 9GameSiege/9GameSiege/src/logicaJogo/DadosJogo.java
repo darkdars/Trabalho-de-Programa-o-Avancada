@@ -87,5 +87,28 @@ public class DadosJogo {
     public void reduceMoral(int i) {
         statusCard.setMoral(statusCard.getMoral() - 1);
     }
+
+    public int checkEnemyCloseCombat() { // Checka numero de inimigos em closecombat
+        int x = 0;
+        
+        if(enemyTracks.getEscada() == 0)
+            x++;
+       
+        if(enemyTracks.getTorre() == 0)
+            x++;
+                    
+        if(enemyTracks.getTrincheiras() == 0)
+            x++;
+        
+        return x;
+    }
+
+    public boolean check0SpaceStatusTrack() {
+        
+        if(statusCard.getMoral() == 0 || statusCard.getMantimentos() == 0 || statusCard.getMuralha() == 0)
+            return true;
+        
+        return false;
+    }
     
 }

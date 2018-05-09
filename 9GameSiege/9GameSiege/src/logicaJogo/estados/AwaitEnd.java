@@ -11,10 +11,14 @@ import logicaJogo.DadosJogo;
  *
  * @author jhssi
  */
-public class AwaitEnemyMovementPhase extends EstadoAdapter{
+public class AwaitEnd extends EstadoAdapter{
     
-    public AwaitEnemyMovementPhase(DadosJogo dadosJogo) {
+    public AwaitEnd(DadosJogo dadosJogo) {
         super(dadosJogo);
     }
     
+    @Override
+    public IEstado end(){
+        return new AwaitBeginning(dadosJogo);
+    }
 }

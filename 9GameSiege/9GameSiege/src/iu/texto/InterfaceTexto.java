@@ -14,11 +14,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import logicaJogo.Jogo;
 import logicaJogo.estados.AwaitCardSelect;
+import logicaJogo.estados.AwaitEnd;
 import logicaJogo.estados.AwaitEndDayPhase;
 import logicaJogo.estados.AwaitEnemyMovementPhase;
 import logicaJogo.estados.AwaitLineCheck;
 import logicaJogo.estados.AwaitPlayerAction;
 import logicaJogo.estados.AwaitWinLosePhase;
+import logicaJogo.estados.IEstado;
 
 /**
  *
@@ -71,6 +73,9 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitEndDayPhase){
                
            } 
+           if(jogo.getEstado() instanceof AwaitEnd){
+               mostrarMenuFinal();
+           }
             
         }
     }
@@ -101,7 +106,6 @@ public class InterfaceTexto {
     }
     
     private void mostrarMenuFinal() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("Fim do JOGO!\n");
         tecla();
     }
@@ -174,12 +178,13 @@ public class InterfaceTexto {
     }
 
     private void cardSelect() {
+     
         jogo.setEstado(jogo.getEstado().cardChoose());
     }
 
     private void winLose() {
         System.out.println("Win or Lose Check!");
-        
+        jogo.setEstado(jogo.getEstado().winLosePhase());
     }
 
 }

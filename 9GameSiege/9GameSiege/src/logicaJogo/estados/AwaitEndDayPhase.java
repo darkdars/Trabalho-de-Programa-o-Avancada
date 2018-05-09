@@ -5,10 +5,16 @@
  */
 package logicaJogo.estados;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author jhssi
  */
-public class AwaitEndDayPhase {
+public class AwaitEndDayPhase extends EstadoAdapter{
+    
+    public AwaitEndDayPhase(DadosJogo dadosJogo) {
+        super(dadosJogo);
+    }
     
 }
