@@ -61,7 +61,7 @@ public class InterfaceTexto {
                cardSelect();
            }
            if(jogo.getEstado() instanceof AwaitEnemyMovementPhase){
-               
+               movementPhase();
            }
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                
@@ -192,6 +192,10 @@ public class InterfaceTexto {
 
     private void imprimirInformacaoCarta() {
         System.out.println("Informacao da Carta!");
+    }
+
+    private void movementPhase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
