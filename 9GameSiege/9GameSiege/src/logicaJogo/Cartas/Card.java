@@ -5,6 +5,7 @@
  */
 package logicaJogo.Cartas;
 
+import logicaJogo.Cartas.Eventos.Evento;
 import java.util.List;
 
 /**
@@ -12,8 +13,13 @@ import java.util.List;
  * @author Andre
  */
 public class Card {
-    private List<Eventos> eventos;
+    private int numCarta;
+    private List<Evento> eventos;
     
-    Card(){
+    public Card(int num, Evento ev1, Evento ev2, Evento ev3){            
+       this.numCarta = num;
+       eventos.add(ev1);
+       eventos.add(ev2);
+       eventos.add(ev3);              
     }
 }
