@@ -34,6 +34,11 @@ public class EstadoAdapter implements IEstado {
     public IEstado start() {
         return this;
     }
+
+    @Override
+    public IEstado ResolveLine() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    
 }

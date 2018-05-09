@@ -20,8 +20,8 @@ public class StatusCard {
         this.muralha = 4;
         this.moral = 4;
         this.mantimentos = 4;
-        this.mantimentosRoubados = 4;
-        this.tunel = 0;
+        this.mantimentosRoubados = 0;
+        this.tunel = 1;
     }
     
     public StatusCard(int muralha,int moral, int mantimentos, int mantimentosR, int tunel){

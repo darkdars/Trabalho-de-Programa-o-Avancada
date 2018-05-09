@@ -11,6 +11,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import logicaJogo.Jogo;
+import logicaJogo.estados.AwaitCardSelect;
+import logicaJogo.estados.AwaitLineCheck;
 
 /**
  *
@@ -38,20 +40,22 @@ public class InterfaceTexto {
         if(jogo == null){
             this.jogo = new Jogo();
         }
-        
-        
+         
         //Estados
-        
-        
+       
         while(i == 1){
            if(jogo.getEstado() instanceof AwaitBeginning)
               mostrarMenuInicial();
-            
-            //if(jogo.getEstado() instanceof)
+           if(jogo.getEstado() instanceof AwaitLineCheck){
+               
+           }
+           
+           if(jogo.getEstado() instanceof AwaitCardSelect){
+               
+           }
             
         }
     }
-
 
     private void mostrarMenuInicial() {
             jogo = null;
@@ -78,7 +82,6 @@ public class InterfaceTexto {
         
     }
     
-     
     private void mostrarMenuFinal() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("Fim do JOGO!\n");
@@ -109,10 +112,4 @@ public class InterfaceTexto {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-   
-   
-   
-    
-    
 }

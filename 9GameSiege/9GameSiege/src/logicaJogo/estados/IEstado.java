@@ -12,10 +12,14 @@ package logicaJogo.estados;
 public interface IEstado {
 
     
-    /****** AwaitBeginning
-     * @return  ******/
+      /***** AwaitBeginning  *****/  
     
         IEstado start();
     
+        /***** AwaitLineCheck
+     * @return  *******/
+        
+        IEstado ResolveLine();
+        
        
 }
