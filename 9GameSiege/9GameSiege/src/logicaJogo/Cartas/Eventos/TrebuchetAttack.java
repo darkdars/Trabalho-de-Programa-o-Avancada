@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class TrebuchetAttack extends Evento{
     
     public TrebuchetAttack(){
-        super("Trebuchet Attack", 3, {"damageT", "damageT", "damageT"}, {"damageT", "damageT", "damageT"}, {"2","1","1"})
+        super("Trebuchet Attack", 3, new String[]{"damageT", "damageT", "damageT"}, new String[]{"damageT", "damageT", "damageT"}, new String[]{"2","1","1"});
     }
 }
