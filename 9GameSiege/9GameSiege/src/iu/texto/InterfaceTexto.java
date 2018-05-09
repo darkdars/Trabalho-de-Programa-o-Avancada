@@ -181,11 +181,17 @@ public class InterfaceTexto {
     private void cardSelect() {
         jogo.setEstado(jogo.getEstado().cardChoose());
         System.out.println("Carta Selecionada!");
+        imprimirInformacaoCarta();
+        
     }
 
     private void winLose() {
         System.out.println("Win or Lose Check!");
         jogo.setEstado(jogo.getEstado().winLosePhase());
+    }
+
+    private void imprimirInformacaoCarta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
