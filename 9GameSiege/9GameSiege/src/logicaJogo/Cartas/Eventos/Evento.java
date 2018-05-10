@@ -10,12 +10,13 @@ package logicaJogo.Cartas.Eventos;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import logicaJogo.DadosJogo;
 
 /**
  *
  * @author Andre
  */
-public class Evento {
+public abstract class Evento {
     private String nome;
     private String info;
     private int actionP;
@@ -91,5 +92,6 @@ public class Evento {
         this.valores = valores;
     }
     
+    public abstract void execute(DadosJogo dadosJogo);
     
 }

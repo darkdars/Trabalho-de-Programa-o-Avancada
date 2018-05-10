@@ -5,6 +5,8 @@
  */
 package logicaJogo.Cartas.Eventos;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author Andre
@@ -14,5 +16,10 @@ public class SuppliesSpoiled extends Evento{
     public SuppliesSpoiled(){
         super("Supplies Spoiled", 2, new String[]{"ladder"}, new String[]{"reduce-supplies"}, new String[]{"1"}, 
                 "As escadas avancam uma unidade.\nAlguns suplementos estragaram-se, os suplementos sao reduzidos por 1.");
+    }
+
+    @Override
+    public void execute(DadosJogo dadosJogo) {
+        dadosJogo.getStatusCard().updateMantimentos(-1);
     }
 }

@@ -5,6 +5,8 @@
  */
 package logicaJogo.Cartas.Eventos;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author Andre
@@ -14,5 +16,10 @@ public class Faith extends Evento{
     public Faith(){
         super("Faith", 3, new String[]{"ladder", "ram", "ladder"}, new String[]{"attacks-ram", "attacks-ladder", "attacks-tower"}, new String[]{"1", "1", "1"}, 
                 "Neste evento todos os inimigos avancam uma casa.\nAo mesmo tempo qualquer ataque contra a ariete, a escada e a torre recem um bonus de 1.");
+    }
+
+    @Override
+    public void execute(DadosJogo dadosJogo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
