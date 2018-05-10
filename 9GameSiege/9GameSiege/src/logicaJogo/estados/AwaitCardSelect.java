@@ -26,7 +26,8 @@ public class AwaitCardSelect extends EstadoAdapter {
         
         //Meter evento
         dadosJogo.updateEventoAtual();
-  
+        dadosJogo.setJogadasDisp(dadosJogo.getEventoAtual().getActionP());
+        
         return this;
     }
     

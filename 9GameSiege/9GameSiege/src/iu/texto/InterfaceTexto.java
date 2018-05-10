@@ -64,7 +64,7 @@ public class InterfaceTexto {
                enemyMovementPhase();
            }
            if(jogo.getEstado() instanceof AwaitPlayerAction){
-               
+               playerMovementPhase();
            }
            if(jogo.getEstado() instanceof AwaitWinLosePhase){
                winLose();
@@ -201,6 +201,12 @@ public class InterfaceTexto {
         jogo.setEstado(jogo.getEstado().enemyMovementPhase());
         //Imprimir cartas e evento
         jogo.setEstado(jogo.getEstado().avancaPhase());
+        
+    }
+
+    private void playerMovementPhase() {
+        System.out.println("Teu turno! Jogadas disponiveis: " + jogo.getDadosJogo().getJogadasDisp());
+        
         
     }
 
