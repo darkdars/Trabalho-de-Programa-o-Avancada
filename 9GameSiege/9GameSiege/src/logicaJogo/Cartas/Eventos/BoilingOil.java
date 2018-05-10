@@ -12,6 +12,7 @@ package logicaJogo.Cartas.Eventos;
 public class BoilingOil extends Evento{
     
     public BoilingOil(){
-        super("Boiling Oil", 2, new String[]{"ladder", "ram"}, new String[]{"attack-circle"}, new String[]{"2"});
+        super("Boiling Oil", 2, new String[]{"ladder", "ram"}, new String[]{"attack-circle"}, new String[]{"2"}, 
+                "A escada e o ariete vao atacar neste evento\n Ataque aos circulos inimigos, tem um bonus de 2 no lancamento do dado.");
     }
 }

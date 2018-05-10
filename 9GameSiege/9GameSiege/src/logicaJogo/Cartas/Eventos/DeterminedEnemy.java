@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class DeterminedEnemy extends Evento{
     
     public DeterminedEnemy(){
-        super("Determined Enemy", 2, new String[]{"ram"}, new String[]{"attacks-ram"}, new String[]{"-1"});
+        super("Determined Enemy", 2, new String[]{"ram"}, new String[]{"attacks-ram"}, new String[]{"-1"}, "");
     }
 }

@@ -12,6 +12,7 @@ package logicaJogo.Cartas.Eventos;
 public class Collapsed extends Evento{
     
     public Collapsed(){
-        super("Collapsed!", 2, new String[]{"ladder", "ram"}, new String[]{"remove-tower"}, new String[]{"4"});
+        super("Collapsed!", 2, new String[]{"ladder", "ram"}, new String[]{"remove-tower"}, new String[]{"4"}, 
+                "A ariete e as escadas avancam uma casa\nCaso a Torre esteja na casa de partida, esta sera removida do jogo.");
     }
 }

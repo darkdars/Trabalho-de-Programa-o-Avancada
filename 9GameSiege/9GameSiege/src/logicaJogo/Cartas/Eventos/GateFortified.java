@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class GateFortified extends Evento{
     
     public GateFortified(){
-        super("Gate Fortified", 2, new String[]{"ladder", "ram"}, new String[]{"attack-ram"}, new String[]{"1"});
+        super("Gate Fortified", 2, new String[]{"ladder", "ram"}, new String[]{"attack-ram"}, new String[]{"1"}, "");
     }
 }

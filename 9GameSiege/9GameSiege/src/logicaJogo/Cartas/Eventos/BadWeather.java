@@ -12,7 +12,8 @@ package logicaJogo.Cartas.Eventos;
 public class BadWeather extends Evento{
     
     public BadWeather(){
-        super("Bad Weather", 2, new String[]{"none"}, new String[]{"actions-raid", "actions-sabotage"}, new String[]{"only"});
+        super("Bad Weather", 2, new String[]{"none"}, new String[]{"actions-raid", "actions-sabotage"}, new String[]{"only"}, 
+                "Nenhum inimigo vai Avançar durante este evento.\nDurante este evento so accoes de raid e sabotagem podem ser realizadas." );
     }
 }
 

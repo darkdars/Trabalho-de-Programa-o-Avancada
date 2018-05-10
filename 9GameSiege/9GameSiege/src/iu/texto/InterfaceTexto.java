@@ -192,10 +192,12 @@ public class InterfaceTexto {
 
     private void imprimirInformacaoCarta() {
         System.out.println("Informacao da Carta!");
+        System.out.println(jogo.getDadosJogo().getCard(jogo.getDadosJogo().getListaCards()).getEventos(jogo.getDadosJogo().getDia()).getInfo());
     }
 
     private void movementPhase() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 }

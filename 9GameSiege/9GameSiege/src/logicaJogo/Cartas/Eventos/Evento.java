@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class Evento {
     private String nome;
+    private String info;
     private int actionP;
     private List<String> enemy;
     private List<String> evento;
@@ -26,7 +27,7 @@ public class Evento {
         
     }
     
-    public Evento(String nome, int actionP, String[] enemy, String[] evento, String[] valores){
+    public Evento(String nome, int actionP, String[] enemy, String[] evento, String[] valores, String info){
         this.nome = nome;
         this.actionP = actionP;
         this.enemy = new ArrayList<>();
@@ -35,6 +36,11 @@ public class Evento {
         this.enemy.addAll(Arrays.asList(enemy));
         this.evento.addAll(Arrays.asList(evento));
         this.valores.addAll(Arrays.asList(valores));
+        this.info = info;
+    }
+    
+    public String getInfo(){
+        return info;
     }
 
     public String getNome() {

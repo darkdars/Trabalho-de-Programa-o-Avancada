@@ -12,6 +12,6 @@ package logicaJogo.Cartas.Eventos;
 public class EnemyFatigue extends Evento{
     
     public EnemyFatigue(){
-        super("Enemy Fatigue", 3, new String[]{"ladder"}, new String[]{"actions-sabotage", "actions-raid", "actions-coupure"}, new String[]{"1", "1", "1"});
+        super("Enemy Fatigue", 3, new String[]{"ladder"}, new String[]{"actions-sabotage", "actions-raid", "actions-coupure"}, new String[]{"1", "1", "1"}, "");
     }
 }
