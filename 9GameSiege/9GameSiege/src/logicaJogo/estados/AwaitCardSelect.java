@@ -33,6 +33,9 @@ public class AwaitCardSelect extends EstadoAdapter {
     @Override
     public IEstado eventPhase(){
         //Passa para o movimento phase
+        
+        
+        
         return new AwaitEnemyMovementPhase(dadosJogo);
     }
     

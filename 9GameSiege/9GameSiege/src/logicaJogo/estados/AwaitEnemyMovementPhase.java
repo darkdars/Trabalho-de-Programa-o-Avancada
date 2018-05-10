@@ -17,4 +17,11 @@ public class AwaitEnemyMovementPhase extends EstadoAdapter{
         super(dadosJogo);
     }
     
+    @Override
+     public IEstado enemyMovementPhase(){
+         
+         
+         return this;
+     }
+    
 }
