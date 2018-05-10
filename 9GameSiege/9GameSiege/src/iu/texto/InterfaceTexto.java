@@ -192,7 +192,7 @@ public class InterfaceTexto {
 
     private void imprimirInformacaoCarta() {
         System.out.println("Informacao da Carta!");
-        System.out.println(jogo.getDadosJogo().getCard(jogo.getDadosJogo().getListaCards()).getEventos(jogo.getDadosJogo().getDia()).getInfo());
+        System.out.println("\nEvento: " +jogo.getDadosJogo().getEventoAtual( ).getNome() + "\nAcontecimentos do evento:\n" + jogo.getDadosJogo().getEventoAtual().getInfo() + "\n\nAction Points: ");
         tecla();
     }
 
