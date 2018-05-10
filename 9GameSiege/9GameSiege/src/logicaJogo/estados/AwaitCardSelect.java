@@ -35,6 +35,8 @@ public class AwaitCardSelect extends EstadoAdapter {
         //Passa para o movimento phase
         
         
+        //Trebuch atack faz e depois lanca para o estado asseguir
+        // return new AwaitPlayerAction(dadosJogo);
         
         return new AwaitEnemyMovementPhase(dadosJogo);
     }
