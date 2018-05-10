@@ -195,6 +195,23 @@ public class DadosJogo {
      public void updateEventoAtual() {
         this.eventoAtual = cartaSelecionada.getEventos(dia);
      }
+
+    public EnemyTracks getEnemyTracks() {
+        return enemyTracks;
+    }
+
+    public void setEnemyTracks(EnemyTracks enemyTracks) {
+        this.enemyTracks = enemyTracks;
+    }
+
+    public StatusCard getStatusCard() {
+        return statusCard;
+    }
+
+    public void setStatusCard(StatusCard statusCard) {
+        this.statusCard = statusCard;
+    }
     
+     
     
 }

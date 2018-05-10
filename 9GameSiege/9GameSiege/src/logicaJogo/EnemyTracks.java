@@ -37,6 +37,10 @@ public class EnemyTracks {
     public void setEscada(int escada) {
         this.escada = escada;
     }
+    
+    public void updateEscada(int escada) {
+        this.escada += escada;
+    }
 
     public int getAriete() {
         return ariete;
@@ -45,6 +49,10 @@ public class EnemyTracks {
     public void setAriete(int ariete) {
         this.ariete = ariete;
     }
+    
+    public void updateAriete(int ariete) {
+        this.ariete += ariete;
+    }
 
     public int getTorre() {
         return torre;
@@ -52,6 +60,10 @@ public class EnemyTracks {
 
     public void setTorre(int torre) {
         this.torre = torre;
+    }
+    
+    public void updateTorre(int torre) {
+        this.torre += torre;
     }
 
     public int getTrincheiras() {

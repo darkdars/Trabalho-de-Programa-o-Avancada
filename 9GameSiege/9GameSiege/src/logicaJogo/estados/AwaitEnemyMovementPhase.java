@@ -28,6 +28,26 @@ public class AwaitEnemyMovementPhase extends EstadoAdapter{
              if(dadosJogo.getEventoAtual().getEnemyString(i) == "sword"){
                  //Obter unidades mais lentas
                  
+                if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateEscada(-1);
+                    dadosJogo.getEnemyTracks().updateAriete(-1);
+                    dadosJogo.getEnemyTracks().updateTorre(-1);    
+                }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() != dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateAriete(-1);
+                    dadosJogo.getEnemyTracks().updateEscada(-1);   
+                }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateAriete(-1);
+                    dadosJogo.getEnemyTracks().updateTorre(-1);    
+                }else if((dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateEscada(-1);
+                    dadosJogo.getEnemyTracks().updateTorre(-1);    
+                }else if((dadosJogo.getEnemyTracks().getEscada() >= dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() >= dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateEscada(-1);    
+                }else if((dadosJogo.getEnemyTracks().getEscada() <= dadosJogo.getEnemyTracks().getTorre() && dadosJogo.getEnemyTracks().getTorre() >= dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateTorre(-1);    
+                }else if((dadosJogo.getEnemyTracks().getEscada() <= dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() <= dadosJogo.getEnemyTracks().getAriete())){
+                    dadosJogo.getEnemyTracks().updateAriete(-1);    
+                }
                  
                  
                  
