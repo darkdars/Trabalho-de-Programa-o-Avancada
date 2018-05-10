@@ -12,6 +12,7 @@ package logicaJogo.Cartas.Eventos;
 public class SuppliesSpoiled extends Evento{
     
     public SuppliesSpoiled(){
-        super("Supplies Spoiled", 2, new String[]{"ladder"}, new String[]{"reduce-supplies"}, new String[]{"1"}, "");
+        super("Supplies Spoiled", 2, new String[]{"ladder"}, new String[]{"reduce-supplies"}, new String[]{"1"}, 
+                "As escadas avancam uma unidade.\nAlguns suplementos estragaram-se, os suplementos sao reduzidos por 1.");
     }
 }
