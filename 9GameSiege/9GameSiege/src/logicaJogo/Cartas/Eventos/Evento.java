@@ -36,7 +36,15 @@ public class Evento {
         this.enemy.addAll(Arrays.asList(enemy));
         this.evento.addAll(Arrays.asList(evento));
         this.valores.addAll(Arrays.asList(valores));
-        this.info = info;
+        this.info = info; 
+    }
+    
+    public String getEnemyString(int i){
+        return this.enemy.get(i);
+    }
+    
+    public int getEnemySize(){
+        return this.enemy.size();
     }
     
     public String getInfo(){
