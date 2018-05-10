@@ -196,9 +196,10 @@ public class InterfaceTexto {
     }
 
     private void enemyMovementPhase() {
+        System.out.println("Enemy Movement Phase!\n");
+        jogo.setEstado(jogo.getEstado().enemyMovementPhase());
         
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
     }
 
