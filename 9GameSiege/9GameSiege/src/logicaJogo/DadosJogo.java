@@ -42,9 +42,11 @@ public class DadosJogo {
     private List<Card> cartas;
     private Card cartaSelecionada;
     
+    private int[] opcoesUtilizadas;
     private Evento eventoAtual;
     private int listaCards; // Vai de 0 a 6 // 7 cartas
     private String texto;
+    private int jogadasDisp;
     
 
     public DadosJogo(){
@@ -53,6 +55,12 @@ public class DadosJogo {
         statusCard = new StatusCard();
         texto="";
         listaCards = 0;
+        
+        jogadasDisp = 0;
+        opcoesUtilizadas = new int[8];
+        for(int i = 8; i < 8; i++){
+            opcoesUtilizadas[i] = 1;
+        }
         
         cartas = new ArrayList<>();
         cartas.add(new Card(1, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1)));
@@ -216,6 +224,22 @@ public class DadosJogo {
 
     public void setStatusCard(StatusCard statusCard) {
         this.statusCard = statusCard;
+    }
+
+    public int getJogadasDisp() {
+        return jogadasDisp;
+    }
+
+    public void setJogadasDisp(int jogadasDisp) {
+        this.jogadasDisp = jogadasDisp;
+    }
+
+    public int[] getOpcoesUtilizadas() {
+        return opcoesUtilizadas;
+    }
+
+    public void setOpcoesUtilizadas(int[] opcoesUtilizadas) {
+        this.opcoesUtilizadas = opcoesUtilizadas;
     }
     
      
