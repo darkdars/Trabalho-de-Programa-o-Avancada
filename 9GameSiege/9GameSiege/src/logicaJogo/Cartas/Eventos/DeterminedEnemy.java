@@ -12,6 +12,7 @@ package logicaJogo.Cartas.Eventos;
 public class DeterminedEnemy extends Evento{
     
     public DeterminedEnemy(){
-        super("Determined Enemy", 2, new String[]{"ram"}, new String[]{"attacks-ram"}, new String[]{"-1"}, "");
+        super("Determined Enemy", 2, new String[]{"ram"}, new String[]{"attacks-ram"}, new String[]{"-1"}, 
+                "As forças da ariete estao motivados, avancam uma casa e ataques a este recebem uma reducao de 1 no valor do dado.");
     }
 }

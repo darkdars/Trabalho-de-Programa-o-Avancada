@@ -13,6 +13,6 @@ public class CoverDarkness extends Evento{
     
     public CoverDarkness(){
         super("Cover Darkness", 3, new String[]{"sword"}, new String[]{"actions-sabotage", "actions-raid"}, new String[]{"1", "1"},
-                "\nAs accoes de Sabotage e de raid tem bonus de 1, no lancamento do dado.");
+                "Os inimigos mais longe do castelo avancam uma casa.\nAs accoes de Sabotage e de raid tem bonus de 1, no lancamento do dado.");
     }
 }
