@@ -27,15 +27,12 @@ public class AwaitCardSelect extends EstadoAdapter {
         //Meter evento
         dadosJogo.updateEventoAtual();
   
-        
         return this;
     }
     
     @Override
     public IEstado eventPhase(){
-        //Determina evento e faz o que o evento faz
-        //dadosJogo.setEvento();
-        
+        //Passa para o movimento phase
         return new AwaitEnemyMovementPhase(dadosJogo);
     }
     
