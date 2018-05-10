@@ -5,6 +5,8 @@
  */
 package logicaJogo.Cartas.Eventos;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author Andre
@@ -14,5 +16,10 @@ public class EnemyFatigue extends Evento{
     public EnemyFatigue(){
         super("Enemy Fatigue", 3, new String[]{"ladder"}, new String[]{"actions-sabotage", "actions-raid", "actions-coupure"}, new String[]{"1", "1", "1"}, 
                 "O grupo das escadas avanca uma casa.\nNeste evento as accoes de coupure, raid e sabotagem recebem um bonus de 1.");
+    }
+
+    @Override
+    public void execute(DadosJogo dadosJogo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
