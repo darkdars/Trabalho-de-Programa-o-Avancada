@@ -5,6 +5,8 @@
  */
 package logicaJogo.Cartas.Eventos;
 
+import logicaJogo.DadosJogo;
+
 /**
  *
  * @author Andre
@@ -14,5 +16,10 @@ public class DeathLeader extends Evento{
     public DeathLeader(){
         super("Death of a Leader", 2, new String[]{"ladder", "tower"}, new String[]{"reduce-morale"}, new String[]{"1"}, 
                 "Tanto as escadas como as torres avancam uma casa\nUm leader morrou, a moral e reduzida por 1.");
+    }
+
+    @Override
+    public void execute(DadosJogo dadosJogo) {
+        dadosJogo.getStatusCard().updateMoral(-1);
     }
 }
