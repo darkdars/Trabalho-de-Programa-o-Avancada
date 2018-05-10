@@ -23,15 +23,23 @@ public class AwaitEnemyMovementPhase extends EstadoAdapter{
 
          //Primeiro Obter evento depois dar handle
          
+         //Ver se é preciso condicoes para decrementar
+         
          if(dadosJogo.getEventoAtual().getEnemySize() > 1){
                 
              for(int i = 0; i < dadosJogo.getEventoAtual().getEnemySize();i++){
                  
-             }
-            
+                 if(dadosJogo.getEventoAtual().getEnemyString(i) == "tower"){
+                     dadosJogo.getEnemyTracks().updateTorre(-1);
+                 }else if(dadosJogo.getEventoAtual().getEnemyString(i) == "ram"){
+                     dadosJogo.getEnemyTracks().updateAriete(-1);
+                 }else if(dadosJogo.getEventoAtual().getEnemyString(i) == "ladder"){
+                     dadosJogo.getEnemyTracks().updateEscada(-1);
+                 }
              
-                
-                
+             
+             }
+               
          }else{
              if(dadosJogo.getEventoAtual().getEnemyString(0) == "sword"){
                  //Obter unidades mais lentas
@@ -71,18 +79,14 @@ public class AwaitEnemyMovementPhase extends EstadoAdapter{
              
              }
              
-         
-         
-         
-
-         
-         
-         
-         
-     
+      
          return this;
      
-    
 }
+     
+     @Override
+     public IEstado avancaPhase(){
+         return new AwaitPlayerAction(dadosJogo);
+     }
      
 }

@@ -28,7 +28,7 @@ public interface IEstado {
         
         /***** AwaitEnemyMovementPhase  *****/ 
         IEstado enemyMovementPhase();
-        
+        IEstado avancaPhase();
         
         /***** AwaitEnemyPlayerAction  *****/
         IEstado playerAction();

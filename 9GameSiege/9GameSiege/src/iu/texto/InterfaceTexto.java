@@ -199,8 +199,8 @@ public class InterfaceTexto {
     private void enemyMovementPhase() {
         System.out.println("Enemy Movement Phase!\n");
         jogo.setEstado(jogo.getEstado().enemyMovementPhase());
-        
-        
+        //Imprimir cartas e evento
+        jogo.setEstado(jogo.getEstado().avancaPhase());
         
     }
 
