@@ -84,6 +84,12 @@ public class DadosJogo {
         setDice((int)(6 * Math.random()) + 1);
     }
     
+    public int rollDiceReturn(){
+        int rand = (int)(6 * Math.random()) + 1;
+        setDice(rand);
+        return rand;
+    }
+    
     //Set EnemyLineSpace
     public void setEnemyLineSpace(int line){
         statusCard.setTunel(line);
