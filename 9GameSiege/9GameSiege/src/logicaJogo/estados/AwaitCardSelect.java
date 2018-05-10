@@ -23,6 +23,11 @@ public class AwaitCardSelect extends EstadoAdapter {
     public IEstado cardChoose(){
         //Pegar na carta de cima do baralho
         dadosJogo.setCartaSelecionada(dadosJogo.getCard(dadosJogo.getListaCards()));
+        
+        //Meter evento
+        dadosJogo.updateEventoAtual();
+  
+        
         return this;
     }
     

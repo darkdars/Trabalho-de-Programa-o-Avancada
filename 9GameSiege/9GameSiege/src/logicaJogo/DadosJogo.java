@@ -16,6 +16,7 @@ import logicaJogo.Cartas.Eventos.CoverDarkness;
 import logicaJogo.Cartas.Eventos.DeathLeader;
 import logicaJogo.Cartas.Eventos.DeterminedEnemy;
 import logicaJogo.Cartas.Eventos.EnemyFatigue;
+import logicaJogo.Cartas.Eventos.Evento;
 import logicaJogo.Cartas.Eventos.Faith;
 import logicaJogo.Cartas.Eventos.FlamingArrows;
 import logicaJogo.Cartas.Eventos.GateFortified;
@@ -41,6 +42,7 @@ public class DadosJogo {
     private List<Card> cartas;
     private Card cartaSelecionada;
     
+    private Evento eventoAtual;
     private int listaCards; // Vai de 0 a 6 // 7 cartas
     private String texto;
     
@@ -181,5 +183,18 @@ public class DadosJogo {
     public Card getCard(int n){
         return this.cartas.get(n);
     }
+
+    public Evento getEventoAtual() {
+        return eventoAtual;
+    }
+
+    public void setEventoAtual(Evento eventoAtual) {
+        this.eventoAtual = eventoAtual;
+    }
+    
+     public void updateEventoAtual() {
+        this.eventoAtual = cartaSelecionada.getEventos(dia);
+     }
+    
     
 }
