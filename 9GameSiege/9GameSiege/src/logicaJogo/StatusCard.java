@@ -38,6 +38,10 @@ public class StatusCard {
     public void setMuralha(int muralha) {
         this.muralha = muralha;
     }
+    
+    public void updateMuralha(int muralha) {
+        this.muralha += muralha;
+    }
 
     public int getMoral() {
         return moral;
@@ -46,6 +50,10 @@ public class StatusCard {
     public void setMoral(int moral) {
         this.moral = moral;
     }
+    
+    public void updateMoral(int moral) {
+        this.moral += moral;
+    }
 
     public int getMantimentos() {
         return mantimentos;
@@ -53,6 +61,10 @@ public class StatusCard {
 
     public void setMantimentos(int mantimentos) {
         this.mantimentos = mantimentos;
+    }
+    
+    public void updateMantimentos(int mantimentos) {
+        this.mantimentos += mantimentos;
     }
 
     public int getMantimentosRoubados() {
