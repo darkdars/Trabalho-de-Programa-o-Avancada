@@ -61,7 +61,7 @@ public class InterfaceTexto {
                cardSelect();
            }
            if(jogo.getEstado() instanceof AwaitEnemyMovementPhase){
-               movementPhase();
+               enemyMovementPhase();
            }
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                
@@ -133,7 +133,7 @@ public class InterfaceTexto {
     }
 
     private void mostrarMenuCarregar() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
      public void tecla()
@@ -195,7 +195,9 @@ public class InterfaceTexto {
         System.out.println(jogo.getDadosJogo().getCard(jogo.getDadosJogo().getListaCards()).getEventos(jogo.getDadosJogo().getDia()).getInfo());
     }
 
-    private void movementPhase() {
+    private void enemyMovementPhase() {
+        
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
     }

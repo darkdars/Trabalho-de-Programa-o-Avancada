@@ -22,7 +22,6 @@ public class AwaitCardSelect extends EstadoAdapter {
     @Override
     public IEstado cardChoose(){
         //Pegar na carta de cima do baralho
-        System.out.println("Falta implementar para pegar na primeira carta!\n");
         dadosJogo.setCartaSelecionada(dadosJogo.getCard(dadosJogo.getListaCards()));
         return this;
     }
@@ -30,7 +29,7 @@ public class AwaitCardSelect extends EstadoAdapter {
     @Override
     public IEstado eventPhase(){
         //Determina evento e faz o que o evento faz
-        
+        //dadosJogo.setEvento();
         
         return new AwaitEnemyMovementPhase(dadosJogo);
     }
