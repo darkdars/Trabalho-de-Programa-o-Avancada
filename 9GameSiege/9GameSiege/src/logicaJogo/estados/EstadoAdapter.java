@@ -52,7 +52,7 @@ public class EstadoAdapter implements IEstado {
     }
 
     @Override
-    public IEstado playerAction() {
+    public IEstado playerAction(int opcao) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }    
 

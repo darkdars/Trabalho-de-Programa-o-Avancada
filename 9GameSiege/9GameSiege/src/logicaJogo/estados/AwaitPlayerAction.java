@@ -17,6 +17,17 @@ public class AwaitPlayerAction extends EstadoAdapter{
         super(dadosJogo);
     }
     
+    @Override
+    public IEstado playerAction(int opcao){
+        
+        System.out.println("" + opcao);
+        
+        
+        
+        
+        
+        return this;
+    }
     
     
 }

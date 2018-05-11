@@ -207,7 +207,34 @@ public class InterfaceTexto {
     private void playerMovementPhase() {
         System.out.println("Teu turno! Jogadas disponiveis: " + jogo.getDadosJogo().getJogadasDisp());
         
+        mostrarMenuJogo();
+        
+        System.out.println("Opcao Invalida! Selecione outra opcao!\n");
+        tecla();
+    }
+
+    private void mostrarMenuJogo() {
+        //Imprimir menu de jogo
+        int opcao = 0;
+        
+        System.out.println("******Menu******");
+        System.out.println("1 - Archers Atack");
+        System.out.println("2 - Boiling Water Atack");
+        System.out.println("3 - Close Combat Atack");
+        System.out.println("4 - Coupure");
+        System.out.println("5 - Rally Trops");
+        System.out.println("6 - Tunnel Movement");
+        System.out.println("7 - Supply Raid");
+        System.out.println("8 - Sabotage");
+        
+        System.out.println("Opcao: ");
+        
+        opcao = scanner.nextInt();
+        
+        jogo.setEstado(jogo.getEstado().playerAction(opcao));
         
     }
+
+ 
 
 }
