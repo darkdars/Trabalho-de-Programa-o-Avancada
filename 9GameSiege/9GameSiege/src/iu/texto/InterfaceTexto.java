@@ -341,13 +341,10 @@ public class InterfaceTexto {
         int opcao;
         
         do{
-           System.out.println("Escolha o alvo!");
-           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 1)
-               System.out.println("1 - Ladders");
-           if(jogo.getDadosJogo().getEnemyTracks().getAriete() == 1)
-               System.out.println("2 - Battering Ram");
-           if(jogo.getDadosJogo().getEnemyTracks().getTorre() == 1)
-               System.out.println("3 - Siege Tower");
+            System.out.println("Escolha o alvo!");
+            System.out.println("1 - Ladders");
+            System.out.println("2 - Battering Ram");
+            System.out.println("3 - Siege Tower");
            
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();
@@ -361,12 +358,9 @@ public class InterfaceTexto {
         
         do{
            System.out.println("Escolha o alvo! Nesta zona todos os inimigos tem uma forca de 4");
-           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
-              System.out.println("1 - Ladders");
-           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
-              System.out.println("2 - Battering Ram");
-           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
-              System.out.println("3 - Siege Tower");
+           System.out.println("1 - Ladders");
+           System.out.println("2 - Battering Ram");
+           System.out.println("3 - Siege Tower");
            
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();
