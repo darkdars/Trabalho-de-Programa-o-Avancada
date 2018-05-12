@@ -204,7 +204,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
         }
         
-            dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
+        dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
         
             
         
