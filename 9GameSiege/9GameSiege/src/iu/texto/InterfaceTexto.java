@@ -224,23 +224,66 @@ public class InterfaceTexto {
                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                System.out.println("" + jogo.getDadosJogo().getTexto());
             case 2: // Boiling Water Attack
+                
+                if(jogo.getDadosJogo().getOpcoesUtilizadas(1) == 0){
+                    System.out.println("Movimento ja utilizado!");
+                    break;
+                }
                 System.out.println("**** Boiling Water Attack ****");
                 
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
+                jogo.getDadosJogo().setOpcoesUtilizadasIndice(1);
+                break;
+            case 3: // Close Combat Attack
+                System.out.println("**** Close Combat Attack ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
                 
                 System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                 System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
-            case 3: // Close Combat Attack
-                break;
             case 4: // Coupure
+                System.out.println("**** Coupure ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 5: // Rally Trops
+                System.out.println("**** Rally Trops ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 6: // Tunnel Movement
+                System.out.println("**** Tunnel Movement ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 7: // Supply Raid
+                System.out.println("**** Supply Raid ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 8: // Sabotage
+                System.out.println("**** Sabotage ****");
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             default:
                 System.out.println("Opcao Invalida! Selecione outra opcao!");

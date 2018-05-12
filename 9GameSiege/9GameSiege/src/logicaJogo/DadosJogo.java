@@ -242,6 +242,12 @@ public class DadosJogo {
         this.opcoesUtilizadas = opcoesUtilizadas;
     }
     
+     public int getOpcoesUtilizadas(int i){
+         return opcoesUtilizadas[i];
+     }
      
+     public void setOpcoesUtilizadasIndice(int i){
+         this.opcoesUtilizadas[i] = 0;
+     }
     
 }
