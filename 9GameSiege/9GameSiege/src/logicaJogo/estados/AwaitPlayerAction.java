@@ -40,7 +40,6 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 return this;
                             }
                         
-                        
                         break;
                     case 2: // Battering Ram
                          if(dadosJogo.getEnemyTracks().getAriete() != 4){
@@ -72,9 +71,6 @@ public class AwaitPlayerAction extends EstadoAdapter{
                             }
                         break;
                 }
-                
-                
-                    
                 
             
             case 2: // Boiling Water Attack
