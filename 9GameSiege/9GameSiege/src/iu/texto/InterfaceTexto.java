@@ -207,13 +207,44 @@ public class InterfaceTexto {
     private void playerMovementPhase() {
         System.out.println("Teu turno! Jogadas disponiveis: " + jogo.getDadosJogo().getJogadasDisp());
         
-        mostrarMenuJogo();
+        int opcao = mostrarMenuJogo();
         
-        System.out.println("Opcao Invalida! Selecione outra opcao!\n");
+        
+        switch(opcao){
+            case 0:
+                jogo.setEstado(jogo.getEstado().playerAction(opcao,0));
+            case 1: // Archers Attack
+                System.out.println("**** Archers Attack ****");
+                
+                int target = menuArchersAttack();
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().rollDiceReturn());
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao,target));
+                
+               System.out.println("" + jogo.getDadosJogo().getTexto());
+            
+            case 2: // Boiling Water Attack
+                break;
+            case 3: // Close Combat Attack
+                break;
+            case 4: // Coupure
+                break;
+            case 5: // Rally Trops
+                break;
+            case 6: // Tunnel Movement
+                break;
+            case 7: // Supply Raid
+                break;
+            case 8: // Sabotage
+                break;
+            default:
+                System.out.println("Opcao Invalida! Selecione outra opcao!\n");
+        }
+        
         tecla();
     }
 
-    private void mostrarMenuJogo() {
+    private int mostrarMenuJogo() {
         //Imprimir menu de jogo
         int opcao = 0;
         
@@ -227,12 +258,28 @@ public class InterfaceTexto {
         System.out.println("7 - Supply Raid");
         System.out.println("8 - Sabotage");
         
-        System.out.println("Opcao: ");
+        System.out.print("Opcao: ");
         
         opcao = scanner.nextInt();
         
-        jogo.setEstado(jogo.getEstado().playerAction(opcao));
+        return opcao;
+    }
+
+    private int menuArchersAttack() {
+        int opcao;
         
+        do{
+           System.out.println("Escolha o alvo!"); 
+           System.out.println("1 - Ladders");
+           System.out.println("2 - Battering");
+           System.out.println("3 - Ram");
+           System.out.println("4 - Siege Tower");
+           
+           System.out.print("Opcao: ");
+           opcao = scanner.nextInt();
+        }while(opcao <= 0 || opcao > 4);
+
+        return opcao;
     }
 
  

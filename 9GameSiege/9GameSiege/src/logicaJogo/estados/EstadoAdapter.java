@@ -52,11 +52,6 @@ public class EstadoAdapter implements IEstado {
     }
 
     @Override
-    public IEstado playerAction(int opcao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }    
-
-    @Override
     public IEstado winLosePhase() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -78,6 +73,11 @@ public class EstadoAdapter implements IEstado {
 
     @Override
     public IEstado avancaPhase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public IEstado playerAction(int opcao, int target) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    

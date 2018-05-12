@@ -31,7 +31,7 @@ public interface IEstado {
         IEstado avancaPhase();
         
         /***** AwaitEnemyPlayerAction  *****/
-        IEstado playerAction(int opcao);
+        IEstado playerAction(int opcao,int target);
         
         /***** AwaitCheck  *****/ 
         

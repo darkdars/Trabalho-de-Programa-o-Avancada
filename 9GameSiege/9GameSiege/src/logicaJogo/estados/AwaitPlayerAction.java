@@ -18,14 +18,18 @@ public class AwaitPlayerAction extends EstadoAdapter{
     }
     
     @Override
-    public IEstado playerAction(int opcao){
+    public IEstado playerAction(int opcao,int target){
         
         switch(opcao){
             case 0:
                 return new AwaitWinLosePhase(dadosJogo);
             case 1: // Archers Attack
                 
-                break;
+                
+                
+                    
+                
+            
             case 2: // Boiling Water Attack
                 break;
             case 3: // Close Combat Attack
@@ -42,10 +46,11 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
         }
         
+            dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
         
-        
-        
-        
+            if(dadosJogo.getJogadasDisp() == 0){
+                return new AwaitWinLosePhase(dadosJogo);
+            }
         
         return this;
     }
