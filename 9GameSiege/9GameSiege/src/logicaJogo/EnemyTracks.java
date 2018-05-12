@@ -15,6 +15,11 @@ public class EnemyTracks {
     int ariete;
     int torre;
     int trincheiras;
+    int closeCombatStrengh = 4;
+    int escadaStrengh = 2;
+    int arieteStrengh = 3;
+    int torreStrengh = 4;
+    
     
     public EnemyTracks(){
         this.escada = 4;
@@ -73,5 +78,38 @@ public class EnemyTracks {
     public void setTrincheiras(int trincheiras) {
         this.trincheiras = trincheiras;
     }
+
+    public int getCloseCombatStrengh() {
+        return closeCombatStrengh;
+    }
+
+    public void setCloseCombatStrengh(int closeCombatStrengh) {
+        this.closeCombatStrengh = closeCombatStrengh;
+    }
+
+    public int getEscadaStrengh() {
+        return escadaStrengh;
+    }
+
+    public void setEscadaStrengh(int escadaStrengh) {
+        this.escadaStrengh = escadaStrengh;
+    }
+
+    public int getArieteStrengh() {
+        return arieteStrengh;
+    }
+
+    public void setArieteStrengh(int arieteStrengh) {
+        this.arieteStrengh = arieteStrengh;
+    }
+
+    public int getTorreStrengh() {
+        return torreStrengh;
+    }
+
+    public void setTorreStrengh(int torreStrengh) {
+        this.torreStrengh = torreStrengh;
+    }
  
+    
 }

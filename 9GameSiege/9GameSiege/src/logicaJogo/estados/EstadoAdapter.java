@@ -80,5 +80,10 @@ public class EstadoAdapter implements IEstado {
     public IEstado playerAction(int opcao, int target) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public IEstado checkJogadasDisp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }

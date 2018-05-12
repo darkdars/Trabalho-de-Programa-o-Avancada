@@ -217,12 +217,12 @@ public class InterfaceTexto {
                 System.out.println("**** Archers Attack ****");
                 
                 int target = menuArchersAttack();
-                System.out.println("Dado Rolado: " + jogo.getDadosJogo().rollDiceReturn());
                 
                 jogo.setEstado(jogo.getEstado().playerAction(opcao,target));
                 
+               
+               System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                System.out.println("" + jogo.getDadosJogo().getTexto());
-            
             case 2: // Boiling Water Attack
                 break;
             case 3: // Close Combat Attack
@@ -238,9 +238,10 @@ public class InterfaceTexto {
             case 8: // Sabotage
                 break;
             default:
-                System.out.println("Opcao Invalida! Selecione outra opcao!\n");
+                System.out.println("Opcao Invalida! Selecione outra opcao!");
         }
         
+        jogo.setEstado(jogo.getEstado().checkJogadasDisp());
         tecla();
     }
 
@@ -271,13 +272,12 @@ public class InterfaceTexto {
         do{
            System.out.println("Escolha o alvo!"); 
            System.out.println("1 - Ladders");
-           System.out.println("2 - Battering");
-           System.out.println("3 - Ram");
-           System.out.println("4 - Siege Tower");
+           System.out.println("2 - Battering Ram");
+           System.out.println("3 - Siege Tower");
            
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();
-        }while(opcao <= 0 || opcao > 4);
+        }while(opcao <= 0 || opcao >= 4);
 
         return opcao;
     }
