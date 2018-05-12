@@ -35,11 +35,11 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para mover! A Escada ja esta na posicao inicial!");
-                                return this;
-                            }
-                        
+                        }else{
+                            dadosJogo.setTexto("Nao da para mover! A Escada ja esta na posicao inicial!");
+                            return this;
+                        }
+
                         break;
                     case 2: // Battering Ram
                          if(dadosJogo.getEnemyTracks().getAriete() != 4){
@@ -50,10 +50,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para mover! O ariete ja esta na posicao inicial!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para mover! O ariete ja esta na posicao inicial!");
+                            return this;
+                        }
           
                         break;
                     case 3: // Siege Tower
@@ -65,10 +65,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para mover! A Torre ja esta na posicao inicial!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para mover! A Torre ja esta na posicao inicial!");
+                            return this;
+                        }
                         break;
                 }
                 break;
@@ -84,10 +84,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Escada nao esta dentro do circulo (casa 1)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Escada nao esta dentro do circulo (casa 1)!");
+                            return this;
+                        }
                         
                         break;
                     case 2: // Battering Ram
@@ -99,10 +99,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Ariete nao esta dentro do circulo (casa 1)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Ariete nao esta dentro do circulo (casa 1)!");
+                            return this;
+                        }
           
                         break;
                     case 3: // Siege Tower
@@ -114,10 +114,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Torre nao esta dentro do circulo (casa 1)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Torre nao esta dentro do circulo (casa 1)!");
+                            return this;
+                        }
                         break;
                 }
                 break;
@@ -133,10 +133,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Escada nao se encontra dentro da zona de close combat (casa 0)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Escada nao se encontra dentro da zona de close combat (casa 0)!");
+                            return this;
+                        }
                         
                         break;
                     case 2: // Battering Ram
@@ -148,10 +148,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Ariete nao se encontra dentro da zona de close combat (casa 0)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Ariete nao se encontra dentro da zona de close combat (casa 0)!");
+                            return this;
+                        }
           
                         break;
                     case 3: // Siege Tower
@@ -163,16 +163,38 @@ public class AwaitPlayerAction extends EstadoAdapter{
                                 dadosJogo.setTexto("O ataque falhou!");
                             }    
  
-                            }else{
-                                dadosJogo.setTexto("Nao da para atacar! A Torre nao se encontra dentro da zona de close combat (casa 0)!");
-                                return this;
-                            }
+                        }else{
+                            dadosJogo.setTexto("Nao da para atacar! A Torre nao se encontra dentro da zona de close combat (casa 0)!");
+                            return this;
+                       }
                         break;
                 }
                 break;
             case 4: // Coupure
+                if(dadosJogo.getStatusCard().getMuralha() < 4){
+                    if(dadosJogo.getDice() > 4){
+                        dadosJogo.getStatusCard().updateMuralha(1);
+                        dadosJogo.setTexto("A muralha foi reparada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMuralha() + ".");
+                    }else{
+                        dadosJogo.setTexto("Houve um assidente que levou a falha da recuperacao da muralha.");
+                    }
+                }else{
+                        dadosJogo.setTexto("A muralha encontra-se sem dano.");
+                        return this;
+                } 
                 break;
             case 5: // Rally Trops
+                if(dadosJogo.getStatusCard().getMuralha() < 4){
+                    if(dadosJogo.getDice() > 4){
+                        dadosJogo.getStatusCard().updateMoral(1);
+                        dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
+                    }else{
+                        dadosJogo.setTexto("O discurso foi mal intrepertado pelo povo, mantendo a moral no mesmo nivel.");
+                    }
+                }else{
+                        dadosJogo.setTexto("A moral encontra-se ao maximo.");
+                        return this;
+                }
                 break;
             case 6: // Tunnel Movement
                 break;
