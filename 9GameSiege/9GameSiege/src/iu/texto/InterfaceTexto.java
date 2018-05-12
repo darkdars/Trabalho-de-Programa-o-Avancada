@@ -71,7 +71,7 @@ public class InterfaceTexto {
            }
            
            if(jogo.getEstado() instanceof AwaitEndDayPhase){
-               
+               endDayPhase();
            } 
            if(jogo.getEstado() instanceof AwaitEnd){
                mostrarMenuFinal();
@@ -224,6 +224,11 @@ public class InterfaceTexto {
                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                System.out.println("" + jogo.getDadosJogo().getTexto());
             case 2: // Boiling Water Attack
+                System.out.println("**** Boiling Water Attack ****");
+                
+                
+                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 3: // Close Combat Attack
                 break;
@@ -280,6 +285,10 @@ public class InterfaceTexto {
         }while(opcao <= 0 || opcao >= 4);
 
         return opcao;
+    }
+
+    private void endDayPhase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
  

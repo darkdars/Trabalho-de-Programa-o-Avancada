@@ -78,6 +78,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 
             
             case 2: // Boiling Water Attack
+                
                 break;
             case 3: // Close Combat Attack
                 break;
