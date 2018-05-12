@@ -238,7 +238,7 @@ public class InterfaceTexto {
                 
                 jogo.setEstado(jogo.getEstado().playerAction(opcao, target));
                 
-                System.out.println("Dado Rolado:" + jogo.getDadosJogo().getDice() + 1 + "(esta jogada tem +1 no lancamento do dado");
+                System.out.println("Dado Rolado:" + (jogo.getDadosJogo().getDice() + 1) + "(esta jogada tem +1 no lancamento do dado).");
                 System.out.println("" + jogo.getDadosJogo().getTexto());
                 jogo.getDadosJogo().setOpcoesUtilizadasIndice(1);
                 break;
