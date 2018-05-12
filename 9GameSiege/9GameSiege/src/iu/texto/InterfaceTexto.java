@@ -229,6 +229,7 @@ public class InterfaceTexto {
                     System.out.println("Movimento ja utilizado!");
                     break;
                 }
+                
                 System.out.println("**** Boiling Water Attack ****");
                 
                 jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
