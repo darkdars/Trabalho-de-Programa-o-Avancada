@@ -20,7 +20,28 @@ public class AwaitPlayerAction extends EstadoAdapter{
     @Override
     public IEstado playerAction(int opcao){
         
-        System.out.println("" + opcao);
+        switch(opcao){
+            case 0:
+                return new AwaitWinLosePhase(dadosJogo);
+            case 1: // Archers Attack
+                
+                break;
+            case 2: // Boiling Water Attack
+                break;
+            case 3: // Close Combat Attack
+                break;
+            case 4: // Coupure
+                break;
+            case 5: // Rally Trops
+                break;
+            case 6: // Tunnel Movement
+                break;
+            case 7: // Supply Raid
+                break;
+            case 8: // Sabotage
+                break;
+        }
+        
         
         
         
