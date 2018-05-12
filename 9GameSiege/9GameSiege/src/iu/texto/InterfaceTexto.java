@@ -205,7 +205,7 @@ public class InterfaceTexto {
     }
 
     private void playerMovementPhase() {
-        System.out.println("Teu turno! Jogadas disponiveis: " + jogo.getDadosJogo().getJogadasDisp());
+        System.out.println("\nTeu turno! Jogadas disponiveis: " + jogo.getDadosJogo().getJogadasDisp());
         
         int target;
         
@@ -245,7 +245,9 @@ public class InterfaceTexto {
             case 3: // Close Combat Attack
                 System.out.println("**** Close Combat Attack ****");
                 
-                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                target = menuCloseCombat();
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, target));
                 
                 System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                 System.out.println("" + jogo.getDadosJogo().getTexto());
@@ -340,9 +342,31 @@ public class InterfaceTexto {
         
         do{
            System.out.println("Escolha o alvo!");
-           System.out.println("1 - Ladders");
-           System.out.println("2 - Battering Ram");
-           System.out.println("3 - Siege Tower");
+           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 1)
+               System.out.println("1 - Ladders");
+           if(jogo.getDadosJogo().getEnemyTracks().getAriete() == 1)
+               System.out.println("2 - Battering Ram");
+           if(jogo.getDadosJogo().getEnemyTracks().getTorre() == 1)
+               System.out.println("3 - Siege Tower");
+           
+           System.out.print("Opcao: ");
+           opcao = scanner.nextInt();
+        }while(opcao <= 0 || opcao >= 4);
+
+        return opcao;
+    }
+    
+    private int menuCloseCombat() {
+        int opcao;
+        
+        do{
+           System.out.println("Escolha o alvo! Nesta zona todos os inimigos tem uma forca de 4");
+           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
+              System.out.println("1 - Ladders");
+           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
+              System.out.println("2 - Battering Ram");
+           if(jogo.getDadosJogo().getEnemyTracks().getEscada() == 0)
+              System.out.println("3 - Siege Tower");
            
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();

@@ -122,6 +122,53 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 }
                 break;
             case 3: // Close Combat Attack
+                switch(target){
+                    //Acrescentar um ao dado dependendo do evento
+                    case 1: // Ladders
+                        if(dadosJogo.getEnemyTracks().getEscada() == 0){
+                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getEscadaStrengh()){
+                                dadosJogo.getEnemyTracks().setEscada(dadosJogo.getEnemyTracks().getEscada() + 1);
+                                dadosJogo.setTexto("Ataque bem sucedido! Ladders Movida para a posicao: " + dadosJogo.getEnemyTracks().getEscada());
+                            }else{
+                                dadosJogo.setTexto("O ataque falhou!");
+                            }    
+ 
+                            }else{
+                                dadosJogo.setTexto("Nao da para atacar! A Escada nao se encontra dentro da zona de close combat (casa 0)!");
+                                return this;
+                            }
+                        
+                        break;
+                    case 2: // Battering Ram
+                         if(dadosJogo.getEnemyTracks().getAriete() == 0){
+                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getArieteStrengh()){
+                                dadosJogo.getEnemyTracks().setAriete(dadosJogo.getEnemyTracks().getAriete() + 1);
+                                dadosJogo.setTexto("Ataque bem sucedido! Battering Ram Movida para posicao: " + dadosJogo.getEnemyTracks().getAriete());
+                            }else{
+                                dadosJogo.setTexto("O ataque falhou!");
+                            }    
+ 
+                            }else{
+                                dadosJogo.setTexto("Nao da para atacar! A Ariete nao se encontra dentro da zona de close combat (casa 0)!");
+                                return this;
+                            }
+          
+                        break;
+                    case 3: // Siege Tower
+                         if(dadosJogo.getEnemyTracks().getTorre() == 0){
+                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getTorreStrengh()){
+                                dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
+                                dadosJogo.setTexto("Ataque bem sucedido! Siege Tower Movida para posicao: " + dadosJogo.getEnemyTracks().getTorre());
+                            }else{
+                                dadosJogo.setTexto("O ataque falhou!");
+                            }    
+ 
+                            }else{
+                                dadosJogo.setTexto("Nao da para atacar! A Torre nao se encontra dentro da zona de close combat (casa 0)!");
+                                return this;
+                            }
+                        break;
+                }
                 break;
             case 4: // Coupure
                 break;
