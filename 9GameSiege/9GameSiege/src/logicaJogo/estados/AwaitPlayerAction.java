@@ -120,6 +120,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         }
                         break;
                 }
+                         dadosJogo.setOpcoesUtilizadasIndice(1);
                 break;
             case 3: // Close Combat Attack
                 switch(target){
@@ -263,6 +264,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
     @Override
     public IEstado checkJogadasDisp(){
         if(dadosJogo.getJogadasDisp() == 0){
+                dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
                 return new AwaitWinLosePhase(dadosJogo);
             }
         return this;

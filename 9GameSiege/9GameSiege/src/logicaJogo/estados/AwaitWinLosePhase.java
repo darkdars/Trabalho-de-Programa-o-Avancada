@@ -26,7 +26,7 @@ public class AwaitWinLosePhase extends EstadoAdapter{
             return new AwaitEnd(dadosJogo);
         }
         
-        return new AwaitBeginning(dadosJogo);
+        return new AwaitEndDayPhase(dadosJogo);
     }
     
     @Override

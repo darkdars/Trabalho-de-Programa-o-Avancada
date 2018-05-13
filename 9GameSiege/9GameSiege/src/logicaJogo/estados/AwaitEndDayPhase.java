@@ -23,7 +23,7 @@ public class AwaitEndDayPhase extends EstadoAdapter{
         //Check if we win
         if(dadosJogo.getDia() == 3 && dadosJogo.getListaCards() >= 6){
             dadosJogo.setTexto("Parabens!!!! Sobreviveu aos ataques do inimigo!");
-            return this;
+            return new AwaitEnd(dadosJogo);
         }
         
        

@@ -109,6 +109,7 @@ public class InterfaceTexto {
         System.out.println(jogo.getTextoDadosJogo());
         System.out.println("Fim do JOGO!\n");
         tecla();
+        jogo.setEstado(jogo.getEstado().end());
     }
 
     char leCaracter() {
@@ -225,6 +226,7 @@ public class InterfaceTexto {
                
                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                System.out.println("" + jogo.getDadosJogo().getTexto());
+               break;
             case 2: // Boiling Water Attack
                 
                 if(jogo.getDadosJogo().getOpcoesUtilizadas(1) == 0){
@@ -240,7 +242,6 @@ public class InterfaceTexto {
                 
                 System.out.println("Dado Rolado:" + (jogo.getDadosJogo().getDice() + 1) + "(esta jogada tem +1 no lancamento do dado).");
                 System.out.println("" + jogo.getDadosJogo().getTexto());
-                jogo.getDadosJogo().setOpcoesUtilizadasIndice(1);
                 break;
             case 3: // Close Combat Attack
                 System.out.println("**** Close Combat Attack ****");
@@ -406,7 +407,7 @@ public class InterfaceTexto {
     }
 
     private void endDayPhase() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jogo.setEstado(jogo.getEstado().endDayPhase());
     }
 
  
