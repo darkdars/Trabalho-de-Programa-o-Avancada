@@ -185,7 +185,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
             case 5: // Rally Trops
                 if(dadosJogo.getStatusCard().getMuralha() < 4){
-                    if(dadosJogo.getDice() + target > 4){
+                    if((dadosJogo.getDice() + target) > 4){
                         dadosJogo.getStatusCard().updateMoral(1);
                         dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
                     }else{
@@ -197,6 +197,44 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 }
                 break;
             case 6: // Tunnel Movement
+                switch(target){
+                    //Acrescentar um ao dado dependendo do evento
+                    case 1: // Entrar no tunel
+                        if(dadosJogo.getStatusCard().getTunel() == 1){
+                            dadosJogo.getStatusCard().updateTunel(1);
+                            dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
+                        }else{
+                                dadosJogo.setTexto("As tropas ja se encontram dentro do tunel.");
+                                return this;
+                        }
+                        break;
+                    case 2: // Free Movement
+                         if((dadosJogo.getStatusCard().getTunel() > 1 && dadosJogo.getStatusCard().isTunelDir()) || (dadosJogo.getStatusCard().getTunel() < 4 && !dadosJogo.getStatusCard().isTunelDir())){
+                            dadosJogo.getStatusCard().updateTunel(1);
+                            dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
+                        }else{
+                                dadosJogo.setTexto("As tropas nao se encontram dentro do tunel.");
+                        }
+                        return this;
+                    case 3: // Fast Movement
+                         if((dadosJogo.getStatusCard().getTunel() > 1 && dadosJogo.getStatusCard().isTunelDir()) || (dadosJogo.getStatusCard().getTunel() < 4 && !dadosJogo.getStatusCard().isTunelDir())){
+                            if(dadosJogo.getStatusCard().isTunelDir()){
+                                dadosJogo.getStatusCard().setTunel(4);
+                                dadosJogo.getStatusCard().setTunelDir(false);
+                                dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
+                                break;
+                            }
+                            if(!dadosJogo.getStatusCard().isTunelDir()){
+                                dadosJogo.getStatusCard().setTunel(1);
+                                dadosJogo.getStatusCard().setTunelDir(true);
+                                dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
+                            } 
+                        }else{
+                                dadosJogo.setTexto("As tropas encontram fora do tunel.");
+                                return this;
+                        }
+                        break;
+                }
                 break;
             case 7: // Supply Raid
                 break;

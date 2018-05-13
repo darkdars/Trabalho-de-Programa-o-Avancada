@@ -276,9 +276,10 @@ public class InterfaceTexto {
             case 6: // Tunnel Movement
                 System.out.println("**** Tunnel Movement ****");
                 
-                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                target = menuTunnel();
                 
-                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, target));
+                
                 System.out.println("" + jogo.getDadosJogo().getTexto());
                 break;
             case 7: // Supply Raid
@@ -385,6 +386,21 @@ public class InterfaceTexto {
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();
         }while(opcao <= 0 || opcao >= 3);
+
+        return opcao;
+    }
+    
+    private int menuTunnel() {
+        int opcao;
+        
+        do{
+           System.out.println("1 - Entrar dentro do tunnel ( 1 Action Point)");
+           System.out.println("2 - Free Movement (Avanca uma casa sem gastar action points, so pode usar uma vez por carta)");
+           System.out.println("3 - Fast Movement (Use 1 action point para chegar ao final do tunnel)");
+           
+           System.out.print("Opcao: ");
+           opcao = scanner.nextInt();
+        }while(opcao <= 0 || opcao >= 4);
 
         return opcao;
     }

@@ -15,6 +15,7 @@ public class StatusCard {
     int mantimentos;
     int mantimentosRoubados;
     int tunel;
+    boolean tunelDir;
     
     public StatusCard(){
         this.muralha = 4;
@@ -22,6 +23,7 @@ public class StatusCard {
         this.mantimentos = 4;
         this.mantimentosRoubados = 0;
         this.tunel = 1;
+        this.tunelDir = true;
     }
     
     public StatusCard(int muralha,int moral, int mantimentos, int mantimentosR, int tunel){
@@ -92,6 +94,26 @@ public class StatusCard {
 
     public void setTunel(int tunel) {
         this.tunel = tunel;
+    }
+
+    public boolean isTunelDir() {
+        return tunelDir;
+    }
+    
+    public void updateTunel(int tunel) {
+        if(this.tunelDir && this.tunel < 4){
+            this.tunel += tunel;
+            if(this.tunel == 4)
+                this.tunelDir = false;
+        }else if (!this.tunelDir && this.tunel > 0){
+            this.tunel -= tunel;
+            if(this.tunel == 0)
+                this.tunelDir = true;
+        }
+    }
+
+    public void setTunelDir(boolean tunelDir) {
+        this.tunelDir = tunelDir;
     }
     
     
