@@ -50,8 +50,13 @@ public class AwaitEndDayPhase extends EstadoAdapter{
             dadosJogo.getStatusCard().setMantimentosRoubados(0);
         }
         
-        // If are enemys on enemy line space capture
-       // if(dadosJogo.getEnemyTracks())
+        // 3 passo
+            if(dadosJogo.getStatusCard().getTunel() == 4){
+                //meter da enemy line para o castelo
+                dadosJogo.getStatusCard().setTunel(1);
+                dadosJogo.getStatusCard().setMantimentosRoubados(0);
+                dadosJogo.getStatusCard().setMoral(dadosJogo.getStatusCard().getMoral() - 1);
+            }
         
         
         return new AwaitLineCheck(dadosJogo);
