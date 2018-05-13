@@ -263,7 +263,12 @@ public class InterfaceTexto {
             case 5: // Rally Trops
                 System.out.println("**** Rally Trops ****");
                 
-                jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+                if(jogo.getDadosJogo().getStatusCard().getMantimentos() > 1)
+                    target = menuRally();
+                else
+                    target = 0;
+                
+                jogo.setEstado(jogo.getEstado().playerAction(opcao, target - 1));
                 
                 System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                 System.out.println("" + jogo.getDadosJogo().getTexto());
@@ -365,6 +370,21 @@ public class InterfaceTexto {
            System.out.print("Opcao: ");
            opcao = scanner.nextInt();
         }while(opcao <= 0 || opcao >= 4);
+
+        return opcao;
+    }
+    
+    private int menuRally() {
+        int opcao;
+        
+        do{
+           System.out.println("Pode reduzir os seu suplementos por 1 para obter um bonus de +1 no lancamento do dado.");
+           System.out.println("1 - Continuar Rally");
+           System.out.println("2 - Utilizar suplemento por bonus");
+           
+           System.out.print("Opcao: ");
+           opcao = scanner.nextInt();
+        }while(opcao <= 0 || opcao >= 3);
 
         return opcao;
     }

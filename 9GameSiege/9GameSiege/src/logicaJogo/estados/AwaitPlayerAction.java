@@ -185,7 +185,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
             case 5: // Rally Trops
                 if(dadosJogo.getStatusCard().getMuralha() < 4){
-                    if(dadosJogo.getDice() > 4){
+                    if(dadosJogo.getDice() + target > 4){
                         dadosJogo.getStatusCard().updateMoral(1);
                         dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
                     }else{
