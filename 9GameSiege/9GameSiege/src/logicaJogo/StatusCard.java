@@ -25,7 +25,6 @@ public class StatusCard {
         this.mantimentosRoubados = 0;
         this.tunel = 1;
         this.tunelDir = true;
-        this.raidMantimentos = 0;
     }
     
     public StatusCard(int muralha,int moral, int mantimentos, int mantimentosR, int tunel){
@@ -78,6 +77,14 @@ public class StatusCard {
     public void setMantimentosRoubados(int mantimentosRoubados) {
         this.mantimentosRoubados = mantimentosRoubados;
     }
+    
+    public void updateMantimentosRoubados(int mantimentosRoubados) {
+        
+        this.mantimentosRoubados += mantimentosRoubados;
+        if(this.mantimentosRoubados > 2)
+            this.mantimentosRoubados = 2;
+        
+    }
 
     public int getTunel() {
         return tunel;
@@ -116,18 +123,6 @@ public class StatusCard {
 
     public void setTunelDir(boolean tunelDir) {
         this.tunelDir = tunelDir;
-    }
-
-    public int getRaidMantimentos() {
-        return raidMantimentos;
-    }
-
-    public void setRaidMantimentos(int raidMantimentos) {
-        this.raidMantimentos = raidMantimentos;
-    }
-    
-    public void updateRaidMantimentos(int raidMantimentos) {
-        this.raidMantimentos += raidMantimentos;
     }
 }
 

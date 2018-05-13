@@ -78,6 +78,10 @@ public class EnemyTracks {
     public void setTrincheiras(int trincheiras) {
         this.trincheiras = trincheiras;
     }
+    
+    public void updateTrincheiras(int trincheiras) {
+        this.trincheiras += trincheiras;
+    }
 
     public int getCloseCombatStrengh() {
         return closeCombatStrengh;

@@ -238,19 +238,60 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 }
                 break;
             case 7: // Supply Raid
-                if(dadosJogo.getStatusCard().getRaidMantimentos() < 2){
-                    if(dadosJogo.getDice() > 2 && dadosJogo.getDice() < 6){
-                        dadosJogo.getStatusCard().updateMoral(1);
-                        dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
+                if(dadosJogo.getStatusCard().getTunel() == 4){
+                    if(dadosJogo.getStatusCard().getMantimentosRoubados() < 2){
+                        if(dadosJogo.getDice() > 2 && dadosJogo.getDice() < 6){
+                            dadosJogo.getStatusCard().updateMantimentosRoubados(1);
+                            dadosJogo.setTexto("As tropas obtiveram uma caixa de suplementos. No total tem " + dadosJogo.getStatusCard().getMantimentosRoubados() + ".");
+                            break;
+                        }
+                        if(dadosJogo.getDice() >= 6){
+                            dadosJogo.getStatusCard().updateMantimentosRoubados(2);
+                            dadosJogo.setTexto("As tropas obtiveram duas caixa de suplementos. No total tem " + dadosJogo.getStatusCard().getMantimentosRoubados() + ".");
+                            break;
+                        }
+                        if(dadosJogo.getDice() == 1){
+                            dadosJogo.getStatusCard().updateMoral(-1);
+                            dadosJogo.getStatusCard().setTunel(1);
+                            dadosJogo.getStatusCard().setTunelDir(true);
+                            dadosJogo.getStatusCard().setMantimentosRoubados(0);
+                            dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
+                            break;
+                        }
                     }else{
-                        dadosJogo.setTexto("O discurso foi mal intrepertado pelo povo, mantendo a moral no mesmo nivel.");
+                            dadosJogo.setTexto("As tropas encontram-se sobrecarregadas, nao conseguem roubar mais mantimentos.");
+                            return this;
                     }
                 }else{
-                        dadosJogo.setTexto("A moral encontra-se ao maximo.");
-                        return this;
+                    dadosJogo.setTexto("Tem de estar nas linhas inimigas para realizar uma raid de mantimentos.");
+                    return this;
                 }
+                
                 break;
             case 8: // Sabotage
+                if(dadosJogo.getStatusCard().getTunel() == 4){
+                    if(dadosJogo.getEnemyTracks().getTrincheiras()> 1){
+                        if(dadosJogo.getDice() > 4){
+                            dadosJogo.getEnemyTracks().updateTrincheiras(-1);
+                            dadosJogo.setTexto("As tropas realizaram dano as Trebuchets, de momento os inimigos tem " + dadosJogo.getEnemyTracks().getAriete() + ".");
+                            break;
+                        }
+                        if(dadosJogo.getDice() == 1){
+                            dadosJogo.getStatusCard().updateMoral(-1);
+                            dadosJogo.getStatusCard().setTunel(1);
+                            dadosJogo.getStatusCard().setTunelDir(true);
+                            dadosJogo.getStatusCard().setMantimentosRoubados(0);
+                            dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
+                            break;
+                        }
+                    }else{
+                            dadosJogo.setTexto("As tropas nao conseguem atacar. Tente mais tarde");
+                            return this;
+                    }
+                }else{
+                    dadosJogo.setTexto("Tem de estar nas linhas inimigas para realizar uma sabotagem.");
+                    return this;
+                }
                 break;
         }
         
