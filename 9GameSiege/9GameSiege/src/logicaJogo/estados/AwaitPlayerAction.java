@@ -237,6 +237,17 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 }
                 break;
             case 7: // Supply Raid
+                if(dadosJogo.getStatusCard().getRaidMantimentos() < 2){
+                    if(dadosJogo.getDice() > 2 && dadosJogo.getDice() < 6){
+                        dadosJogo.getStatusCard().updateMoral(1);
+                        dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
+                    }else{
+                        dadosJogo.setTexto("O discurso foi mal intrepertado pelo povo, mantendo a moral no mesmo nivel.");
+                    }
+                }else{
+                        dadosJogo.setTexto("A moral encontra-se ao maximo.");
+                        return this;
+                }
                 break;
             case 8: // Sabotage
                 break;
