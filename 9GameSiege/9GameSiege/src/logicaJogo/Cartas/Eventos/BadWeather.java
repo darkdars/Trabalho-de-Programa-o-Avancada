@@ -20,7 +20,13 @@ public class BadWeather extends Evento{
 
     @Override
     public void execute(DadosJogo dadosJogo) {
-        
+            dadosJogo.setOpcoesUtilizadasIndice(0);
+            dadosJogo.setOpcoesUtilizadasIndice(1);
+            dadosJogo.setOpcoesUtilizadasIndice(2);
+            dadosJogo.setOpcoesUtilizadasIndice(3);
+            dadosJogo.setOpcoesUtilizadasIndice(4);
+            dadosJogo.setOpcoesUtilizadasIndice(5);
+            
     }
     
     
