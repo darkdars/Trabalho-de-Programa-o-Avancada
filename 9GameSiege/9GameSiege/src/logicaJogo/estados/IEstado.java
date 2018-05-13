@@ -34,12 +34,13 @@ public interface IEstado {
         IEstado playerAction(int opcao,int target);
         IEstado checkJogadasDisp();
         
-        /***** AwaitCheck  *****/ 
-        
         /***** AwaitWinLosePhase  *****/ 
         IEstado winLosePhase();
         IEstado winLoseI();
 
+        /***** AwaitEndDayPhase  *****/
+        IEstado  endDayPhase();
+        
         /***** AwaitEnd *****/ 
         IEstado end();
         
