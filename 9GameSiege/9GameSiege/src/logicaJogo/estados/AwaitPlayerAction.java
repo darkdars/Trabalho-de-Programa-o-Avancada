@@ -120,7 +120,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         }
                         break;
                 }
-                         dadosJogo.setOpcoesUtilizadasIndice(1);
+                dadosJogo.setOpcoesUtilizadasIndice(1);
                 break;
             case 3: // Close Combat Attack
                 switch(target){
