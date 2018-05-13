@@ -21,10 +21,17 @@ public class AwaitEndDayPhase extends EstadoAdapter{
     public IEstado endDayPhase(){
         
         //Check if we win
-        if(dadosJogo.getDia() > 3){
+        if(dadosJogo.getDia() == 3 && dadosJogo.getListaCards() >= 6){
             dadosJogo.setTexto("Parabens!!!! Sobreviveu aos ataques do inimigo!");
             return this;
         }
+        
+       
+        //meter a um jogadas disponiveis
+        dadosJogo.setOpcoesUtilizadas1();
+        
+        //Shufle cards
+        dadosJogo.baralhaCartas();
         
         //Suplies reduction
         dadosJogo.getStatusCard().setMantimentos(dadosJogo.getStatusCard().getMantimentos() - 1);
@@ -57,8 +64,8 @@ public class AwaitEndDayPhase extends EstadoAdapter{
                 dadosJogo.getStatusCard().setMantimentosRoubados(0);
                 dadosJogo.getStatusCard().setMoral(dadosJogo.getStatusCard().getMoral() - 1);
             }
-        
-        
+            
+            dadosJogo.setDia(dadosJogo.getDia() + 1);
         return new AwaitLineCheck(dadosJogo);
     }
     
