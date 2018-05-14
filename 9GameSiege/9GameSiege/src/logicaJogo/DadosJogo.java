@@ -43,6 +43,8 @@ public class DadosJogo {
     private Card cartaSelecionada;
     
     private int[] opcoesUtilizadas;
+    private int[] bonusEvent;
+    private int[] bonusEnemy;
     private Evento eventoAtual;
     private int listaCards; // Vai de 0 a 6 // 7 cartas
     private String texto;
@@ -60,6 +62,14 @@ public class DadosJogo {
         opcoesUtilizadas = new int[8];
         for(int i = 0; i < 8; i++){
             opcoesUtilizadas[i] = 1;
+        }
+        bonusEvent = new int[8];
+        for(int i = 0; i < 8; i++){
+            bonusEvent[i] = 1;
+        }
+        bonusEnemy = new int[8];
+        for(int i = 0; i < 4; i++){
+            bonusEnemy[i] = 1;
         }
         
         cartas = new ArrayList<>();
@@ -255,5 +265,32 @@ public class DadosJogo {
              this.opcoesUtilizadas[i] = 1;
          }
      }
+
+    public int[] getBonusEvent() {
+        return bonusEvent;
+    }
+
+    public void setBonusEvent(int[] bonusEvent) {
+        this.bonusEvent = bonusEvent;
+    }
     
+    public int setBonusEvent(int bonusEvent) {
+        return this.bonusEvent[bonusEvent];
+    }
+    
+    public int setBonusEvent(int pos, int bonusEvent) {
+        return this.bonusEvent[pos] = bonusEvent;
+    }
+
+    public int[] getBonusEnemy() {
+        return bonusEnemy;
+    }
+
+    public void setBonusEnemy(int[] bonusEnemy) {
+        this.bonusEnemy = bonusEnemy;
+    }
+    
+    public int setBonusEnemy(int pos, int bonusEnemy) {
+        return this.bonusEnemy[pos] = bonusEnemy;
+    }
 }

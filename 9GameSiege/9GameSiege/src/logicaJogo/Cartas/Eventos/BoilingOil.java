@@ -20,6 +20,6 @@ public class BoilingOil extends Evento{
 
     @Override
     public void execute(DadosJogo dadosJogo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        prepare(dadosJogo);
     }
 }

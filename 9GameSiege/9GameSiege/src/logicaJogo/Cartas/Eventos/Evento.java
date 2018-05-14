@@ -83,6 +83,10 @@ public abstract class Evento {
     public void setEvento(List<String> evento) {
         this.evento = evento;
     }
+    
+    public String getEventoString(int i){
+        return this.evento.get(i);
+    }
 
     public List<String> getValores() {
         return valores;
@@ -90,6 +94,47 @@ public abstract class Evento {
 
     public void setValores(List<String> valores) {
         this.valores = valores;
+    }
+    
+    public String getValoresString(int i){
+        return this.valores.get(i);
+    }
+    
+    public void prepare(DadosJogo dadosJogo){
+        for(int i = 0; i < enemy.size(); i++){
+            String[] evento = this.evento.get(i).split("-");
+            if(evento[0].equals("attack")){
+                if(evento[1].equals("circle")){
+                    dadosJogo.setBonusEnemy(0, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("tower")){
+                    dadosJogo.setBonusEnemy(1, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("ram")){
+                    dadosJogo.setBonusEnemy(2, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("ladder")){
+                    dadosJogo.setBonusEnemy(3, Integer.parseInt(this.valores.get(i)));
+                }
+            }else if(evento[0].equals("actions")){
+                if(evento[1].equals("archer")){
+                    dadosJogo.setBonusEvent(0, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("boiling")){
+                    dadosJogo.setBonusEvent(1, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("close")){
+                    dadosJogo.setBonusEvent(2, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("coupure")){
+                    dadosJogo.setBonusEvent(3, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("rally")){
+                    dadosJogo.setBonusEvent(4, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("tunnel")){
+                    dadosJogo.setBonusEvent(5, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("raid")){
+                    dadosJogo.setBonusEvent(6, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("sabotage")){
+                    dadosJogo.setBonusEvent(7, Integer.parseInt(this.valores.get(i)));
+                }
+            }/*else if(evento[0].equals("attack")){
+                
+            }*/
+        }
     }
     
     public abstract void execute(DadosJogo dadosJogo);

@@ -14,7 +14,7 @@ import logicaJogo.DadosJogo;
 public class Rally extends Evento{
     
     public Rally(){
-        super("Rally!", 3, new String[]{"ram", "tower"}, new String[]{"attacks-close", "attacks-circle"}, new String[]{"1", "1"}, 
+        super("Rally!", 3, new String[]{"ram", "tower"}, new String[]{"attack-close", "attack-circle"}, new String[]{"1", "1"}, 
                 "A ariete e a escada avancam uma unidade.\nOs ataques em close combat e nos circulos recebem um bonus de 1.");
     }
 

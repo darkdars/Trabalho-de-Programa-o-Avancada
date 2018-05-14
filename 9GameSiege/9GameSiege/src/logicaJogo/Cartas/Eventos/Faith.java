@@ -14,7 +14,7 @@ import logicaJogo.DadosJogo;
 public class Faith extends Evento{
     
     public Faith(){
-        super("Faith", 3, new String[]{"ladder", "ram", "ladder"}, new String[]{"attacks-ram", "attacks-ladder", "attacks-tower"}, new String[]{"1", "1", "1"}, 
+        super("Faith", 3, new String[]{"ladder", "ram", "ladder"}, new String[]{"attack-ram", "attack-ladder", "attack-tower"}, new String[]{"1", "1", "1"}, 
                 "Neste evento todos os inimigos avancam uma casa.\nAo mesmo tempo qualquer ataque contra a ariete, a escada e a torre recem um bonus de 1.");
     }
 

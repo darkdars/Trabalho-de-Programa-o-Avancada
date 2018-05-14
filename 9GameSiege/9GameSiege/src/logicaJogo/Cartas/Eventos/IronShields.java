@@ -14,7 +14,7 @@ import logicaJogo.DadosJogo;
 public class IronShields extends Evento{
     
     public IronShields(){
-        super("Iron Shields", 2, new String[]{"tower"}, new String[]{"attacks-tower"}, new String[]{"-1"}, 
+        super("Iron Shields", 2, new String[]{"tower"}, new String[]{"attack-tower"}, new String[]{"-1"}, 
                 "As torres avancam uma unidade.\nAs torres fortificaram os seu escudos, dai qualquer ataque as torres e reduzido por 1.");
     }
 
