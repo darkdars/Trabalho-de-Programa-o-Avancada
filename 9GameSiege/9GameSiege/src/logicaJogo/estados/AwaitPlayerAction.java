@@ -28,7 +28,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     //Acrescentar um ao dado dependendo do evento
                     case 1: // Ladders
                         if(dadosJogo.getEnemyTracks().getEscada() != 4){
-                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(3)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
                                 dadosJogo.getEnemyTracks().setEscada(dadosJogo.getEnemyTracks().getEscada() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Ladders Movida para a posicao: " + dadosJogo.getEnemyTracks().getEscada());
                             }else{
@@ -43,7 +43,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 2: // Battering Ram
                          if(dadosJogo.getEnemyTracks().getAriete() != 4){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getArieteStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(2)> dadosJogo.getEnemyTracks().getArieteStrengh()){
                                 dadosJogo.getEnemyTracks().setAriete(dadosJogo.getEnemyTracks().getAriete() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Battering Ram Movida para posicao: " + dadosJogo.getEnemyTracks().getAriete());
                             }else{
@@ -58,7 +58,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 3: // Siege Tower
                          if(dadosJogo.getEnemyTracks().getTorre() != 4){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getTorreStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Siege Tower Movida para posicao: " + dadosJogo.getEnemyTracks().getTorre());
                             }else{
@@ -77,7 +77,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     //Acrescentar um ao dado dependendo do evento
                     case 1: // Ladders
                         if(dadosJogo.getEnemyTracks().getEscada() == 1){
-                            if(dadosJogo.getDice() + 1> dadosJogo.getEnemyTracks().getEscadaStrengh()){
+                            if(dadosJogo.getDice() + 1 + dadosJogo.getBonusEvent(1) + dadosJogo.getBonusEnemy(3)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
                                 dadosJogo.getEnemyTracks().setEscada(dadosJogo.getEnemyTracks().getEscada() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Ladders Movida para a posicao: " + dadosJogo.getEnemyTracks().getEscada());
                             }else{
@@ -92,7 +92,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 2: // Battering Ram
                          if(dadosJogo.getEnemyTracks().getAriete() == 1){
-                            if(dadosJogo.getDice() + 1> dadosJogo.getEnemyTracks().getArieteStrengh()){
+                            if(dadosJogo.getDice() + 1 + dadosJogo.getBonusEvent(1) + dadosJogo.getBonusEnemy(2)> dadosJogo.getEnemyTracks().getArieteStrengh()){
                                 dadosJogo.getEnemyTracks().setAriete(dadosJogo.getEnemyTracks().getAriete() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Battering Ram Movida para posicao: " + dadosJogo.getEnemyTracks().getAriete());
                             }else{
@@ -107,7 +107,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 3: // Siege Tower
                          if(dadosJogo.getEnemyTracks().getTorre() == 1){
-                            if(dadosJogo.getDice() + 1> dadosJogo.getEnemyTracks().getTorreStrengh()){
+                            if(dadosJogo.getDice() + 1 + dadosJogo.getBonusEvent(1) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Siege Tower Movida para posicao: " + dadosJogo.getEnemyTracks().getTorre());
                             }else{
@@ -127,7 +127,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     //Acrescentar um ao dado dependendo do evento
                     case 1: // Ladders
                         if(dadosJogo.getEnemyTracks().getEscada() == 0){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getEscadaStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(2) + dadosJogo.getBonusEnemy(3)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
                                 dadosJogo.getEnemyTracks().setEscada(dadosJogo.getEnemyTracks().getEscada() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Ladders Movida para a posicao: " + dadosJogo.getEnemyTracks().getEscada());
                             }else{
@@ -142,7 +142,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 2: // Battering Ram
                          if(dadosJogo.getEnemyTracks().getAriete() == 0){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getArieteStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(2) + dadosJogo.getBonusEnemy(2)> dadosJogo.getEnemyTracks().getArieteStrengh()){
                                 dadosJogo.getEnemyTracks().setAriete(dadosJogo.getEnemyTracks().getAriete() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Battering Ram Movida para posicao: " + dadosJogo.getEnemyTracks().getAriete());
                             }else{
@@ -157,7 +157,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                         break;
                     case 3: // Siege Tower
                          if(dadosJogo.getEnemyTracks().getTorre() == 0){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getTorreStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(2) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Siege Tower Movida para posicao: " + dadosJogo.getEnemyTracks().getTorre());
                             }else{
@@ -173,7 +173,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
             case 4: // Coupure
                 if(dadosJogo.getStatusCard().getMuralha() < 4){
-                    if(dadosJogo.getDice() > 4){
+                    if(dadosJogo.getDice() + dadosJogo.getBonusEvent(3)> 4){
                         dadosJogo.getStatusCard().updateMuralha(1);
                         dadosJogo.setTexto("A muralha foi reparada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMuralha() + ".");
                     }else{
@@ -186,7 +186,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 break;
             case 5: // Rally Trops
                 if(dadosJogo.getStatusCard().getMuralha() < 4){
-                    if((dadosJogo.getDice() + target) > 4){
+                    if((dadosJogo.getDice() + target + dadosJogo.getBonusEvent(4)) > 4){
                         dadosJogo.getStatusCard().updateMoral(1);
                         dadosJogo.setTexto("A moral foi levantada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMoral()+ ".");
                     }else{
@@ -240,7 +240,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
             case 7: // Supply Raid
                 if(dadosJogo.getStatusCard().getTunel() == 4){
                     if(dadosJogo.getStatusCard().getMantimentosRoubados() < 2){
-                        if(dadosJogo.getDice() > 2 && dadosJogo.getDice() < 6){
+                        if(dadosJogo.getDice() + dadosJogo.getBonusEvent(6) + dadosJogo.getBonusEnemy(0)> 2 && dadosJogo.getDice() < 6){
                             dadosJogo.getStatusCard().updateMantimentosRoubados(1);
                             dadosJogo.setTexto("As tropas obtiveram uma caixa de suplementos. No total tem " + dadosJogo.getStatusCard().getMantimentosRoubados() + ".");
                             break;
@@ -271,7 +271,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
             case 8: // Sabotage
                 if(dadosJogo.getStatusCard().getTunel() == 4){
                     if(dadosJogo.getEnemyTracks().getTrincheiras()> 1){
-                        if(dadosJogo.getDice() > 4){
+                        if(dadosJogo.getDice() + dadosJogo.getBonusEvent(7) > 4){
                             dadosJogo.getEnemyTracks().updateTrincheiras(-1);
                             dadosJogo.setTexto("As tropas realizaram dano as Trebuchets, de momento os inimigos tem " + dadosJogo.getEnemyTracks().getAriete() + ".");
                             break;

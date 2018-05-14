@@ -278,7 +278,7 @@ public class DadosJogo {
         return this.bonusEvent[pos] = bonusEvent;
     }
     
-    public int setBonusEvent(int bonusEvent) {
+    public int getBonusEvent(int bonusEvent) {
         return this.bonusEvent[bonusEvent];
     }
 
@@ -296,5 +296,14 @@ public class DadosJogo {
     
     public int getBonusEnemy(int bonusEnemy) {
         return this.bonusEvent[bonusEnemy];
+    }
+    
+    public void setBonus(){
+        for(int i = 0; i < this.bonusEnemy.length; i++){
+            this.bonusEnemy[i]=0;
+        }
+        for(int i = 0; i < this.bonusEvent.length; i++){
+            this.bonusEvent[i]=0;
+        }
     }
 }
