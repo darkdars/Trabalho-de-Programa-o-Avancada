@@ -112,6 +112,11 @@ public abstract class Evento {
                     dadosJogo.setBonusEnemy(2, Integer.parseInt(this.valores.get(i)));
                 }else if(evento[1].equals("ladder")){
                     dadosJogo.setBonusEnemy(3, Integer.parseInt(this.valores.get(i)));
+                }else if(evento[1].equals("all")){
+                    dadosJogo.setBonusEnemy(0, Integer.parseInt(this.valores.get(i)));
+                    dadosJogo.setBonusEnemy(1, Integer.parseInt(this.valores.get(i)));
+                    dadosJogo.setBonusEnemy(2, Integer.parseInt(this.valores.get(i)));
+                    dadosJogo.setBonusEnemy(3, Integer.parseInt(this.valores.get(i)));
                 }
             }else if(evento[0].equals("actions")){
                 if(evento[1].equals("archer")){
@@ -131,9 +136,11 @@ public abstract class Evento {
                 }else if(evento[1].equals("sabotage")){
                     dadosJogo.setBonusEvent(7, Integer.parseInt(this.valores.get(i)));
                 }
-            }/*else if(evento[0].equals("attack")){
-                
-            }*/
+            }else if(evento[0].equals("add")){
+                if(evento[1].equals("Trebuchet")){
+                    dadosJogo.getEnemyTracks().updateTrincheiras(1);
+                }
+            }
         }
     }
     

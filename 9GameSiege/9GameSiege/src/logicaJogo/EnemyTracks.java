@@ -81,6 +81,8 @@ public class EnemyTracks {
     
     public void updateTrincheiras(int trincheiras) {
         this.trincheiras += trincheiras;
+        if(this.trincheiras>=3)
+            this.trincheiras =3;
     }
 
     public int getCloseCombatStrengh() {
