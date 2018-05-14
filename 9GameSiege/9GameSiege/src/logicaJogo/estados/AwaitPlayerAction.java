@@ -28,7 +28,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     //Acrescentar um ao dado dependendo do evento
                     case 1: // Ladders
                         if(dadosJogo.getEnemyTracks().getEscada() != 4){
-                            if(dadosJogo.getDice() > dadosJogo.getEnemyTracks().getEscadaStrengh()){
+                            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
                                 dadosJogo.getEnemyTracks().setEscada(dadosJogo.getEnemyTracks().getEscada() + 1);
                                 dadosJogo.setTexto("Ataque bem sucedido! Ladders Movida para a posicao: " + dadosJogo.getEnemyTracks().getEscada());
                             }else{

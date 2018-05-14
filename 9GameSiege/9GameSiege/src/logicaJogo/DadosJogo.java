@@ -274,12 +274,12 @@ public class DadosJogo {
         this.bonusEvent = bonusEvent;
     }
     
-    public int setBonusEvent(int bonusEvent) {
-        return this.bonusEvent[bonusEvent];
-    }
-    
     public int setBonusEvent(int pos, int bonusEvent) {
         return this.bonusEvent[pos] = bonusEvent;
+    }
+    
+    public int setBonusEvent(int bonusEvent) {
+        return this.bonusEvent[bonusEvent];
     }
 
     public int[] getBonusEnemy() {
@@ -290,7 +290,11 @@ public class DadosJogo {
         this.bonusEnemy = bonusEnemy;
     }
     
-    public int setBonusEnemy(int pos, int bonusEnemy) {
-        return this.bonusEnemy[pos] = bonusEnemy;
+    public void setBonusEnemy(int pos, int bonusEnemy) {
+        this.bonusEnemy[pos] = bonusEnemy;
+    }
+    
+    public int getBonusEnemy(int bonusEnemy) {
+        return this.bonusEvent[bonusEnemy];
     }
 }
