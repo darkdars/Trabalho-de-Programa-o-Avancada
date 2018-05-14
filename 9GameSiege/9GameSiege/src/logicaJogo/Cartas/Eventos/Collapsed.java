@@ -21,7 +21,7 @@ public class Collapsed extends Evento{
     @Override
     public void execute(DadosJogo dadosJogo) {
         if(dadosJogo.getEnemyTracks().getTorre() == 4){
-            
+            dadosJogo.getEnemyTracks().setVidaTorre(false);
         }
     }
 }

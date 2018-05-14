@@ -57,6 +57,13 @@ public class AwaitPlayerAction extends EstadoAdapter{
           
                         break;
                     case 3: // Siege Tower
+                        
+                        if(dadosJogo.getEnemyTracks().isVidaTorre() == false){
+                            dadosJogo.setTexto("Nao existe torre! Escolha outra opcao!");
+                            return this;
+                        }
+                        
+                        
                          if(dadosJogo.getEnemyTracks().getTorre() != 4){
                             if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
@@ -106,6 +113,11 @@ public class AwaitPlayerAction extends EstadoAdapter{
           
                         break;
                     case 3: // Siege Tower
+                         if(dadosJogo.getEnemyTracks().isVidaTorre() == false){
+                            dadosJogo.setTexto("Nao existe torre! Escolha outra opcao!");
+                            return this;
+                        }
+                        
                          if(dadosJogo.getEnemyTracks().getTorre() == 1){
                             if(dadosJogo.getDice() + 1 + dadosJogo.getBonusEvent(1) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
@@ -156,6 +168,11 @@ public class AwaitPlayerAction extends EstadoAdapter{
           
                         break;
                     case 3: // Siege Tower
+                         if(dadosJogo.getEnemyTracks().isVidaTorre() == false){
+                            dadosJogo.setTexto("Nao existe torre! Escolha outra opcao!");
+                            return this;
+                        }
+                        
                          if(dadosJogo.getEnemyTracks().getTorre() == 0){
                             if(dadosJogo.getDice() + dadosJogo.getBonusEvent(2) + dadosJogo.getBonusEnemy(1)> dadosJogo.getEnemyTracks().getTorreStrengh()){
                                 dadosJogo.getEnemyTracks().setTorre(dadosJogo.getEnemyTracks().getTorre() + 1);
