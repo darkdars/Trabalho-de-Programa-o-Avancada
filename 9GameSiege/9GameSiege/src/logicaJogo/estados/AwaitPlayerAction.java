@@ -314,7 +314,10 @@ public class AwaitPlayerAction extends EstadoAdapter{
         
         dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
         
-            
+            if(dadosJogo.checkEnemyCloseCombat() >= 3 || dadosJogo.check0SpaceStatusTrack() >= 2){
+                dadosJogo.setTexto("Perdeu!");
+            return new AwaitEnd(dadosJogo); 
+        }
         
         return this;
     }
