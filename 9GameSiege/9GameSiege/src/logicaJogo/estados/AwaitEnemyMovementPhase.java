@@ -86,6 +86,13 @@ public class AwaitEnemyMovementPhase extends EstadoAdapter{
      
      @Override
      public IEstado avancaPhase(){
+         
+          if(dadosJogo.checkEnemyCloseCombat() >= 3 || dadosJogo.check0SpaceStatusTrack() >= 2){
+            dadosJogo.setTexto("Perdeu!");
+            return new AwaitEnd(dadosJogo); 
+        }
+         
+         
          return new AwaitPlayerAction(dadosJogo);
      }
      
