@@ -19,6 +19,7 @@ public class EnemyTracks {
     int escadaStrengh = 2;
     int arieteStrengh = 3;
     int torreStrengh = 4;
+    boolean vidaTorre;
     
     
     public EnemyTracks(){
@@ -26,6 +27,7 @@ public class EnemyTracks {
         this.ariete = 4;
         this.torre = 4;
         this.trincheiras = 1;
+        this.vidaTorre = true;
     }
     
     public EnemyTracks(int escada, int ariete, int torre, int trincheiras){
@@ -115,6 +117,14 @@ public class EnemyTracks {
 
     public void setTorreStrengh(int torreStrengh) {
         this.torreStrengh = torreStrengh;
+    }
+
+    public boolean isVidaTorre() {
+        return vidaTorre;
+    }
+
+    public void setVidaTorre(boolean vidaTorre) {
+        this.vidaTorre = vidaTorre;
     }
  
     

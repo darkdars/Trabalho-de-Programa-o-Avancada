@@ -35,7 +35,7 @@ public class AwaitCardSelect extends EstadoAdapter {
     public IEstado eventPhase(){
         //Passa para o movimento phase
         
-        
+        dadosJogo.getEventoAtual().execute(dadosJogo);
         //Trebuch atack faz e depois lanca para o estado asseguir
         // return new AwaitPlayerAction(dadosJogo);
         
