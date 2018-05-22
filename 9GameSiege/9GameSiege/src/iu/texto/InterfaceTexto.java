@@ -222,7 +222,7 @@ public class InterfaceTexto {
                 target = menuArchersAttack();
                 
                 jogo.setEstado(jogo.getEstado().playerAction(opcao,target));
-                
+    
                
                System.out.println("Dado Rolado: " + jogo.getDadosJogo().getDice());
                System.out.println("" + jogo.getDadosJogo().getTexto());

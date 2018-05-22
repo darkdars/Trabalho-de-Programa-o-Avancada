@@ -38,7 +38,7 @@ public class Card {
     }
     
     public Evento getEventos(int dia) {
-        return eventos.get(dia);
+        return eventos.get(dia-1);
     }
 
     public void setEventos(List<Evento> eventos) {
