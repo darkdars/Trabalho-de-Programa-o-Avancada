@@ -54,6 +54,8 @@ public class InterfaceTexto {
         while(i == 1){
            if(jogo.getEstado() instanceof AwaitBeginning)
               mostrarMenuInicial();
+         
+           /**
            if(jogo.getEstado() instanceof AwaitLineCheck){
               lineCheck();
            }
@@ -63,6 +65,7 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitEnemyMovementPhase){
                enemyMovementPhase();
            }
+           * **/
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                playerMovementPhase();
            }

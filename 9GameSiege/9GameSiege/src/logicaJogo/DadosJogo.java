@@ -138,7 +138,7 @@ public class DadosJogo {
     }
 
     public void reduceMoral(int i) {
-        statusCard.setMoral(statusCard.getMoral() - 1);
+        statusCard.setMoral(statusCard.getMoral() - i);
     }
 
     public int checkEnemyCloseCombat() { // Checka numero de inimigos em closecombat
