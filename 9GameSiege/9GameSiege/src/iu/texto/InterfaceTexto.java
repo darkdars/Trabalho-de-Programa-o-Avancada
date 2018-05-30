@@ -19,6 +19,7 @@ import logicaJogo.estados.AwaitEndDayPhase;
 import logicaJogo.estados.AwaitEnemyMovementPhase;
 import logicaJogo.estados.AwaitLineCheck;
 import logicaJogo.estados.AwaitPlayerAction;
+import logicaJogo.estados.AwaitTopCard;
 import logicaJogo.estados.AwaitWinLosePhase;
 import logicaJogo.estados.IEstado;
 
@@ -66,6 +67,11 @@ public class InterfaceTexto {
                enemyMovementPhase();
            }
            * **/
+           
+           if(jogo.getEstado() instanceof AwaitTopCard){
+               topCardDrawn();
+           }
+)           
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                playerMovementPhase();
            }
@@ -411,6 +417,10 @@ public class InterfaceTexto {
 
     private void endDayPhase() {
         jogo.setEstado(jogo.getEstado().endDayPhase());
+    }
+
+    private void topCardDrawn() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
  
