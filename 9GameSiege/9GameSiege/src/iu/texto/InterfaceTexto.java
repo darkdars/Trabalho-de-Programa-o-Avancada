@@ -71,7 +71,7 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitTopCard){
                topCardDrawn();
            }
-)           
+           
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                playerMovementPhase();
            }
