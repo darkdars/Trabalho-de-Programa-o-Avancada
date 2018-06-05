@@ -5,9 +5,16 @@
  */
 package logicaJogo;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import logicaJogo.estados.AwaitBeginning;
 import logicaJogo.estados.IEstado;
 import java.util.List;
+
+import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -80,11 +87,28 @@ public class Jogo {
     }
   
     
+public static Jogo carregarJogo(String nome)
+    {
+        try
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(nome));
 
+            Jogo j = (Jogo) in.readObject();
+
+            in.close();
+
+            return j;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
    
-
-    
-    
     
     
         

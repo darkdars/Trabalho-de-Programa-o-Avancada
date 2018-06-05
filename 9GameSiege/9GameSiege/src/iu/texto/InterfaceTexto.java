@@ -5,6 +5,7 @@
  */
 package iu.texto;
 
+import java.io.File;
 import logicaJogo.estados.AwaitBeginning;
 import java.io.IOException;
 import java.util.HashSet;
@@ -139,7 +140,34 @@ public class InterfaceTexto {
     }
 
     private void mostrarMenuCarregar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Estes saves foram encontrados: ");
+
+        File dir = new File(".");
+        File[] filesList = dir.listFiles();
+        for (File file : filesList) {
+            if (file.isFile() && file.getName().endsWith(".mse")) {
+                System.out.println(file.getName().replace(".mse", ""));
+            }
+        }
+
+        System.out.println("Insira o nome do save a carregar: ");
+
+        do {
+            String nome = scanner.nextLine();
+
+            File f = new File(nome + ".mse");
+
+            if(f.exists()) {
+                jogo = Jogo.carregarJogo(nome + ".mse");
+                break;
+            }
+            else
+            {
+                System.out.println("Nome incorreto.");
+
+            }
+
+        }while(true);
     }
     
      public void tecla()
