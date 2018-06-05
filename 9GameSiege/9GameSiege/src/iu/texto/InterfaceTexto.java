@@ -13,14 +13,10 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import logicaJogo.Jogo;
-import logicaJogo.estados.AwaitCardSelect;
 import logicaJogo.estados.AwaitEnd;
 import logicaJogo.estados.AwaitEndDayPhase;
-import logicaJogo.estados.AwaitEnemyMovementPhase;
-import logicaJogo.estados.AwaitLineCheck;
 import logicaJogo.estados.AwaitPlayerAction;
 import logicaJogo.estados.AwaitTopCard;
-import logicaJogo.estados.AwaitWinLosePhase;
 import logicaJogo.estados.IEstado;
 
 /**
@@ -75,9 +71,9 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                playerMovementPhase();
            }
-           if(jogo.getEstado() instanceof AwaitWinLosePhase){
-               winLose();
-           }
+          // if(jogo.getEstado() instanceof AwaitWinLosePhase){
+            //   winLose();
+           //}
            
            if(jogo.getEstado() instanceof AwaitEndDayPhase){
                endDayPhase();
@@ -420,7 +416,41 @@ public class InterfaceTexto {
     }
 
     private void topCardDrawn() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Line Check Phase!\n");
+        
+        int i = jogo.lineCheck();
+        
+        if(i == 0){
+            System.out.println("Nao Existem Inimigos nas EnemyLines!\n");
+        }else{
+            System.out.println("Existem Inimigos nas EnemyLines!\n");
+            
+            System.out.println("Resultado do lancamento do dado: " + i);
+            
+            if(i == 1){
+                System.out.println("Inimigos Capturados!\n");
+            }else{
+                System.out.println("Soldados nao foram detetados!");
+            }
+            
+        }
+       
+        tecla();
+        clearScreen();
+       // jogo.setEstado(jogo.getEstado().ResolveLine());
+       
+        //jogo.setEstado(jogo.getEstado().cardChoose());
+        System.out.println("Carta Selecionada!");
+        imprimirInformacaoCarta();
+        //jogo.setEstado(jogo.getEstado().eventPhase());
+        
+        
+        System.out.println("Enemy Movement Phase!\n");
+        //jogo.setEstado(jogo.getEstado().enemyMovementPhase());
+        //Imprimir cartas e evento
+        //jogo.setEstado(jogo.getEstado().avancaPhase());
+        
+       
     }
 
  

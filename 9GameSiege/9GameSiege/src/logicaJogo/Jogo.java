@@ -8,7 +8,6 @@ package logicaJogo;
 import logicaJogo.estados.AwaitBeginning;
 import logicaJogo.estados.IEstado;
 import java.util.List;
-import logicaJogo.estados.AwaitCardSelect;
 
 /**
  *

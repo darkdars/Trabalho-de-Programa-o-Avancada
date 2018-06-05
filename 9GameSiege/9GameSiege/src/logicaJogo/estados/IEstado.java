@@ -11,22 +11,13 @@ package logicaJogo.estados;
  */
 public interface IEstado {
 
-    
       /***** AwaitBeginning  *****/  
-    
         IEstado start();
     
-        /***** AwaitLineCheck
-     * @return  *******/
-        
+       /***** AwaitTopCard  *****/ 
         IEstado ResolveLine();
-        
-         /***** AwaitCardSelect  *****/  
-       
         IEstado cardChoose();
         IEstado eventPhase();
-        
-        /***** AwaitEnemyMovementPhase  *****/ 
         IEstado enemyMovementPhase();
         IEstado avancaPhase();
         
@@ -34,16 +25,12 @@ public interface IEstado {
         IEstado playerAction(int opcao,int target);
         IEstado checkJogadasDisp();
         
-        /***** AwaitWinLosePhase  *****/ 
+        /***** AwaitEndDayPhase  *****/
+        IEstado endDayPhase();
         IEstado winLosePhase();
         IEstado winLoseI();
-
-        /***** AwaitEndDayPhase  *****/
-        IEstado  endDayPhase();
-        
+            
         /***** AwaitEnd *****/ 
         IEstado end();
-        
-        
-        
+       
 }

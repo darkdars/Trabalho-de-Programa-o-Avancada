@@ -22,7 +22,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
             dadosJogo.rollDice();
         switch(opcao){
             case 0:
-                return new AwaitWinLosePhase(dadosJogo);
+                return new AwaitEndDayPhase(dadosJogo);
             case 1: // Archers Attack
                 switch(target){
                     //Acrescentar um ao dado dependendo do evento
@@ -326,7 +326,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
     public IEstado checkJogadasDisp(){
         if(dadosJogo.getJogadasDisp() == 0){
                 dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
-                return new AwaitWinLosePhase(dadosJogo);
+                return new AwaitEndDayPhase(dadosJogo);
             }
         return this;
     }

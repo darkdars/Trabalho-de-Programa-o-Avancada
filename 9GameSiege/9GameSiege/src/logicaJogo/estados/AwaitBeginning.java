@@ -20,7 +20,7 @@ public class AwaitBeginning extends EstadoAdapter {
    @Override
    public IEstado start(){
        dadosJogo.baralhaCartas();
-       return new AwaitLineCheck(dadosJogo);
+       return new AwaitTopCard(dadosJogo);
    }
     
 }

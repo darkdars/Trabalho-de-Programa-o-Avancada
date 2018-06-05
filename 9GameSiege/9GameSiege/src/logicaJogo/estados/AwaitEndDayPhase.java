@@ -26,7 +26,6 @@ public class AwaitEndDayPhase extends EstadoAdapter{
             return new AwaitEnd(dadosJogo);
         }
         
-       
         //meter a um jogadas disponiveis
         dadosJogo.setOpcoesUtilizadas1();
         
@@ -66,7 +65,29 @@ public class AwaitEndDayPhase extends EstadoAdapter{
             }
             
             dadosJogo.setDia(dadosJogo.getDia() + 1);
-        return new AwaitLineCheck(dadosJogo);
+        return new AwaitTopCard(dadosJogo);
     }
+    
+    
+    @Override
+    public IEstado winLosePhase(){
+        if(dadosJogo.checkEnemyCloseCombat() >= 2 || dadosJogo.check0SpaceStatusTrack() >= 1){
+            dadosJogo.setTexto("Perdeu!");
+            return new AwaitEnd(dadosJogo);
+        }
+        
+        return new AwaitEndDayPhase(dadosJogo);
+    }
+    
+    @Override
+    public IEstado winLoseI(){
+        if(dadosJogo.checkEnemyCloseCombat() >= 3 || dadosJogo.check0SpaceStatusTrack() >= 2){
+            dadosJogo.setTexto("Perdeu!");
+            return new AwaitEnd(dadosJogo); 
+        }
+        
+        return this;
+    }
+    
     
 }
