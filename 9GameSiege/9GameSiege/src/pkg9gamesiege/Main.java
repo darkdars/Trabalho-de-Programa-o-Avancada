@@ -5,6 +5,7 @@
  */
 package pkg9gamesiege;
 
+import iu.grafico.InterfaceGrafica;
 import iu.texto.InterfaceTexto;
 
 
@@ -19,14 +20,13 @@ public class Main {
      */
     
     public static void main(String[] args) {
-
-        //Jogo jogo = new Jogo();
         
-        InterfaceTexto iT = new InterfaceTexto();
-        iT.runJogo();
+        //InterfaceTexto iT = new InterfaceTexto();
+        //iT.runJogo();
       
-        
-        
+        InterfaceGrafica iG = new InterfaceGrafica();
+        iG.iniciarInterface();
+
 
         
     }
