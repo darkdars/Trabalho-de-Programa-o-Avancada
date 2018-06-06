@@ -52,18 +52,6 @@ public class InterfaceTexto {
         while(i == 1){
            if(jogo.getEstado() instanceof AwaitBeginning)
               mostrarMenuInicial();
-         
-           /**
-           if(jogo.getEstado() instanceof AwaitLineCheck){
-              lineCheck();
-           }
-           if(jogo.getEstado() instanceof AwaitCardSelect){
-               cardSelect();
-           }
-           if(jogo.getEstado() instanceof AwaitEnemyMovementPhase){
-               enemyMovementPhase();
-           }
-           * **/
            
            if(jogo.getEstado() instanceof AwaitTopCard){
                topCardDrawn();
@@ -186,39 +174,7 @@ public class InterfaceTexto {
     System.out.print("\033[H\033[2J");  
     System.out.flush();  
 }  
-
-    private void lineCheck(){
-        System.out.println("Line Check Phase!\n");
-        
-        int i = jogo.lineCheck();
-        
-        if(i == 0){
-            System.out.println("Nao Existem Inimigos nas EnemyLines!\n");
-        }else{
-            System.out.println("Existem Inimigos nas EnemyLines!\n");
-            
-            System.out.println("Resultado do lancamento do dado: " + i);
-            
-            if(i == 1){
-                System.out.println("Inimigos Capturados!\n");
-            }else{
-                System.out.println("Soldados nao foram detetados!");
-            }
-            
-        }
-       
-        tecla();
-        clearScreen();
-        jogo.setEstado(jogo.getEstado().ResolveLine());
-    }
-
-    private void cardSelect() {
-        jogo.setEstado(jogo.getEstado().cardChoose());
-        System.out.println("Carta Selecionada!");
-        imprimirInformacaoCarta();
-        jogo.setEstado(jogo.getEstado().eventPhase());
-    }
-
+     
     private void winLose() {
         System.out.println("Win or Lose Check!");
         jogo.setEstado(jogo.getEstado().winLosePhase());
@@ -228,14 +184,6 @@ public class InterfaceTexto {
         System.out.println("\nInformacao da Carta!");
         System.out.println("\nEvento: " +jogo.getDadosJogo().getEventoAtual( ).getNome() + "\n\nAcontecimentos do evento:\n" + jogo.getDadosJogo().getEventoAtual().getInfo() + "\n\nAction Points: " + jogo.getDadosJogo().getEventoAtual().getActionP());
         tecla();
-    }
-
-    private void enemyMovementPhase() {
-        System.out.println("Enemy Movement Phase!\n");
-        jogo.setEstado(jogo.getEstado().enemyMovementPhase());
-        //Imprimir cartas e evento
-        jogo.setEstado(jogo.getEstado().avancaPhase());
-        
     }
 
     private void playerMovementPhase() {
@@ -440,6 +388,9 @@ public class InterfaceTexto {
     }
 
     private void endDayPhase() {
+        System.out.println("Win or Lose Check!");
+        jogo.setEstado(jogo.getEstado().winLosePhase());
+        
         jogo.setEstado(jogo.getEstado().endDayPhase());
     }
 
@@ -465,18 +416,18 @@ public class InterfaceTexto {
        
         tecla();
         clearScreen();
-       // jogo.setEstado(jogo.getEstado().ResolveLine());
+        jogo.setEstado(jogo.getEstado().ResolveLine());
        
-        //jogo.setEstado(jogo.getEstado().cardChoose());
+        jogo.setEstado(jogo.getEstado().cardChoose());
         System.out.println("Carta Selecionada!");
         imprimirInformacaoCarta();
-        //jogo.setEstado(jogo.getEstado().eventPhase());
+        jogo.setEstado(jogo.getEstado().eventPhase());
         
         
         System.out.println("Enemy Movement Phase!\n");
-        //jogo.setEstado(jogo.getEstado().enemyMovementPhase());
+        jogo.setEstado(jogo.getEstado().enemyMovementPhase());
         //Imprimir cartas e evento
-        //jogo.setEstado(jogo.getEstado().avancaPhase());
+        jogo.setEstado(jogo.getEstado().avancaPhase());
         
        
     }

@@ -76,7 +76,7 @@ public class AwaitEndDayPhase extends EstadoAdapter{
             return new AwaitEnd(dadosJogo);
         }
         
-        return new AwaitEndDayPhase(dadosJogo);
+        return this;
     }
     
     @Override
