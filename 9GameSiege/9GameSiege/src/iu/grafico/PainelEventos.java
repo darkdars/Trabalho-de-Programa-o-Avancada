@@ -25,7 +25,7 @@ class PainelEventos extends JPanel implements Observer{
          super();
         
         this.jogo = jogo;
-
+/**
         jogo.getFase().addObserver(this);
 
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -34,7 +34,7 @@ class PainelEventos extends JPanel implements Observer{
 
         this.add(restantes);
         this.add(new Evento(jogo), JPanel.CENTER_ALIGNMENT);
-
+**/
         this.setPreferredSize(new Dimension(200 + 10, 300 + 10));
 
     }
