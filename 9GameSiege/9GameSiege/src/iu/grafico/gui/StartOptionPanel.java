@@ -6,11 +6,15 @@
 package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
+import java.awt.Component;
 import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import logicaJogo.estados.AwaitBeginning;
 
 /**
  *
@@ -34,11 +38,23 @@ public class StartOptionPanel extends JPanel implements Observer{
         game=g;
         game.addObserver(this);
 
-        setupComponents();
+        setupComponentes();
         setupLayout();
         
-        setVisible(game.getState() instanceof AwaitBeginning);
+        setVisible(game.getEstado() instanceof AwaitBeginning);
     }
+     
+     private void setupLayout()
+    {
+      
+         validate();
+        
+    }
+     
+     private void setupComponentes(){
+      
+     }
+     
      
      
     @Override
