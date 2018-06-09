@@ -26,5 +26,7 @@ public class TrebuchetAttack extends Evento{
             dadosJogo.getStatusCard().updateMuralha(-1);
         else if(dadosJogo.getEnemyTracks().getTrincheiras() == 1 && dadosJogo.rollDiceReturn() > 4)
             dadosJogo.getStatusCard().updateMuralha(-1);
+        
+        
     }
 }
