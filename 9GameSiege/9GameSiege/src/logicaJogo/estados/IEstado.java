@@ -5,6 +5,8 @@
  */
 package logicaJogo.estados;
 
+import java.util.Observer;
+
 /**
  *
  * @author jhssi
@@ -33,4 +35,5 @@ public interface IEstado {
         /***** AwaitEnd *****/ 
         IEstado end();
        
+        void addObserver(Observer o);
 }

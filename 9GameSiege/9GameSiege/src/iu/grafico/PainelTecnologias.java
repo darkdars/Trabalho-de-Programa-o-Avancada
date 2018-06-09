@@ -24,7 +24,7 @@ public class PainelTecnologias extends JTabbedPane implements Observer
 
         this.jogo = jogo;
 
-       
+        jogo.getEstado().addObserver(this);
 
         
     }
