@@ -60,9 +60,6 @@ public class InterfaceTexto {
            if(jogo.getEstado() instanceof AwaitPlayerAction){
                playerMovementPhase();
            }
-          // if(jogo.getEstado() instanceof AwaitWinLosePhase){
-            //   winLose();
-           //}
            
            if(jogo.getEstado() instanceof AwaitEndDayPhase){
                endDayPhase();
