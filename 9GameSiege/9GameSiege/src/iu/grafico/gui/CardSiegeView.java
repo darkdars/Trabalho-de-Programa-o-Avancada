@@ -12,13 +12,19 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
+import logicaJogo.Ficheiros;
+import logicaJogo.Jogo;
 
 /**
  *
@@ -113,7 +119,8 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+            System.exit(0);
         }
     
         }
@@ -122,7 +129,21 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            JFileChooser fc = new JFileChooser("./data");
+            int returnVal = fc.showOpenDialog(CardSiegeView.this);
+            
+            if(returnVal == JFileChooser.APPROVE_OPTION)
+            {
+                File file = fc.getSelectedFile();
+                
+                try{
+                    game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                }catch(IOException | ClassNotFoundException ex){
+                    JOptionPane.showMessageDialog(CardSiegeView.this,"Operacao Falhou \r\n\r\n" + e);
+                }
+            } else{
+                System.out.println("Operacao cancelada");
+            }
         }
     
         }
@@ -131,7 +152,21 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            JFileChooser fc = new JFileChooser("./data");
+            int returnVal = fc.showOpenDialog(CardSiegeView.this);
+            
+            if(returnVal == JFileChooser.APPROVE_OPTION)
+            {
+                File file = fc.getSelectedFile();
+                
+                try{
+                    game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                }catch(IOException | ClassNotFoundException ex){
+                    JOptionPane.showMessageDialog(CardSiegeView.this,"Operação falhou \r\n\r\n" + e);
+                }
+            } else{
+                System.out.println("Operação Falhou");
+            }
         }
     
         }
@@ -140,7 +175,8 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+             System.exit(0);
         }
     
         }

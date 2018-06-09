@@ -25,4 +25,11 @@ public class ObservableGame extends Observable{
         return jogo.getEstado();
     }
     
+       public void setGame(Jogo jogo)
+    {
+        this.jogo = jogo;
+        
+        setChanged();
+        notifyObservers();
+    }
 }
