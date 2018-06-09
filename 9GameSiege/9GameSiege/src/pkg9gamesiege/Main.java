@@ -5,7 +5,8 @@
  */
 package pkg9gamesiege;
 
-import iu.grafico.InterfaceGrafica;
+import iu.grafico.*;
+import iu.grafico.gui.CardSiegeView;
 import iu.texto.InterfaceTexto;
 
 
@@ -24,10 +25,10 @@ public class Main {
         //InterfaceTexto iT = new InterfaceTexto();
         //iT.runJogo();
       
-        InterfaceGrafica iG = new InterfaceGrafica();
-        iG.iniciarInterface();
+        //InterfaceGrafica iG = new InterfaceGrafica();
+        //iG.iniciarInterface();
 
-
+        CardSiegeView GUI = new CardSiegeView(new ObservableGame());
         
     }
     

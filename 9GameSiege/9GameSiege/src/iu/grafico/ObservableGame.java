@@ -5,16 +5,24 @@
  */
 package iu.grafico;
 
-import java.awt.Component;
+import java.util.Observable;
 import logicaJogo.Jogo;
+import logicaJogo.estados.IEstado;
 
 /**
  *
  * @author jhssi
  */
-public class PainelRecursos extends Component {
-
-    public PainelRecursos(Jogo jogo) {
+public class ObservableGame extends Observable{
+    Jogo jogo;
+    
+    public ObservableGame(){
+        jogo = new Jogo();
+    }
+    
+    public IEstado getEstado()
+    {
+        return jogo.getEstado();
     }
     
 }
