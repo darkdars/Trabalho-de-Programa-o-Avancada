@@ -45,15 +45,14 @@ public class CardSiegeView extends JFrame implements Observer{
        
         addComponents();
         menu();
-        
-       
     }
     
     public void startInterface(){
-       game.addObserver(this);
-       setVisible(true);
+       
        this.setSize(700,500);
        this.setMinimumSize(new Dimension(650, 450));
+       game.addObserver(this);
+       setVisible(true);
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        validate();
     }
@@ -61,7 +60,7 @@ public class CardSiegeView extends JFrame implements Observer{
     
       private void addComponents()
     {
-        Container cp=getContentPane();
+        Container cp = getContentPane();
         
         cp.setLayout(new BorderLayout());
         cp.add(panel,BorderLayout.CENTER);
