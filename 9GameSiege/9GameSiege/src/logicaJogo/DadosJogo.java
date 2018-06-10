@@ -118,6 +118,7 @@ public class DadosJogo {
     }
 
     public void setDia(int dia) {
+        System.out.println(this.dia);
         this.dia = dia;
     }
 

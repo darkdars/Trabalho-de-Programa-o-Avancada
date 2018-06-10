@@ -8,6 +8,7 @@ package logicaJogo.Cartas;
 import java.util.ArrayList;
 import logicaJogo.Cartas.Eventos.Evento;
 import java.util.List;
+import java.util.*;
 
 /**
  *

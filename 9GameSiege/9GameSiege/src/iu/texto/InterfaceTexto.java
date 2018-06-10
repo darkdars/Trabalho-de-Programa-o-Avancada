@@ -384,7 +384,7 @@ public class InterfaceTexto {
         return opcao;
     }
 
-    private void endDayPhase() {
+    private void endDayPhase() {//Passa Lodgo de um estado para o outro
         System.out.println("Win or Lose Check!");
         jogo.setEstado(jogo.getEstado().winLosePhase());
         

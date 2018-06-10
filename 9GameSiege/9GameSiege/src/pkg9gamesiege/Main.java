@@ -22,13 +22,13 @@ public class Main {
     
     public static void main(String[] args) {
         
-        //InterfaceTexto iT = new InterfaceTexto();
-        //iT.runJogo();
+        InterfaceTexto iT = new InterfaceTexto();
+        iT.runJogo();
       
         //InterfaceGrafica iG = new InterfaceGrafica();
         //iG.iniciarInterface();
 
-        CardSiegeView GUI = new CardSiegeView(new ObservableGame());
+        //CardSiegeView GUI = new CardSiegeView(new ObservableGame());
         
     }
     

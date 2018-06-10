@@ -101,9 +101,11 @@ public abstract class Evento {
     }
     
     public void prepare(DadosJogo dadosJogo){
+        String[] evento;
+        
         dadosJogo.setBonus();
-        for(int i = 0; i < enemy.size(); i++){
-            String[] evento = this.evento.get(i).split("-");
+        for(int i = 0; i < this.evento.size(); i++){
+            evento = this.evento.get(i).split("-");
             if(evento[0].equals("attack")){
                 if(evento[1].equals("circle")){
                     dadosJogo.setBonusEnemy(0, Integer.parseInt(this.valores.get(i)));

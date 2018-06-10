@@ -57,14 +57,14 @@ public class AwaitEndDayPhase extends EstadoAdapter{
         }
         
         // 3 passo
-            if(dadosJogo.getStatusCard().getTunel() == 4){
-                //meter da enemy line para o castelo
-                dadosJogo.getStatusCard().setTunel(1);
-                dadosJogo.getStatusCard().setMantimentosRoubados(0);
-                dadosJogo.getStatusCard().setMoral(dadosJogo.getStatusCard().getMoral() - 1);
-            }
-            
-            dadosJogo.setDia(dadosJogo.getDia() + 1);
+        if(dadosJogo.getStatusCard().getTunel() == 4){
+            //meter da enemy line para o castelo
+            dadosJogo.getStatusCard().setTunel(1);
+            dadosJogo.getStatusCard().setMantimentosRoubados(0);
+            dadosJogo.getStatusCard().setMoral(dadosJogo.getStatusCard().getMoral() - 1);
+        }
+
+        dadosJogo.setDia(dadosJogo.getDia() + 1);
         return new AwaitTopCard(dadosJogo);
     }
     
