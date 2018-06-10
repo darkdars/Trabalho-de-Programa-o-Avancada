@@ -45,7 +45,7 @@ public class CardSiegeView extends JFrame implements Observer{
        
         addComponents();
         menu();
-       
+        
        
     }
     
