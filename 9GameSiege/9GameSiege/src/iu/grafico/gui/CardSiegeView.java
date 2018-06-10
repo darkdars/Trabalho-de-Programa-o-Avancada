@@ -35,18 +35,22 @@ public class CardSiegeView extends JFrame implements Observer{
      ObservableGame game;
      CardSiegeGamePanel panel;
     
-    public CardSiegeView(ObservableGame j)
+    public CardSiegeView(ObservableGame observableGame)
     {
         super("Card Siege");
         
-        game = j;
-        game.addObserver(this);
+        game = observableGame;
         
-       panel = new CardSiegeGamePanel(game);
+        panel = new CardSiegeGamePanel(game);
        
-       addComponents();
-       menu();
+        addComponents();
+        menu();
        
+       
+    }
+    
+    public void startInterface(){
+       game.addObserver(this);
        setVisible(true);
        this.setSize(700,500);
        this.setMinimumSize(new Dimension(650, 450));
