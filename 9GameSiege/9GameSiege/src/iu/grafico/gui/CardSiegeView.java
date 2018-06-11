@@ -37,24 +37,34 @@ public class CardSiegeView extends JFrame implements Observer{
     
     public CardSiegeView(ObservableGame observableGame)
     {
-        super("Card Siege");
+        super(" 9 Card Siege");
         
         game = observableGame;
+        game.addObserver(this);
+        
+        
+       // startInterface();
         
         panel = new CardSiegeGamePanel(game);
        
-        addComponents();
-        menu();
+       addComponents();
+       menu();
+       
+       setVisible(true);
+       this.setSize(1024,860);
+       this.setMinimumSize(new Dimension(650,450));
+       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       validate();
     }
     
     public void startInterface(){
-       
-       this.setSize(700,500);
-       this.setMinimumSize(new Dimension(650, 450));
        game.addObserver(this);
        setVisible(true);
+       this.setSize(700,500);
+       this.setMinimumSize(new Dimension(650, 450));
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        validate();
+        
     }
     
     
@@ -188,7 +198,7 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             JOptionPane.showMessageDialog(CardSiegeView.this,"Carregue nas Opções disponiveis! Tente defender o castelo durante 3 dias e ganhe!","Ajuda",JOptionPane.PLAIN_MESSAGE);
         }
     
         }
@@ -197,7 +207,7 @@ public class CardSiegeView extends JFrame implements Observer{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             JOptionPane.showMessageDialog(CardSiegeView.this,"9 Card Siege GameBoard","Acerca",JOptionPane.PLAIN_MESSAGE);
         }
     
         }
@@ -205,7 +215,7 @@ public class CardSiegeView extends JFrame implements Observer{
        
     @Override
     public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        repaint();
     }
     
 }

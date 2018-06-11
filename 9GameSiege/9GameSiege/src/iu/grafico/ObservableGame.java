@@ -14,11 +14,22 @@ import logicaJogo.estados.IEstado;
  * @author jhssi
  */
 public class ObservableGame extends Observable{
+
     Jogo jogo;
+    
     
     public ObservableGame(){
         jogo = new Jogo();
     }
+    
+    public Jogo getJogo() {
+        return jogo;
+    }
+
+    public void setJogo(Jogo jogo) {
+        this.jogo = jogo;
+    }
+    
     
     public IEstado getEstado()
     {
@@ -32,4 +43,14 @@ public class ObservableGame extends Observable{
         setChanged();
         notifyObservers();
     }
+       
+       public void ResolveStart()
+    {
+        jogo.CheckStart();
+       
+        
+        setChanged();
+        notifyObservers();
+    }
+       
 }

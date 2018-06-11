@@ -28,8 +28,7 @@ public class Main {
         //InterfaceGrafica iG = new InterfaceGrafica();
         //iG.iniciarInterface();
 
-        CardSiegeView gui = new CardSiegeView(new ObservableGame());
-        gui.startInterface();
+        CardSiegeView GUI = new CardSiegeView(new ObservableGame());
         
     }
     

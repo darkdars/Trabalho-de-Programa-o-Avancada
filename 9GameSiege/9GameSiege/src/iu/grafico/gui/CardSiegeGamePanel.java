@@ -18,6 +18,10 @@ import javax.swing.JPanel;
 public class CardSiegeGamePanel extends JPanel {
     
      ObservableGame game;
+     StartOptionPanel optionPanel;
+     EnemyTracksPanel enemyTracksPanel;
+     StatusCardPanel statusCardPanel;
+     
      
       public CardSiegeGamePanel(ObservableGame game)
     {
@@ -31,15 +35,30 @@ public class CardSiegeGamePanel extends JPanel {
       
       private void setupComponents()
     {
+        optionPanel = new StartOptionPanel(game);
+        
+        optionPanel.setPreferredSize(new Dimension(450,0));
+        
+        enemyTracksPanel = new EnemyTracksPanel(game);
+        
+        statusCardPanel = new StatusCardPanel(game);
+        
         
     }
     
     private void setupLayout()
     {
+       JPanel pCenter, pSouth, pWest, pEast;
+       
+       setLayout(new BorderLayout());
+       
+       pEast = new JPanel();
+       pEast.setLayout(new BorderLayout());
+       pEast.add(optionPanel,BorderLayout.EAST);
        
         
         validate();
-       
+   
     }
 
 }
