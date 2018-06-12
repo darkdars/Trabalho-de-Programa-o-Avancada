@@ -7,6 +7,7 @@ package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
 import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -58,10 +59,11 @@ public class StartOptionPanel extends JPanel implements Observer{
      
      private void setupLayout()
     {
-        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-        iniciar.setAlignmentX(Component.CENTER_ALIGNMENT);
-        acerca.setAlignmentX(Component.CENTER_ALIGNMENT);
-        sair.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+            setLayout(new FlowLayout());
+        //iniciar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //acerca.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //sair.setAlignmentX(Component.CENTER_ALIGNMENT);
         
          add(Box.createHorizontalBox());
         add(iniciar);
