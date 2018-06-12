@@ -54,6 +54,7 @@ public class StartOptionPanel extends JPanel implements Observer{
         
         
         setVisible(game.getEstado() instanceof AwaitBeginning);
+        
 
     }
      
@@ -65,7 +66,7 @@ public class StartOptionPanel extends JPanel implements Observer{
         //acerca.setAlignmentX(Component.CENTER_ALIGNMENT);
         //sair.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-         add(Box.createHorizontalBox());
+        add(Box.createHorizontalBox());
         add(iniciar);
         
         add(Box.createVerticalStrut(10));
@@ -122,7 +123,7 @@ public class StartOptionPanel extends JPanel implements Observer{
             
         }
         g.drawImage(home,0,0,getWidth()-1,getHeight()-1,null);
-        }
+    }
      
      
     @Override
