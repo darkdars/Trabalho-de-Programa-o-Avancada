@@ -36,7 +36,7 @@ public class ObservableGame extends Observable{
         return jogo.getEstado();
     }
     
-       public void setGame(Jogo jogo)
+    public void setGame(Jogo jogo)
     {
         this.jogo = jogo;
         
@@ -44,7 +44,7 @@ public class ObservableGame extends Observable{
         notifyObservers();
     }
        
-       public void ResolveStart()
+    public void ResolveStart()
     {
         jogo.CheckStart();
        
