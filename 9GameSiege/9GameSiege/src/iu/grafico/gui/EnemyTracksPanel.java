@@ -28,20 +28,28 @@ public class EnemyTracksPanel extends JPanel implements Observer{
 
     ObservableGame game;
     String imageFiles[] ={"images/enemyTracks.png","images/piaoVermelho.png"};
-    Image imagem[]= new Image[imageFiles.length];
+    Image[] imagem= new Image[imageFiles.length];
     boolean loaded=false;
     
     EnemyTracksPanel(ObservableGame g) {
         game = g;
         game.addObserver(this);
-        
+        int j = 0;
+        for(String fileName:imageFiles){
+               try {
+                   System.out.println(fileName);
+                imagem[j] = ImageIO.read(Resources.getResourceFile(fileName));
+                j++;
+               } catch (IOException ex) {
+           }
+        }    
         setVisible(game.getEstado() instanceof AwaitTopCard);
         
     }
     
     Image getImagem(ObservableGame game,int i)
     {
-
+/*
        if(!loaded){
            int j=0;
            loaded=true;
@@ -50,10 +58,10 @@ public class EnemyTracksPanel extends JPanel implements Observer{
                 imagem[j] = ImageIO.read(Resources.getResourceFile(fileName));
                 j++;
                } catch (IOException ex) {
-            }
+           }
            }
        }
-       
+       */
        return imagem[i];
     }
     
