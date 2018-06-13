@@ -25,7 +25,7 @@ import logicaJogo.estados.AwaitTopCard;
 public class StatusCardPanel extends JPanel implements Observer {
 
     ObservableGame game;
-    String imageFiles[] ={"images/statusCard.PNG","images/piaoVerde.png"};
+    String imageFiles[] ={"imagens/statusCard.PNG","imagens/piaoVerde.png","imagens/piaoPreto.png"};
     Image imagem[]= new Image[imageFiles.length];
     boolean loaded = false;
     
@@ -64,9 +64,7 @@ public class StatusCardPanel extends JPanel implements Observer {
         int width = getWidth();
         int width_image =750;
         int height_image = 1050;
-        int shift_area = 30;
-        int shift_y = 40;
-        int j=0,k=0;
+       
         
         int x = (width_image*height)/height_image;
         super.paintComponent(g);

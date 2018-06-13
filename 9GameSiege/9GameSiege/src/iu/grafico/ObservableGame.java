@@ -53,4 +53,20 @@ public class ObservableGame extends Observable{
         notifyObservers();
     }
        
+    public int getEscadas(){
+        return jogo.getDadosJogo().getEnemyTracks().getEscada();
+    }
+    
+     public int getAriete(){
+        return jogo.getDadosJogo().getEnemyTracks().getAriete();
+    }
+     
+      public int getTorre(){
+        return jogo.getDadosJogo().getEnemyTracks().getTorre();
+    }
+      
+     public int getTrincheiras(){
+         return jogo.getDadosJogo().getEnemyTracks().getTrincheiras();
+     }
+    
 }

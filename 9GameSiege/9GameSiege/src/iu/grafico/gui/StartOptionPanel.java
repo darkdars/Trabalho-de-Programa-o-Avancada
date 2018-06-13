@@ -23,6 +23,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import logicaJogo.estados.AwaitBeginning;
 
@@ -86,7 +87,6 @@ public class StartOptionPanel extends JPanel implements Observer{
          iniciar.addActionListener(new ActionListener(){
              @Override
             public void actionPerformed(ActionEvent ev) {
-                
                game.ResolveStart();
                
             }
@@ -96,8 +96,10 @@ public class StartOptionPanel extends JPanel implements Observer{
          acerca.addActionListener(new ActionListener(){
              @Override
             public void actionPerformed(ActionEvent ev) {
-                
-               //game.ResolveInicio();
+                System.out.println("Acerca: "
+                        + "Trabalho Realizado por Hugo Silva e Carlos Santanta!");
+               
+                //Arranjar forma de dar popup e aparecer a informação de cima
             }
          });
          
