@@ -83,6 +83,8 @@ public class StatusCardPanel extends JPanel implements Observer {
     @Override
     public void update(Observable o, Object arg) {
        setVisible(game.getEstado() instanceof AwaitTopCard || game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitEndDayPhase);
+       //revalidate();
+       repaint();
     }
 
   

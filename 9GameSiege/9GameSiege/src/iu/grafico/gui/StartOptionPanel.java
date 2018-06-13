@@ -88,6 +88,7 @@ public class StartOptionPanel extends JPanel implements Observer{
             public void actionPerformed(ActionEvent ev) {
                 
                game.ResolveStart();
+               
             }
          });
          

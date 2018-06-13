@@ -40,8 +40,10 @@ public class CardSiegeGamePanel extends JPanel {
         optionPanel.setPreferredSize(new Dimension(450,0));
         
         enemyTracksPanel = new EnemyTracksPanel(game);
+        //enemyTracksPanel.setPreferredSize(new Dimension(450,0));
         
         statusCardPanel = new StatusCardPanel(game);
+        //statusCardPanel.setPreferredSize(new Dimension(450,0));
         
         
     }
@@ -54,7 +56,10 @@ public class CardSiegeGamePanel extends JPanel {
        
        /*pEast = new JPanel();
        pEast.setLayout(new BorderLayout());
-       pEast.*/add(optionPanel,BorderLayout.CENTER);
+       pEast.*/
+       add(enemyTracksPanel,BorderLayout.EAST);
+       add(statusCardPanel,BorderLayout.CENTER);
+       add(optionPanel,BorderLayout.CENTER);
        
         
         validate();

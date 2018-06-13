@@ -47,8 +47,9 @@ public class EnemyTracksPanel extends JPanel implements Observer{
            loaded=true;
            for(String fileName:imageFiles){
                try {
-            imagem[j++] = ImageIO.read(Resources.getResourceFile(fileName));
-            } catch (IOException ex) {
+                imagem[j] = ImageIO.read(Resources.getResourceFile(fileName));
+                j++;
+               } catch (IOException ex) {
             }
            }
        }
@@ -73,6 +74,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
     
         g.drawImage(getImagem(game,0),0,0,x,(getHeight())-1,null);
         g.drawRect(0,0,x,(getHeight())-1);
+        
     
     //INCOMPLETO
     }

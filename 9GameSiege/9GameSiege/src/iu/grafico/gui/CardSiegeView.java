@@ -45,7 +45,7 @@ public class CardSiegeView extends JFrame implements Observer{
         
        // startInterface();
         
-        panel = new CardSiegeGamePanel(game);
+       panel = new CardSiegeGamePanel(game);
        
        addComponents();
        menu();
