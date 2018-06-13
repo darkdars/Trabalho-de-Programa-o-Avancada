@@ -62,19 +62,16 @@ public class EnemyTracksPanel extends JPanel implements Observer{
      @Override
     public void paintComponent(Graphics g)
     {
-        int height = getHeight();
-        int width = getWidth();
         int width_image =750;
         int height_image = 1050;
         int j=0;
-        
-        int x = (width_image*height)/height_image;
+       
         
         super.paintComponent(g);
  
         
-        g.drawImage(getImagem(game,0),0,0,241,336,null);
-        g.drawRect(0,0,241,336);
+        g.drawImage(getImagem(game,0),0,250,241,336,null);
+        g.drawRect(0,250,241,336);
         
     
         //INCOMPLETO

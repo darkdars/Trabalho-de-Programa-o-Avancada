@@ -7,7 +7,9 @@ package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 
@@ -40,33 +42,26 @@ public class CardSiegeGamePanel extends JPanel {
         optionPanel.setPreferredSize(new Dimension(450,0));
         
         enemyTracksPanel = new EnemyTracksPanel(game);
-        //enemyTracksPanel.setPreferredSize(new Dimension(450,0));
+        enemyTracksPanel.setPreferredSize(new Dimension(450,0));
         
         statusCardPanel = new StatusCardPanel(game);
-        //statusCardPanel.setPreferredSize(new Dimension(450,0));
+        statusCardPanel.setPreferredSize(new Dimension(450,0));
         
         
     }
     
     private void setupLayout()
     {
-       JPanel pCenter, pSouth, pWest, pEast;
-       
-       setLayout(new BorderLayout());
-       
-       /*pEast = new JPanel();
-       pEast.setLayout(new BorderLayout());
-       pEast.*/
-
-      pCenter = new JPanel();
-      pCenter.setLayout(new BorderLayout());
-     add(optionPanel,BorderLayout.CENTER);
+      
+      
+      setLayout(new BorderLayout());
      
-      pEast = new JPanel();
-       pEast.setLayout(new GridLayout(2,1,0,0));
-     add(enemyTracksPanel,BorderLayout.WEST);
+      add(optionPanel,BorderLayout.CENTER);
      
-    validate();
+      add(enemyTracksPanel,BorderLayout.WEST);
+      add(statusCardPanel,BorderLayout.EAST);
+        
+       validate();
    
     }
 

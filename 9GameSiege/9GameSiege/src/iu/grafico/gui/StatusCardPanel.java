@@ -60,18 +60,16 @@ public class StatusCardPanel extends JPanel implements Observer {
      @Override
     public void paintComponent(Graphics g)
     {
-        int height = getHeight();
-        int width = getWidth();
-        int width_image =750;
-        int height_image = 1050;
+
+        int width_image =241;
+        int height_image = 336;
        
-        
-        int x = (width_image*height)/height_image;
         super.paintComponent(g);
+            
+        g.drawImage(getImagem(game,0),200,250,width_image,height_image,null);
+        g.drawRect(200,250,width_image,height_image);
         
-      
-        g.drawImage(getImagem(game,0),0,0,x,(getHeight()-1),null);
-        g.drawRect(0,0,x,(getHeight())-1);
+        //resto das opcoes
     }
 
      private void setupLayout() {
