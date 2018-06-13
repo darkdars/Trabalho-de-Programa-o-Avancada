@@ -35,21 +35,13 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         game = g;
         game.addObserver(this);
         int j = 0;
-        for(String fileName:imageFiles){
-               try {
-                   System.out.println(fileName);
-                imagem[j] = ImageIO.read(Resources.getResourceFile(fileName));
-                j++;
-               } catch (IOException ex) {
-           }
-        }    
-        setVisible(game.getEstado() instanceof AwaitTopCard);
-        
+    
+        setVisible(game.getEstado() instanceof AwaitTopCard);    
     }
     
     Image getImagem(ObservableGame game,int i)
     {
-/*
+
        if(!loaded){
            int j=0;
            loaded=true;
@@ -61,7 +53,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
            }
            }
        }
-       */
+       
        return imagem[i];
     }
     
@@ -85,6 +77,9 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         
     
     //INCOMPLETO
+    
+    //Desenhar casa por das váriaveis
+       
     }
     
     

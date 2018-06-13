@@ -57,9 +57,9 @@ public class CardSiegeGamePanel extends JPanel {
        /*pEast = new JPanel();
        pEast.setLayout(new BorderLayout());
        pEast.*/
-       add(enemyTracksPanel,BorderLayout.EAST);
-       add(statusCardPanel,BorderLayout.CENTER);
-       add(optionPanel,BorderLayout.CENTER);
+     add(enemyTracksPanel,BorderLayout.EAST);
+     add(statusCardPanel,BorderLayout.CENTER);
+     add(optionPanel,BorderLayout.CENTER);
        
         
         validate();
