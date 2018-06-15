@@ -70,6 +70,8 @@ public class StatusCardPanel extends JPanel implements Observer {
         g.drawRect(200,250,width_image,height_image);
         
         //resto das opcoes
+        
+        
     }
 
      private void setupLayout() {
