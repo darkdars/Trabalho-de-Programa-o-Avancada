@@ -31,14 +31,17 @@ import logicaJogo.estados.AwaitBeginning;
  */
 public class CardSiegeGamePanel extends JPanel implements Observer{
     
-     ObservableGame game;
-     StartOptionPanel optionPanel;
-     EnemyTracksPanel enemyTracksPanel;
-     StatusCardPanel statusCardPanel;
+     private ObservableGame game;
+     private StartOptionPanel optionPanel;
+     private EnemyTracksPanel enemyTracksPanel;
+     private StatusCardPanel statusCardPanel;
+     private GameLogo logo;
+     private CardSelected cSelected;
      private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
      private JPanel pStart, pMainButtons;
      private String imgName = "imagens/paginaInicial.png";
      private Image bg;
+     
      
       public CardSiegeGamePanel(ObservableGame game)
     {
@@ -64,7 +67,10 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         statusCardPanel = new StatusCardPanel(game);
         statusCardPanel.setPreferredSize(new Dimension(450,0));
         
+        logo = new GameLogo(game);
+        logo.setPreferredSize(new Dimension(50,200));
         
+        cSelected  = new CardSelected(game);
     }
     
     private void setupLayout()
@@ -82,17 +88,11 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
       setupWest();
       
      
-      //add(optionPanel,BorderLayout.CENTER);
-     
-      //add(enemyTracksPanel,BorderLayout.WEST);
-      //add(statusCardPanel,BorderLayout.EAST);
-      
-      
-       // pNorth.add(logo);
-        //pCenterLeft.add(cSelected);
+        pNorth.add(logo);
+        pCenterLeft.add(cSelected);
 
 
-       // pCenterRight.add(gbP, BorderLayout.NORTH);
+      // pCenterRight.add(gbP, BorderLayout.NORTH);
 
        // pSouth.add(cards);
 
@@ -127,6 +127,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
 
         } catch (IOException ex) {
            // Logger.getLogger(GameLogo.class.getName()).log(Level.SEVERE, null, ex);
+           //Corrigir isto
         }
 
     }
@@ -247,7 +248,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        setBackground(Color.blue);
     }
 
     

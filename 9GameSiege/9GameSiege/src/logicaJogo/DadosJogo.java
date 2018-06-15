@@ -80,6 +80,7 @@ public class DadosJogo {
         cartas.add(new Card(5, new VolleyArrows(), new Collapsed(), new RepairedTrebuchet()));
         cartas.add(new Card(6, new CoverDarkness(), new EnemyFatigue(), new Rally()));
         cartas.add(new Card(7, new DeterminedEnemy(), new IronShields(), new Faith()));
+        cartaSelecionada  = new Card(0, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1));
     }
     
     public void baralhaCartas(){
