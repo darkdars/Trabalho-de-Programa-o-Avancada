@@ -26,7 +26,7 @@ public class EnemyTracks {
         this.escada = 4;
         this.ariete = 4;
         this.torre = 4;
-        this.trincheiras = 1;
+        this.trincheiras = 3;
         this.vidaTorre = true;
     }
     

@@ -73,7 +73,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         g.drawImage(getImagem(game,0),0,250,241,336,null);
         g.drawRect(0,250,241,336);
         
-        g.drawImage(getImagem(game,1),119,255,40,40,null);
+        //g.drawImage(getImagem(game,2),179,537,40,40,null);
     
         //INCOMPLETO
         //Desenhar casa por das váriaveis
@@ -148,11 +148,16 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         
         switch(game.getTrincheiras()){
             case 3:
-               // g.drawImage(getImagem(game,2),0,20,40,40,null);
+               g.drawImage(getImagem(game,2),179,537,40,40,null);
+               g.drawRect(179,255,40,40);
                 break;
             case 2:
+               g.drawImage(getImagem(game,2),98,537,40,40,null);
+               g.drawRect(98,255,40,40);
                 break;
             case 1:
+              g.drawImage(getImagem(game,2),17,537,40,40,null);
+              g.drawRect(17,255,40,40);
                 break;
         }
         
