@@ -37,6 +37,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
      private StatusCardPanel statusCardPanel;
      private GameLogo logo;
      private CardSelected cSelected;
+     private GameButtonsPanel gameButtons;
      private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
      private JPanel pStart, pMainButtons;
      private String imgName = "imagens/paginaInicial.png";
@@ -71,6 +72,8 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         logo.setPreferredSize(new Dimension(50,200));
         
         cSelected  = new CardSelected(game);
+        
+        gameButtons = new GameButtonsPanel(game);
     }
     
     private void setupLayout()
@@ -92,7 +95,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         pCenterLeft.add(cSelected);
 
 
-      // pCenterRight.add(gbP, BorderLayout.NORTH);
+       pCenterRight.add(gameButtons, BorderLayout.NORTH);
 
        // pSouth.add(cards);
 
