@@ -74,8 +74,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         g.drawRect(0,250,241,336);
         
         //g.drawImage(getImagem(game,2),179,537,40,40,null);
-    
-        //INCOMPLETO
+
         //Desenhar casa por das váriaveis
         switch (game.getEscadas()) {
             case 4:

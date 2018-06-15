@@ -68,5 +68,25 @@ public class ObservableGame extends Observable{
      public int getTrincheiras(){
          return jogo.getDadosJogo().getEnemyTracks().getTrincheiras();
      }
+
+    public int getMuralha() {
+        return jogo.getDadosJogo().getStatusCard().getMuralha();
+    }
+
+    public int getMoral() {
+        return jogo.getDadosJogo().getStatusCard().getMoral();
+    }
+
+    public int getSupplies() {
+        return jogo.getDadosJogo().getStatusCard().getMantimentos();
+    }
+
+    public int getTunnel() {
+        return jogo.getDadosJogo().getStatusCard().getTunel();
+    }
+
+    public int getRaidSupplies() {
+        return jogo.getDadosJogo().getStatusCard().getMantimentosRoubados();
+    }
     
 }
