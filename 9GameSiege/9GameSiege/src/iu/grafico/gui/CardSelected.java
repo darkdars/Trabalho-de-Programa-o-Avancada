@@ -124,7 +124,7 @@ public class CardSelected extends JPanel implements Observer{
         Image img = getCardImage();
 
         if(img != null)
-            g.drawImage(img,0,0,245,337,null);
+            g.drawImage(img,0,0,this.getWidth(),this.getHeight(),null);//g.drawImage(img,0,0,245,337,null);
 
     }
 

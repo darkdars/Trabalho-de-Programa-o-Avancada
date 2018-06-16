@@ -62,6 +62,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
      @Override
     public void paintComponent(Graphics g)
     {
+        /*
         int width_image =750;
         int height_image = 1050;
         int j=0;
@@ -72,6 +73,100 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         
         g.drawImage(getImagem(game,0),0,250,241,336,null);
         g.drawRect(0,250,241,336);
+        
+        //g.drawImage(getImagem(game,2),179,537,40,40,null);
+
+        //Desenhar casa por das váriaveis
+        switch (game.getEscadas()) {
+            case 4:
+             g.drawImage(getImagem(game,1),17,472,40,40,null);
+             g.drawRect(17,472,40,40);
+                break;
+            case 3:
+             g.drawImage(getImagem(game,1),17,417,40,40,null);
+             g.drawRect(17,417,40,40);
+                break;
+            case 2:
+             g.drawImage(getImagem(game,1),17,362,40,40,null);
+             g.drawRect(17,362,40,40);
+                break;
+            case 1:
+             g.drawImage(getImagem(game,1),17,307,40,40,null);
+             g.drawRect(17,307,40,40);
+                break;
+            case 0:
+             g.drawImage(getImagem(game,1),78,255,40,40,null);
+             g.drawRect(78,255,40,40);
+                break;
+        }
+        
+        switch (game.getAriete()) {
+            case 4:
+             g.drawImage(getImagem(game,1),98,472,40,40,null);
+             g.drawRect(98,472,40,40);
+                break;
+            case 3:
+             g.drawImage(getImagem(game,1),98,417,40,40,null);
+             g.drawRect(98,417,40,40);
+                break;
+            case 2:
+             g.drawImage(getImagem(game,1),98,362,40,40,null);
+             g.drawRect(98,362,40,40);
+                break;
+            case 1:
+             g.drawImage(getImagem(game,1),98,307,40,40,null);
+             g.drawRect(98,307,40,40);
+                break;
+            case 0:
+             g.drawImage(getImagem(game,1),98,255,40,40,null);
+             g.drawRect(98,255,40,40);
+                break;
+        }
+        
+        switch (game.getTorre()) {
+            case 4:
+             g.drawImage(getImagem(game,1),179,472,40,40,null);
+             g.drawRect(179,472,40,40);
+                break;
+            case 3:
+             g.drawImage(getImagem(game,1),179,417,40,40,null);
+             g.drawRect(179,417,40,40);
+                break;
+            case 2:
+             g.drawImage(getImagem(game,1),179,362,40,40,null);
+             g.drawRect(179,362,40,40);  
+                break;
+            case 1:
+             g.drawImage(getImagem(game,1),179,307,40,40,null);
+             g.drawRect(179,307,40,40);
+                break;
+            case 0:
+             g.drawImage(getImagem(game,1),119,255,40,40,null);
+             g.drawRect(119,255,40,40);
+                break;
+        }
+        
+        switch(game.getTrincheiras()){
+            case 3:
+               g.drawImage(getImagem(game,2),179,537,40,40,null);
+               g.drawRect(179,255,40,40);
+                break;
+            case 2:
+               g.drawImage(getImagem(game,2),98,537,40,40,null);
+               g.drawRect(98,255,40,40);
+                break;
+            case 1:
+              g.drawImage(getImagem(game,2),17,537,40,40,null);
+              g.drawRect(17,255,40,40);
+                break;
+        }
+*/
+       
+        
+        super.paintComponent(g);
+ 
+        
+        g.drawImage(getImagem(game,0),0,0,this.getWidth(),this.getHeight(),null);
         
         //g.drawImage(getImagem(game,2),179,537,40,40,null);
 

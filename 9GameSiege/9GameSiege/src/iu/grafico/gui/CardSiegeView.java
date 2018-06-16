@@ -51,8 +51,8 @@ public class CardSiegeView extends JFrame implements Observer{
        menu();
        
        setVisible(true);
-       this.setSize(1024,860);
-       this.setMinimumSize(new Dimension(650,450));
+       this.setSize(1024,600);
+       this.setMinimumSize(new Dimension(700,600));
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        validate();
     }
@@ -61,14 +61,14 @@ public class CardSiegeView extends JFrame implements Observer{
        game.addObserver(this);
        setVisible(true);
        this.setSize(700,500);
-       this.setMinimumSize(new Dimension(650, 450));
+       this.setMinimumSize(new Dimension(700, 500));
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        validate();
         
     }
     
     
-      private void addComponents()
+    private void addComponents()
     {
         Container cp = getContentPane();
         
@@ -76,65 +76,65 @@ public class CardSiegeView extends JFrame implements Observer{
         cp.add(panel,BorderLayout.CENTER);
     }
       
-      private void menu(){
-        
-        JMenuBar menuBar = new JMenuBar();
-        setJMenuBar(menuBar);
-        
-        JMenu gameMenu = new JMenu("Jogo");
-         
-        JMenuItem newObjJMI = new JMenuItem("Parar");
-        newObjJMI.setAccelerator(
-            KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
-        
-        JMenuItem readObjJMI = new JMenuItem("Carregar");
-        newObjJMI.setAccelerator(
-            KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
-        
-        JMenuItem saveObjJMI = new JMenuItem("Gravar");
-        newObjJMI.setAccelerator(
-            KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-        
-        JMenuItem exitObjJMI = new JMenuItem("Sair");
-        newObjJMI.setAccelerator(
-            KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
-        
-        gameMenu.add(newObjJMI);
-        gameMenu.add(readObjJMI);
-        gameMenu.add(saveObjJMI);
-        gameMenu.addSeparator();
-        
-        gameMenu.add(exitObjJMI);
-        menuBar.add(gameMenu);
-        
-        newObjJMI.addActionListener(new ObjMenuBarListener());
-        readObjJMI.addActionListener(new CarregarObjMenuBarListener());
-        saveObjJMI.addActionListener(new GravarObjMenuBarListener());
-        exitObjJMI.addActionListener(new SairListener());
-        
-        JMenu helpMenu = new JMenu("Opções");
-        
-        JMenuItem helpContentJMI = new JMenuItem("Ajuda");
-        helpContentJMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,ActionEvent.CTRL_MASK));
-        
-        JMenuItem aboutJMI = new JMenuItem("Acerca");
-        aboutJMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
-        
-        helpMenu.add(helpContentJMI);
-        helpMenu.add(aboutJMI);
-        menuBar.add(helpMenu);
-        
-        helpContentJMI.addActionListener(new AjudaListener());
-        aboutJMI.addActionListener(new AcercaListener());
-      }
+    private void menu(){
+
+      JMenuBar menuBar = new JMenuBar();
+      setJMenuBar(menuBar);
+
+      JMenu gameMenu = new JMenu("Jogo");
+
+      JMenuItem newObjJMI = new JMenuItem("Parar");
+      newObjJMI.setAccelerator(
+          KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
+
+      JMenuItem readObjJMI = new JMenuItem("Carregar");
+      newObjJMI.setAccelerator(
+          KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
+
+      JMenuItem saveObjJMI = new JMenuItem("Gravar");
+      newObjJMI.setAccelerator(
+          KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+
+      JMenuItem exitObjJMI = new JMenuItem("Sair");
+      newObjJMI.setAccelerator(
+          KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
+
+      gameMenu.add(newObjJMI);
+      gameMenu.add(readObjJMI);
+      gameMenu.add(saveObjJMI);
+      gameMenu.addSeparator();
+
+      gameMenu.add(exitObjJMI);
+      menuBar.add(gameMenu);
+
+      newObjJMI.addActionListener(new ObjMenuBarListener());
+      readObjJMI.addActionListener(new CarregarObjMenuBarListener());
+      saveObjJMI.addActionListener(new GravarObjMenuBarListener());
+      exitObjJMI.addActionListener(new SairListener());
+
+      JMenu helpMenu = new JMenu("Opções");
+
+      JMenuItem helpContentJMI = new JMenuItem("Ajuda");
+      helpContentJMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,ActionEvent.CTRL_MASK));
+
+      JMenuItem aboutJMI = new JMenuItem("Acerca");
+      aboutJMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
+
+      helpMenu.add(helpContentJMI);
+      helpMenu.add(aboutJMI);
+      menuBar.add(helpMenu);
+
+      helpContentJMI.addActionListener(new AjudaListener());
+      aboutJMI.addActionListener(new AcercaListener());
+    }
 
         class ObjMenuBarListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
-            System.exit(0);
-        }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+                System.exit(0);
+            }
     
         }
       
