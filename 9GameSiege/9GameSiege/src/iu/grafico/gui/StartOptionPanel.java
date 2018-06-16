@@ -67,14 +67,15 @@ public class StartOptionPanel extends JPanel implements Observer{
         acerca.setAlignmentX(Component.CENTER_ALIGNMENT);
         sair.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        add(Box.createVerticalStrut(600));
+        add(Box.createVerticalGlue());
         add(iniciar);
         
-        add(Box.createVerticalStrut(40));
+        add(Box.createVerticalStrut(20));
         add(acerca);
         
-        add(Box.createVerticalStrut(40));
+        add(Box.createVerticalStrut(20));
         add(sair);
+        add(Box.createVerticalStrut(10));
        
        
    
