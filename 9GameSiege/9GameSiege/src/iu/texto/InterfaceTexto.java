@@ -387,7 +387,7 @@ public class InterfaceTexto {
     private void endDayPhase() {//Passa Lodgo de um estado para o outro
         System.out.println("Win or Lose Check!");
         jogo.setEstado(jogo.getEstado().winLosePhase());
-        
+        if(jogo.getDadosJogo().getListaCards()>6)
         jogo.setEstado(jogo.getEstado().endDayPhase());
     }
 
