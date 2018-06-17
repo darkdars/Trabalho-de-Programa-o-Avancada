@@ -63,10 +63,10 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         optionPanel.setPreferredSize(new Dimension(450,0));
         
         enemyTracksPanel = new EnemyTracksPanel(game);
-        enemyTracksPanel.setPreferredSize(new Dimension(300,0));
+        enemyTracksPanel.setPreferredSize(new Dimension(450,0));
         
         statusCardPanel = new StatusCardPanel(game);
-        statusCardPanel.setPreferredSize(new Dimension(300,0));
+        statusCardPanel.setPreferredSize(new Dimension(450,0));
         
         logo = new GameLogo(game);
         logo.setPreferredSize(new Dimension(50,200));
@@ -90,7 +90,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
       setupEast();
       setupWest();
       
-     /*
+     
         pNorth.add(logo);
         pCenterLeft.add(cSelected);
 
@@ -111,17 +111,8 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
 
         add(pEast, BorderLayout.EAST);
         add(pWest, BorderLayout.WEST);
-*/
+
         //add(mainPanel, BorderLayout.CENTER);
-
-        add(logo, BorderLayout.PAGE_START);
-        add(pCenter, BorderLayout.CENTER);
-        pCenter.add(cSelected, BorderLayout.CENTER);
-        //add(gameButtons, BorderLayout.PAGE_END);
-
-        add(enemyTracksPanel, BorderLayout.LINE_END);
-        add(statusCardPanel, BorderLayout.LINE_START);
-        
        validate();
    
     
@@ -154,12 +145,12 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         pCenter = new JPanel();
         pCenter.setOpaque(false);
         pCenter.setLayout(new BorderLayout());
-        //pCenter.setBorder(new EmptyBorder(0, 0, 0, 100));
+        pCenter.setBorder(new EmptyBorder(0, 0, 0, 100));
 
 
         pCenterLeft = new JPanel();
         pCenterLeft.setLayout(new BorderLayout());
-        //pCenterLeft.setBorder(new EmptyBorder(0, 0, 20, 0));
+        pCenterLeft.setBorder(new EmptyBorder(0, 0, 20, 0));
         pCenterLeft.setOpaque(false);
 
         pCenterRight = new JPanel();
@@ -168,7 +159,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
 
 
         pCenter.add(pCenterLeft, BorderLayout.WEST);
-        //pCenter.add(pCenterRight, BorderLayout.EAST);
+        pCenter.add(pCenterRight, BorderLayout.EAST);
     }
 
     private void setupSouth() {

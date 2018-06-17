@@ -65,8 +65,7 @@ public class GameLogo extends JPanel implements Observer{
     {
         super.paintComponent(g);
 
-        //g.drawImage(logo,550,0,680-1,140-1,null);
-        g.drawImage(logo,0,0,this.getWidth(),this.getHeight(),null);
+        g.drawImage(logo,550,0,680-1,140-1,null);
         g.setColor(Color.black);
     }
 

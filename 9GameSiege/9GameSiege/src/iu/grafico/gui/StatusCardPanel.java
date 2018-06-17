@@ -61,7 +61,7 @@ public class StatusCardPanel extends JPanel implements Observer {
      @Override
     public void paintComponent(Graphics g)
     {
-        /*
+        
         int width_image =241;
         int height_image = 336;
        
@@ -168,113 +168,7 @@ public class StatusCardPanel extends JPanel implements Observer {
                 g.drawImage(getImagem(game,3),375,541,40,40,null);
                 g.drawRect(375,541,40,40);
                 break;
-        }
-        */
-       
-        super.paintComponent(g);
-            
-        g.drawImage(getImagem(game,0),0,0,this.getWidth(),this.getHeight(),null);
-        //g.drawRect(0,0,this.getWidth(),this.getHeight());
-       
-
-        switch(game.getMuralha()){
-            case 4:
-                g.drawImage(getImagem(game,1),213,261,40,40,null);
-                //g.drawRect(213,261,40,40);
-                break;
-            case 3:
-                g.drawImage(getImagem(game,1),213,318,40,40,null);
-                //g.drawRect(213,318,40,40);
-                break;
-            case 2:
-                g.drawImage(getImagem(game,1),213,372,40,40,null);
-                //g.drawRect(213,372,40,40);
-                break;
-            case 1:
-                g.drawImage(getImagem(game,1),213,426,40,40,null);
-                //g.drawRect(213,426,40,40);
-                break;
-            case 0:
-                g.drawImage(getImagem(game,1),290,484,40,40,null);
-                //g.drawRect(290,484,40,40);
-                break;
-        }
-        
-        switch(game.getMoral()){
-            case 4:
-              g.drawImage(getImagem(game,1),290,261,40,40,null);
-              //g.drawRect(290,261,40,40);
-                break;
-            case 3:
-               g.drawImage(getImagem(game,1),290,317,40,40,null);
-               //g.drawRect(290,317,40,40);
-                break;
-            case 2:
-                g.drawImage(getImagem(game,1),290,372,40,40,null);
-                //g.drawRect(290,372,40,40);
-                break;
-            case 1:
-                g.drawImage(getImagem(game,1),290,426,40,40,null);
-                //g.drawRect(290,426,40,40);
-                break;
-            case 0:
-                g.drawImage(getImagem(game,1),290,484,40,40,null);
-                //g.drawRect(290,484,40,40);
-                break;
-        }
-        
-        switch(game.getSupplies()){
-            case 4:
-                g.drawImage(getImagem(game,1),368,261,40,40,null);
-                //g.drawRect(368,261,40,40);
-                break;
-            case 3:
-                g.drawImage(getImagem(game,1),368,317,40,40,null);
-               // g.drawRect(368,317,40,40);
-                break;
-            case 2:
-                g.drawImage(getImagem(game,1),368,372,40,40,null);
-                //g.drawRect(368,372,40,40);
-                break;
-            case 1:
-                g.drawImage(getImagem(game,1),368,426,40,40,null);
-               // g.drawRect(368,426,40,40);
-                break;
-            case 0:
-                g.drawImage(getImagem(game,1),290,484,40,40,null);
-                //g.drawRect(290,484,40,40);
-                break;
-        }
-        
-        switch(game.getTunnel()){
-            case 4:
-                g.drawImage(getImagem(game,2),320,540,40,40,null);
-                //g.drawRect(320,540,40,40);
-                break;
-            case 3:
-                g.drawImage(getImagem(game,2),280,540,40,40,null);
-                //g.drawRect(280,540,40,40);
-                break;
-            case 2:
-                g.drawImage(getImagem(game,2),244,540,40,40,null);
-               // g.drawRect(244,540,40,40);
-                break;
-            case 1:
-                g.drawImage(getImagem(game,2),204,540,40,40,null);
-               // g.drawRect(204,540,40,40);
-                break;
-        }
-        
-        switch(game.getRaidSupplies()){
-            case 2:
-                g.drawImage(getImagem(game,3),375,501,40,40,null);
-               // g.drawRect(375,501,40,40);
-                break;
-            case 1:
-                g.drawImage(getImagem(game,3),375,541,40,40,null);
-               // g.drawRect(375,541,40,40);
-                break;
-        }
+        }        
     }
 
      private void setupLayout() {
