@@ -52,6 +52,7 @@ public class CardSiegeView extends JFrame implements Observer{
        
        setVisible(true);
        this.setSize(1024,860);
+       this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
        this.setMinimumSize(new Dimension(700,600));
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        validate();

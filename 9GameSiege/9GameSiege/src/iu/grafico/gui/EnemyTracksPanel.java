@@ -6,6 +6,7 @@
 package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.IOException;
@@ -36,6 +37,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
         game = g;
         game.addObserver(this);
         int j = 0;
+        setBackground(Color.darkGray);
     
         setVisible(game.getEstado() instanceof AwaitTopCard);    
     }

@@ -47,6 +47,7 @@ public class GameLogo extends JPanel implements Observer{
 
         setPreferredSize(new Dimension(700,140));
         setLayout(new BorderLayout());
+        setBackground(Color.darkGray);
         setVisible(game.getEstado() instanceof AwaitTopCard);
     }
 

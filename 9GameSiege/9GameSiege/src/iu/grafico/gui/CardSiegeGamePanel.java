@@ -21,6 +21,8 @@ import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import logicaJogo.estados.AwaitBeginning;
@@ -93,9 +95,9 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
      
         pNorth.add(logo);
         pCenterLeft.add(cSelected);
-
-
-       pCenterRight.add(gameButtons, BorderLayout.NORTH);
+        
+        pCenterRight.add(gameButtons);
+       
 
        // pSouth.add(cards);
 
@@ -146,6 +148,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         pCenter.setOpaque(false);
         pCenter.setLayout(new BorderLayout());
         pCenter.setBorder(new EmptyBorder(0, 0, 0, 100));
+        
 
 
         pCenterLeft = new JPanel();
@@ -154,7 +157,7 @@ public class CardSiegeGamePanel extends JPanel implements Observer{
         pCenterLeft.setOpaque(false);
 
         pCenterRight = new JPanel();
-        pCenterRight.setLayout(new BorderLayout());
+        pCenterRight.setLayout(new BoxLayout(pCenterRight, BoxLayout.Y_AXIS));
         pCenterRight.setOpaque(false);
 
 

@@ -48,7 +48,7 @@ public class CardSelected extends JPanel implements Observer{
     private void setupPanel(){
         //getImage();
         //setOpaque(false);
-        setBackground( new Color(0, 0, 0, 64));
+        setBackground(Color.darkGray);
 
         setPreferredSize(new Dimension(360,400));
 

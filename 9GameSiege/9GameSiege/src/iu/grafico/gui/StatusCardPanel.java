@@ -6,6 +6,7 @@
 package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.IOException;
@@ -34,7 +35,7 @@ public class StatusCardPanel extends JPanel implements Observer {
         game.addObserver(this);
         
         setupLayout();
-        
+        setBackground(Color.darkGray);
         setVisible(game.getEstado() instanceof AwaitTopCard);
     }
     
