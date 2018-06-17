@@ -61,7 +61,6 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         game.addObserver(this);
         
         setupComponents();
-        registarListeners();
 
         setPreferredSize(new Dimension(330,500));
        // setOpaque(false);
@@ -73,6 +72,8 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
     private void setupComponents() {
         setupButtons();
+        setButtonsMouseListener();
+        setButtonsActionListeners();
 
     }
 
@@ -120,7 +121,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
         this.add(nextCardB, gridBagConstraints);
         
-        setButtonsMouseListener();
+        
     }
 
     private void registarListeners(){
@@ -141,36 +142,52 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
     /* ============================================== Classes Interiores ============================================== */
 
-    class ResolveOneCard implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          //  game.getGameData().getCard(game.getGameData().getCounter()).resolveCard(game.getGameModel());
-            //game.checkCardsCounter();
-        }
-    }
-
-    class ResolveTwoCards implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            if(jb1.isSelected()) {
-            //    game.getGameData().cardChoosen(1);
-              //  game.getGameData().getCard(game.getGameData().getCounter()).resolveCard(game.getGameModel());
-                //game.checkCardsCounter();
-
+    private void setButtonsActionListeners (){
+        archerAttackB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
             }
-            else if(jb2.isSelected()){
-                //game.getGameData().cardChoosen(2);
-                //game.getGameData().getCard(game.getGameData().getCounter()).resolveCard(game.getGameModel());
-                //game.checkCardsCounter();
+         });
+        boilingWaterAttackB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
             }
-        }
-    }
-
-    public void noChooseOneOftwoVisible(){
-
+         });
+        closeCombatB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        coupureB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        rallyTrops.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        tunnelMovementB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        supplyRaidB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        sabotageB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        nextCardB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
     }
 
     /* ================================================== Overrides ================================================== */
