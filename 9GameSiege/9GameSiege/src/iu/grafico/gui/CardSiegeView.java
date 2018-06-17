@@ -106,12 +106,67 @@ public class CardSiegeView extends JFrame implements Observer{
 
       gameMenu.add(exitObjJMI);
       menuBar.add(gameMenu);
-
+/*
       newObjJMI.addActionListener(new ObjMenuBarListener());
       readObjJMI.addActionListener(new CarregarObjMenuBarListener());
       saveObjJMI.addActionListener(new GravarObjMenuBarListener());
       exitObjJMI.addActionListener(new SairListener());
+*/
+      newObjJMI.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+                System.exit(0);
+            }
+        });
+      readObjJMI.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser("./data");
+                int returnVal = fc.showOpenDialog(CardSiegeView.this);
 
+                if(returnVal == JFileChooser.APPROVE_OPTION)
+                {
+                    File file = fc.getSelectedFile();
+
+                    try{
+                        game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                    }catch(IOException | ClassNotFoundException ex){
+                        JOptionPane.showMessageDialog(CardSiegeView.this,"Operacao Falhou \r\n\r\n" + e);
+                    }
+                } else{
+                    System.out.println("Operacao cancelada");
+                }
+            }
+        });
+      saveObjJMI.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser("./data");
+                int returnVal = fc.showOpenDialog(CardSiegeView.this);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION)
+                {
+                    File file = fc.getSelectedFile();
+
+                    try{
+                        game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                    }catch(IOException | ClassNotFoundException ex){
+                        JOptionPane.showMessageDialog(CardSiegeView.this,"Operação falhou \r\n\r\n" + e);
+                    }
+                } else{
+                    System.out.println("Operação Falhou");
+                }
+            }
+        });
+      exitObjJMI.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+                 System.exit(0);
+            }
+        });
+      
       JMenu helpMenu = new JMenu("Opções");
 
       JMenuItem helpContentJMI = new JMenuItem("Ajuda");
@@ -123,95 +178,108 @@ public class CardSiegeView extends JFrame implements Observer{
       helpMenu.add(helpContentJMI);
       helpMenu.add(aboutJMI);
       menuBar.add(helpMenu);
+      
+      //helpContentJMI.addActionListener(new AjudaListener());
+      //aboutJMI.addActionListener(new AcercaListener());
 
-      helpContentJMI.addActionListener(new AjudaListener());
-      aboutJMI.addActionListener(new AcercaListener());
-    }
-
-        class ObjMenuBarListener implements ActionListener{
-
+      helpContentJMI.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
-                System.exit(0);
+                 JOptionPane.showMessageDialog(CardSiegeView.this,"Carregue nas Opções disponiveis! Tente defender o castelo durante 3 dias e ganhe!","Ajuda",JOptionPane.PLAIN_MESSAGE);
             }
-    
-        }
-      
-     class CarregarObjMenuBarListener implements ActionListener{
+        });
+      aboutJMI.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(CardSiegeView.this,"9 Card Siege GameBoard","Acerca",JOptionPane.PLAIN_MESSAGE);
+            }
+        });
+    }
+/*
+    class ObjMenuBarListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JFileChooser fc = new JFileChooser("./data");
-            int returnVal = fc.showOpenDialog(CardSiegeView.this);
-            
-            if(returnVal == JFileChooser.APPROVE_OPTION)
-            {
-                File file = fc.getSelectedFile();
-                
-                try{
-                    game.setGame((Jogo)Ficheiros.CarregarJogo(file));
-                }catch(IOException | ClassNotFoundException ex){
-                    JOptionPane.showMessageDialog(CardSiegeView.this,"Operacao Falhou \r\n\r\n" + e);
-                }
-            } else{
-                System.out.println("Operacao cancelada");
-            }
+            JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+            System.exit(0);
         }
+
+    }
+        
+     class CarregarObjMenuBarListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser("./data");
+                int returnVal = fc.showOpenDialog(CardSiegeView.this);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION)
+                {
+                    File file = fc.getSelectedFile();
+
+                    try{
+                        game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                    }catch(IOException | ClassNotFoundException ex){
+                        JOptionPane.showMessageDialog(CardSiegeView.this,"Operacao Falhou \r\n\r\n" + e);
+                    }
+                } else{
+                    System.out.println("Operacao cancelada");
+                }
+            }
     
         }
       
       class GravarObjMenuBarListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JFileChooser fc = new JFileChooser("./data");
-            int returnVal = fc.showOpenDialog(CardSiegeView.this);
-            
-            if(returnVal == JFileChooser.APPROVE_OPTION)
-            {
-                File file = fc.getSelectedFile();
-                
-                try{
-                    game.setGame((Jogo)Ficheiros.CarregarJogo(file));
-                }catch(IOException | ClassNotFoundException ex){
-                    JOptionPane.showMessageDialog(CardSiegeView.this,"Operação falhou \r\n\r\n" + e);
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser("./data");
+                int returnVal = fc.showOpenDialog(CardSiegeView.this);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION)
+                {
+                    File file = fc.getSelectedFile();
+
+                    try{
+                        game.setGame((Jogo)Ficheiros.CarregarJogo(file));
+                    }catch(IOException | ClassNotFoundException ex){
+                        JOptionPane.showMessageDialog(CardSiegeView.this,"Operação falhou \r\n\r\n" + e);
+                    }
+                } else{
+                    System.out.println("Operação Falhou");
                 }
-            } else{
-                System.out.println("Operação Falhou");
             }
-        }
     
         }
       
        class SairListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-             JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
-             System.exit(0);
-        }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(CardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+                 System.exit(0);
+            }
     
         }
        
        class AjudaListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-             JOptionPane.showMessageDialog(CardSiegeView.this,"Carregue nas Opções disponiveis! Tente defender o castelo durante 3 dias e ganhe!","Ajuda",JOptionPane.PLAIN_MESSAGE);
-        }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(CardSiegeView.this,"Carregue nas Opções disponiveis! Tente defender o castelo durante 3 dias e ganhe!","Ajuda",JOptionPane.PLAIN_MESSAGE);
+            }
     
         }
        
        class AcercaListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-             JOptionPane.showMessageDialog(CardSiegeView.this,"9 Card Siege GameBoard","Acerca",JOptionPane.PLAIN_MESSAGE);
-        }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(CardSiegeView.this,"9 Card Siege GameBoard","Acerca",JOptionPane.PLAIN_MESSAGE);
+            }
     
         }
-       
+       */
        
     @Override
     public void update(Observable o, Object arg) {
