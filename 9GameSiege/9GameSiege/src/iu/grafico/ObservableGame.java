@@ -64,6 +64,16 @@ public class ObservableGame extends Observable{
         setChanged();
         notifyObservers();
     }
+    
+    public void skipCard()
+    {
+        
+        jogo.setEstado(jogo.getEstado().skipCard());
+       
+        
+        setChanged();
+        notifyObservers();
+    }
        
     public int getEscadas(){
         return jogo.getDadosJogo().getEnemyTracks().getEscada();

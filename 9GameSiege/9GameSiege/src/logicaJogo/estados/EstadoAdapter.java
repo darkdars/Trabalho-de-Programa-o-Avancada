@@ -111,5 +111,10 @@ public class EstadoAdapter implements IEstado {
     public IEstado opcaoBoilingWatter(int target) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public IEstado skipCard() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }

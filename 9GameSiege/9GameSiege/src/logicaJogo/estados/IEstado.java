@@ -26,6 +26,7 @@ public interface IEstado {
         /***** AwaitEnemyPlayerAction  *****/
         IEstado playerAction(int opcao,int target);
         IEstado checkJogadasDisp();
+        IEstado skipCard();
         
         /***** AwaitEndDayPhase  *****/
         IEstado endDayPhase();

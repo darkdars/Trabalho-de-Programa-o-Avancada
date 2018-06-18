@@ -186,7 +186,10 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         nextCardB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.NextCard();
+                if(game.getEstado() instanceof AwaitPlayerAction)
+                        game.skipCard();
+                if(game.getEstado() instanceof AwaitTopCard )
+                        game.NextCard();
             }
          });
     }

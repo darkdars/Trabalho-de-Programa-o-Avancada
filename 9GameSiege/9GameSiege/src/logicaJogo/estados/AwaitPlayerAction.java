@@ -325,11 +325,16 @@ public class AwaitPlayerAction extends EstadoAdapter{
     @Override
     public IEstado checkJogadasDisp(){
         if(dadosJogo.getJogadasDisp() == 0){
-                dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
-                return new AwaitEndDayPhase(dadosJogo);
-            }
+            dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
+            return new AwaitEndDayPhase(dadosJogo);
+        }
         return this;
     }
     
+    @Override
+    public IEstado skipCard(){
+        dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
+        return new AwaitEndDayPhase(dadosJogo);
+    }
     
 }
