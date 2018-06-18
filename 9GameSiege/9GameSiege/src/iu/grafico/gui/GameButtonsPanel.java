@@ -146,6 +146,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         archerAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                
             }
          });
         boilingWaterAttackB.addActionListener(new ActionListener(){
@@ -161,26 +162,31 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         coupureB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(4);
             }
          });
         rallyTrops.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                
             }
          });
         tunnelMovementB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(6);
             }
          });
         supplyRaidB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(7);
             }
          });
         sabotageB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(8);
             }
          });
         nextCardB.addActionListener(new ActionListener(){

@@ -111,4 +111,8 @@ public class ObservableGame extends Observable{
         return jogo.getDadosJogo().getStatusCard().getMantimentosRoubados();
     }
     
+    public void setEstadoAction(int opcao){
+        jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
+    }
+    
 }
