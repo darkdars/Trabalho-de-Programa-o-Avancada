@@ -18,7 +18,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
     }
     
     @Override
-    public IEstado playerAction(int opcao,int target){
+    public IEstado playerAction(int opcao, int target){
         dadosJogo.rollDice();
         switch(opcao){
             case 0:
@@ -168,7 +168,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
           
                         break;
                     case 3: // Siege Tower
-                         if(dadosJogo.getEnemyTracks().isVidaTorre() == false){
+                        if(dadosJogo.getEnemyTracks().isVidaTorre() == false){
                             dadosJogo.setTexto("Nao existe torre! Escolha outra opcao!");
                             return this;
                         }
@@ -335,6 +335,31 @@ public class AwaitPlayerAction extends EstadoAdapter{
     public IEstado skipCard(){
         dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
         return new AwaitEndDayPhase(dadosJogo);
+    }
+    
+    @Override
+    public IEstado archerAttck(){
+        return new AwaitArchersAttack(dadosJogo);
+    }
+    
+    @Override
+    public IEstado boilingWater(){
+        return new AwaitBoilingWatter(dadosJogo);
+    }
+    
+    @Override
+    public IEstado closeCombat(){
+        return new AwaitCloseCombat(dadosJogo);
+    }
+    
+    @Override
+    public IEstado rally(){
+        return new AwaitRally(dadosJogo);
+    }
+    
+    @Override
+    public IEstado tunnel(){
+        return new AwaitTunnel(dadosJogo);
     }
     
 }

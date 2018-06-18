@@ -27,6 +27,25 @@ public interface IEstado {
         IEstado playerAction(int opcao,int target);
         IEstado checkJogadasDisp();
         IEstado skipCard();
+        IEstado archerAttck();
+        IEstado boilingWater();
+        IEstado closeCombat();
+        IEstado rally();
+        IEstado tunnel();
+        
+        /***** AwaitArchersAttack/  AwaitBoilingWatter / AwaitCloseCombat *****/
+        IEstado tower();
+        IEstado ariete();
+        IEstado escadas();
+        
+        /***** AwaitRally  *****/
+        IEstado normalRally();
+        IEstado superRally();
+        
+        /***** AwaitTunnel  *****/
+        IEstado enterTunnel();
+        IEstado freeMove();
+        IEstado fastMove();
         
         /***** AwaitEndDayPhase  *****/
         IEstado endDayPhase();
