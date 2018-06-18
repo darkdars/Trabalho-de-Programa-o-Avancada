@@ -97,6 +97,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
              g.drawRect(17,307,40,40);
                 break;
             case 0:
+            default:
              g.drawImage(getImagem(game,1),78,255,40,40,null);
              g.drawRect(78,255,40,40);
                 break;
@@ -120,6 +121,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
              g.drawRect(98,307,40,40);
                 break;
             case 0:
+            default:
              g.drawImage(getImagem(game,1),98,255,40,40,null);
              g.drawRect(98,255,40,40);
                 break;
@@ -143,6 +145,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
              g.drawRect(179,307,40,40);
                 break;
             case 0:
+            default:
              g.drawImage(getImagem(game,1),119,255,40,40,null);
              g.drawRect(119,255,40,40);
                 break;
@@ -158,6 +161,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
                g.drawRect(98,255,40,40);
                 break;
             case 1:
+            default:
               g.drawImage(getImagem(game,2),17,537,40,40,null);
               g.drawRect(17,255,40,40);
                 break;
@@ -228,6 +232,8 @@ public class EnemyTracksPanel extends JPanel implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         setVisible(game.getEstado() instanceof AwaitTopCard || game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitEndDayPhase);
+        revalidate();
+       repaint();
     }
     
 }

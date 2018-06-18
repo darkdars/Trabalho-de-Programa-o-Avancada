@@ -19,7 +19,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
     
     @Override
     public IEstado playerAction(int opcao,int target){
-            dadosJogo.rollDice();
+        dadosJogo.rollDice();
         switch(opcao){
             case 0:
                 return new AwaitEndDayPhase(dadosJogo);

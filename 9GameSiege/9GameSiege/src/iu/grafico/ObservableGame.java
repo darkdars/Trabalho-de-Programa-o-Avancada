@@ -52,6 +52,18 @@ public class ObservableGame extends Observable{
         setChanged();
         notifyObservers();
     }
+    
+    public void NextCard()
+    {
+        
+        jogo.setEstado(jogo.getEstado().cardChoose());
+        jogo.setEstado(jogo.getEstado().enemyMovementPhase());
+        jogo.setEstado(jogo.getEstado().eventPhase());
+       
+        
+        setChanged();
+        notifyObservers();
+    }
        
     public int getEscadas(){
         return jogo.getDadosJogo().getEnemyTracks().getEscada();

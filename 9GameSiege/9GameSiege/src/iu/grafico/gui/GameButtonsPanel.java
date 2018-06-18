@@ -140,7 +140,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         nextCardB.addMouseListener(new ButtonMouseListener(nextCardB));
     }
 
-    /* ============================================== Classes Interiores ============================================== */
+    /* ============================================== setButtonsActionListeners ============================================== */
 
     private void setButtonsActionListeners (){
         archerAttackB.addActionListener(new ActionListener(){
@@ -186,6 +186,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         nextCardB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.NextCard();
             }
          });
     }

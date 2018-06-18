@@ -90,6 +90,7 @@ public class StatusCardPanel extends JPanel implements Observer {
                 g.drawRect(213,426,40,40);
                 break;
             case 0:
+            default:
                 g.drawImage(getImagem(game,1),290,484,40,40,null);
                 g.drawRect(290,484,40,40);
                 break;
@@ -113,6 +114,7 @@ public class StatusCardPanel extends JPanel implements Observer {
                 g.drawRect(290,426,40,40);
                 break;
             case 0:
+            default:
                 g.drawImage(getImagem(game,1),290,484,40,40,null);
                 g.drawRect(290,484,40,40);
                 break;
@@ -136,9 +138,11 @@ public class StatusCardPanel extends JPanel implements Observer {
                 g.drawRect(368,426,40,40);
                 break;
             case 0:
+            default:
                 g.drawImage(getImagem(game,1),290,484,40,40,null);
                 g.drawRect(290,484,40,40);
                 break;
+                
         }
         
         switch(game.getTunnel()){
