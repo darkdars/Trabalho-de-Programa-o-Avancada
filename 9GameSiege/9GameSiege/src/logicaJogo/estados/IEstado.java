@@ -34,6 +34,9 @@ public interface IEstado {
             
         /***** AwaitEnd *****/ 
         IEstado end();
+        IEstado opcaoArchersAttack(int target);
+        IEstado opcaoCloseCombat(int target);
+        IEstado opcaoBoilingWatter(int target);
        
         void addObserver(Observer o);
 }
