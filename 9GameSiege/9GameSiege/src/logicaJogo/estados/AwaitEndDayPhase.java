@@ -75,8 +75,10 @@ public class AwaitEndDayPhase extends EstadoAdapter{
             dadosJogo.setTexto("Perdeu!");
             return new AwaitEnd(dadosJogo);
         }
+        if(dadosJogo.getListaCards() == 6)
+            endDayPhase();
         
-        return this;
+        return new AwaitTopCard(dadosJogo);
     }
     
     @Override

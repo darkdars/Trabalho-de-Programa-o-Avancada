@@ -175,6 +175,8 @@ public class InterfaceTexto {
     private void winLose() {
         System.out.println("Win or Lose Check!");
         jogo.setEstado(jogo.getEstado().winLosePhase());
+        if(jogo.getDadosJogo().getListaCards()>6)
+            jogo.setEstado(jogo.getEstado().endDayPhase());
     }
 
     private void imprimirInformacaoCarta() {

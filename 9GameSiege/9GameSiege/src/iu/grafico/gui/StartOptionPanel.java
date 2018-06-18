@@ -134,6 +134,8 @@ public class StartOptionPanel extends JPanel implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         setVisible(game.getEstado() instanceof AwaitBeginning);
+        revalidate();
+        repaint();
     }
     
 }
