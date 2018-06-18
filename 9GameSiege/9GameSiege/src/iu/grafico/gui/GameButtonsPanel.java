@@ -205,5 +205,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         setVisible(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard);
+        revalidate();
+        repaint();
     }
 }

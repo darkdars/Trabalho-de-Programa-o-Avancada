@@ -7,6 +7,8 @@ package iu.grafico;
 
 import java.util.Observable;
 import logicaJogo.Jogo;
+import logicaJogo.estados.AwaitEnd;
+import logicaJogo.estados.AwaitTopCard;
 import logicaJogo.estados.IEstado;
 
 /**
@@ -59,6 +61,10 @@ public class ObservableGame extends Observable{
         jogo.setEstado(jogo.getEstado().cardChoose());
         jogo.setEstado(jogo.getEstado().enemyMovementPhase());
         jogo.setEstado(jogo.getEstado().eventPhase());
+        jogo.setEstado(jogo.getEstado().avancaPhase());
+        
+        if(jogo.getEstado() instanceof AwaitEnd)
+            jogo.setEstado(jogo.getEstado().end());
        
         
         setChanged();
@@ -69,10 +75,22 @@ public class ObservableGame extends Observable{
     {
         
         jogo.setEstado(jogo.getEstado().skipCard());
+        if(jogo.getDadosJogo().getListaCards() < 6){
+            jogo.setEstado(jogo.getEstado().winLosePhase());
+        }else{
+            jogo.setEstado(jogo.getEstado().endDayPhase());
+        }
        
+        if(jogo.getEstado() instanceof AwaitTopCard){
+            NextCard();
+        }
+        else if(jogo.getEstado() instanceof AwaitEnd){
+            jogo.setEstado(jogo.getEstado().end());
+        }
         
         setChanged();
         notifyObservers();
+        
     }
        
     public int getEscadas(){

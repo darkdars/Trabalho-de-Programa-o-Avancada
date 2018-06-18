@@ -83,8 +83,41 @@ public class DadosJogo {
         cartaSelecionada  = new Card(0, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1));
     }
     
+    public void newDadosJogo(){
+        dia = 1;
+        enemyTracks = new EnemyTracks();
+        statusCard = new StatusCard();
+        texto="";
+        listaCards = 0;
+        
+        jogadasDisp = 0;
+        opcoesUtilizadas = new int[8];
+        for(int i = 0; i < 8; i++){
+            opcoesUtilizadas[i] = 1;
+        }
+        bonusEvent = new int[8];
+        for(int i = 0; i < 8; i++){
+            bonusEvent[i] = 1;
+        }
+        bonusEnemy = new int[8];
+        for(int i = 0; i < 4; i++){
+            bonusEnemy[i] = 1;
+        }
+        
+        cartas = new ArrayList<>();
+        cartas.add(new Card(1, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1)));
+        cartas.add(new Card(2, new Illness(), new GuardsDistracted(), new TrebuchetAttack(1)));
+        cartas.add(new Card(3, new SuppliesSpoiled(), new BadWeather(), new BoilingOil()));
+        cartas.add(new Card(4, new DeathLeader(), new GateFortified(), new FlamingArrows()));
+        cartas.add(new Card(5, new VolleyArrows(), new Collapsed(), new RepairedTrebuchet()));
+        cartas.add(new Card(6, new CoverDarkness(), new EnemyFatigue(), new Rally()));
+        cartas.add(new Card(7, new DeterminedEnemy(), new IronShields(), new Faith()));
+        cartaSelecionada  = new Card(0, new TrebuchetAttack(3), new TrebuchetAttack(2), new TrebuchetAttack(1));
+    }
+    
     public void baralhaCartas(){
         Collections.shuffle(cartas);
+        listaCards = 0;
       //  System.out.println(cartas.get(0).getEventos(0).getNome());
     }
     
@@ -146,13 +179,13 @@ public class DadosJogo {
     public int checkEnemyCloseCombat() { // Checka numero de inimigos em closecombat
         int x = 0;
         
-        if(enemyTracks.getEscada() == 0)
+        if(enemyTracks.getEscada() <= 0 )
             x++;
        
-        if(enemyTracks.getTorre() == 0)
+        if(enemyTracks.getTorre() <= 0)
             x++;
                     
-        if(enemyTracks.getTrincheiras() == 0)
+        if(enemyTracks.getAriete() <= 0)
             x++;
         
         return x;

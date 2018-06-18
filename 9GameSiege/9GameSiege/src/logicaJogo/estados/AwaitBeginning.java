@@ -19,6 +19,7 @@ public class AwaitBeginning extends EstadoAdapter {
     
    @Override
    public IEstado start(){
+       dadosJogo.newDadosJogo();
        dadosJogo.baralhaCartas();
        return new AwaitTopCard(dadosJogo);
    }

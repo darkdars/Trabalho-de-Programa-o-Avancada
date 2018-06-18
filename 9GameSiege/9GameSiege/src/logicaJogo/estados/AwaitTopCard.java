@@ -103,7 +103,7 @@ public class AwaitTopCard extends EstadoAdapter{
              }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ram"){
                  dadosJogo.getEnemyTracks().updateAriete(-1);
              }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "none"){
-                 return new AwaitPlayerAction(dadosJogo);
+                 //return new AwaitPlayerAction(dadosJogo);
              }
              
              }

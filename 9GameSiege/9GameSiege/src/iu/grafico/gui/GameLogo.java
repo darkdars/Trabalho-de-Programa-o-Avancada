@@ -73,8 +73,9 @@ public class GameLogo extends JPanel implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        if(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard)
-            setVisible(true);
+        setVisible(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard);
+        revalidate();
+        repaint();
     }
 
 }
