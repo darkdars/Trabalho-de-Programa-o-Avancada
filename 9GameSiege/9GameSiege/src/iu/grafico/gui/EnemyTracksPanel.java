@@ -238,7 +238,7 @@ public class EnemyTracksPanel extends JPanel implements Observer{
     public void update(Observable o, Object arg) {
         setVisible(game.getEstado() instanceof AwaitTopCard || game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitEndDayPhase || game.getEstado() instanceof AwaitArchersAttack || game.getEstado() instanceof AwaitBoilingWatter || game.getEstado() instanceof AwaitCloseCombat || game.getEstado() instanceof AwaitRally || game.getEstado() instanceof AwaitTunnel);
         revalidate();
-       repaint();
+        repaint();
     }
     
 }
