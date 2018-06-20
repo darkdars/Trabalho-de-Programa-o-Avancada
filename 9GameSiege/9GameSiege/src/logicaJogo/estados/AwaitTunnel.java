@@ -67,4 +67,9 @@ public class AwaitTunnel extends EstadoAdapter{
         }
         return new AwaitPlayerAction(dadosJogo);
     }    
+    
+    @Override
+    public IEstado cancel() {
+        return new AwaitPlayerAction(dadosJogo);
+    }
 }

@@ -58,5 +58,7 @@ public interface IEstado {
         IEstado opcaoCloseCombat(int target);
         IEstado opcaoBoilingWatter(int target);
        
+        IEstado cancel();
+        
         void addObserver(Observer o);
 }

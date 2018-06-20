@@ -362,4 +362,9 @@ public class AwaitPlayerAction extends EstadoAdapter{
         return new AwaitTunnel(dadosJogo);
     }
     
+    @Override
+    public IEstado cancel() {
+        return this;
+    }
+    
 }

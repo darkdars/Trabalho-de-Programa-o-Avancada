@@ -48,13 +48,22 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     
     private JButton nextCardB;
     
+    private JButton towerB;
+    private JButton arieteB;
+    private JButton escadasB;
+    private JPanel attackButtons;
     
-    private JRadioButton jb1, jb2;
-    private ButtonGroup group;
-    private JPanel resolveForOneCard, resolveForTwoCards, OptionPainel, tradingPanel, CombatPanel, dicePanel, SpellPanel, FeatPanel;
-
-    private Box vBoxForResolveForOneCard, vboxForResolveForTwoCards;
-    private Box vBox;
+    private JButton normalRallyB;
+    private JButton superRallyB;
+    private JPanel rallyButtons;
+    
+    private JButton enterTunnelB;
+    private JButton freeMoveB;
+    private JButton fastMoveB;
+    private JPanel tunelButtons;
+    
+    private JButton cancelB;
+    
 
     public GameButtonsPanel(ObservableGame g) {
         this.game = g;
@@ -71,13 +80,13 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
 
     private void setupComponents() {
-        setupButtons();
-        setButtonsMouseListener();
-        setButtonsActionListeners();
+        playerActionButtons();
+        setPlayerActionButtons();
+        setPlayerActionButtonsListeners();
 
     }
 
-    private void setupButtons() {
+    private void playerActionButtons() {
         //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         
@@ -121,15 +130,22 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
         this.add(nextCardB, gridBagConstraints);
         
+        cancelB = new JButton("Cancel");
+        cancelB.setBackground(Color.white);
+        cancelB.addMouseListener(new ButtonMouseListener(cancelB));
+        cancelB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                game.getEstado().cancel();
+            }
+         });
+        
+        
         
     }
-
-    private void registarListeners(){
     
-    }
-
-    private void setButtonsMouseListener() {
-        archerAttackB.addMouseListener(new ButtonMouseListener(archerAttackB));
+    private void setPlayerActionButtons() {
+        attackButtons.addMouseListener(new ButtonMouseListener(archerAttackB));
         boilingWaterAttackB.addMouseListener(new ButtonMouseListener(boilingWaterAttackB));
         closeCombatB.addMouseListener(new ButtonMouseListener(closeCombatB));
         coupureB.addMouseListener(new ButtonMouseListener(coupureB));
@@ -139,10 +155,98 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         sabotageB.addMouseListener(new ButtonMouseListener(sabotageB));
         nextCardB.addMouseListener(new ButtonMouseListener(nextCardB));
     }
+    
+    private void setPlayerActionButtonsListeners (){
+        archerAttackB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                
+            }
+         });
+        boilingWaterAttackB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        closeCombatB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        coupureB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(4);
+            }
+         });
+        rallyTrops.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                
+            }
+         });
+        tunnelMovementB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(6);
+            }
+         });
+        supplyRaidB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(7);
+            }
+         });
+        sabotageB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                game.setEstadoAction(8);
+            }
+         });
+        nextCardB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                if(game.getEstado() instanceof AwaitPlayerAction)
+                        game.skipCard();
+                if(game.getEstado() instanceof AwaitTopCard )
+                        game.NextCard();
+            }
+         });
+    }
+    
+    private void attackButtons() {
+        //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        setLayout(new GridLayout(2,1));
+        attackButtons = new JPanel();
+        attackButtons.setLayout(new GridLayout(4, 1));
+        towerB = new JButton("Attack Torre");
+        towerB.setBackground(Color.white);
+        arieteB = new JButton("Attack Ariete");
+        arieteB.setBackground(Color.white);
+        escadasB = new JButton("Attack Escadas");
+        escadasB.setBackground(Color.white);
+        
+        attackButtons.add(towerB);
+        attackButtons.add(arieteB);
+        attackButtons.add(escadasB);
+        attackButtons.add(cancelB);
+        this.add(attackButtons, gridBagConstraints);       
+        
+    }
+
+    private void setAttackButtons() {
+        towerB.addMouseListener(new ButtonMouseListener(archerAttackB));
+        arieteB.addMouseListener(new ButtonMouseListener(boilingWaterAttackB));
+        escadasB.addMouseListener(new ButtonMouseListener(closeCombatB));
+    }
 
     /* ============================================== setButtonsActionListeners ============================================== */
 
-    private void setButtonsActionListeners (){
+    private void setAttackButtonsListeners (){
         archerAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
