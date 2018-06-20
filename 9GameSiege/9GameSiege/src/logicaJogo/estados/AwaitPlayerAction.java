@@ -361,7 +361,77 @@ public class AwaitPlayerAction extends EstadoAdapter{
     public IEstado tunnel(){
         return new AwaitTunnel(dadosJogo);
     }
+    @Override
+    public IEstado coupure(){
+        dadosJogo.rollDice();
+        if(dadosJogo.getStatusCard().getMuralha() < 4){
+            if(dadosJogo.getDice() + dadosJogo.getBonusEvent(3)> 4){
+                dadosJogo.getStatusCard().updateMuralha(1);
+                dadosJogo.setTexto("A muralha foi reparada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMuralha() + ".");
+            }else{
+                dadosJogo.setTexto("Houve um assidente que levou a falha da recuperacao da muralha.");
+            }
+        }else{
+                dadosJogo.setTexto("A muralha encontra-se sem dano.");
+        } 
+        return this;
+    }
     
+    @Override
+    public IEstado supplyRaid(){
+        dadosJogo.rollDice();
+        
+        if(dadosJogo.getStatusCard().getTunel() == 4){
+            if(dadosJogo.getStatusCard().getMantimentosRoubados() < 2){
+                if(dadosJogo.getDice() + dadosJogo.getBonusEvent(6) + dadosJogo.getBonusEnemy(0)> 2 && dadosJogo.getDice() < 6){
+                    dadosJogo.getStatusCard().updateMantimentosRoubados(1);
+                    dadosJogo.setTexto("As tropas obtiveram uma caixa de suplementos. No total tem " + dadosJogo.getStatusCard().getMantimentosRoubados() + ".");
+                }
+                if(dadosJogo.getDice() >= 6){
+                    dadosJogo.getStatusCard().updateMantimentosRoubados(2);
+                    dadosJogo.setTexto("As tropas obtiveram duas caixa de suplementos. No total tem " + dadosJogo.getStatusCard().getMantimentosRoubados() + ".");
+                }
+                if(dadosJogo.getDice() == 1){
+                    dadosJogo.getStatusCard().updateMoral(-1);
+                    dadosJogo.getStatusCard().setTunel(1);
+                    dadosJogo.getStatusCard().setTunelDir(true);
+                    dadosJogo.getStatusCard().setMantimentosRoubados(0);
+                    dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
+                }
+            }else{
+                    dadosJogo.setTexto("As tropas encontram-se sobrecarregadas, nao conseguem roubar mais mantimentos.");
+            }
+        }else{
+            dadosJogo.setTexto("Tem de estar nas linhas inimigas para realizar uma raid de mantimentos.");
+        }
+        return this;
+    }
+    
+    @Override
+    public IEstado sabotage(){
+        dadosJogo.rollDice();
+        
+        if(dadosJogo.getStatusCard().getTunel() == 4){
+            if(dadosJogo.getEnemyTracks().getTrincheiras()> 1){
+                if(dadosJogo.getDice() + dadosJogo.getBonusEvent(7) > 4){
+                    dadosJogo.getEnemyTracks().updateTrincheiras(-1);
+                    dadosJogo.setTexto("As tropas realizaram dano as Trebuchets, de momento os inimigos tem " + dadosJogo.getEnemyTracks().getAriete() + ".");
+                }
+                if(dadosJogo.getDice() == 1){
+                    dadosJogo.getStatusCard().updateMoral(-1);
+                    dadosJogo.getStatusCard().setTunel(1);
+                    dadosJogo.getStatusCard().setTunelDir(true);
+                    dadosJogo.getStatusCard().setMantimentosRoubados(0);
+                    dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
+                }
+            }else{
+                    dadosJogo.setTexto("As tropas nao conseguem atacar. Tente mais tarde");
+            }
+        }else{
+            dadosJogo.setTexto("Tem de estar nas linhas inimigas para realizar uma sabotagem.");
+        }
+        return this;
+    }
     @Override
     public IEstado cancel() {
         return this;

@@ -176,50 +176,49 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         archerAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                
-                
                 game.awaitArcherAttck();
-                
             }
          });
         boilingWaterAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.awaitBoilingWater();
             }
          });
         closeCombatB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.awaitCloseCombat();
             }
          });
         coupureB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(4);
+                game.awaitCoupure();
             }
          });
         rallyTrops.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                
+                game.awaitRally();                
             }
          });
         tunnelMovementB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(6);
+                game.awaitTunnelMovement();
             }
          });
         supplyRaidB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(7);
+                game.awaitSupplyRaid();
             }
          });
         sabotageB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(8);
+                game.awaitSabotage();
             }
          });
         nextCardB.addActionListener(new ActionListener(){
@@ -243,7 +242,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         attackButtons = new JPanel();
-        attackButtons.setLayout(new GridLayout(4, 1));
+        attackButtons.setLayout(new GridLayout(3, 1));
         towerB = new JButton("Attack Torre");
         towerB.setBackground(Color.white);
         arieteB = new JButton("Attack Ariete");
@@ -269,17 +268,19 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         towerB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                
+                game.attackTower();
             }
          });
         arieteB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.attackAriete();
             }
          });
         escadasB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.attackEscadas();
             }
          });
     }
@@ -293,7 +294,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         rallyButtons = new JPanel();
-        rallyButtons.setLayout(new GridLayout(4, 1));
+        rallyButtons.setLayout(new GridLayout(2, 1));
         normalRallyB = new JButton("Normal Rally");
         normalRallyB.setBackground(Color.white);
         superRallyB = new JButton("Royal Rally");
@@ -315,12 +316,13 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         normalRallyB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                
+                game.normalRally();
             }
          });
         superRallyB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.superRally();
             }
          });
     }
@@ -334,7 +336,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         tunelButtons = new JPanel();
-        tunelButtons.setLayout(new GridLayout(4, 1));
+        tunelButtons.setLayout(new GridLayout(3, 1));
         enterTunnelB = new JButton("Enter Tunnel");
         enterTunnelB.setBackground(Color.white);
         freeMoveB = new JButton("Free Move");
@@ -360,20 +362,25 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         enterTunnelB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                
+                game.enterTunnel();
             }
          });
         freeMoveB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.freeMove();
             }
          });
         fastMoveB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.fastMove();
             }
          });
     }
+    
+    
+    /****************** ChangeButtons ********************/
     
     public void changePlayerAction(){
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
@@ -409,7 +416,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     
     
 
-    /* ================================================== Overrides ================================================== */
+    /* ================================================== update ================================================== */
 
     @Override
     public void update(Observable o, Object arg) {

@@ -141,17 +141,112 @@ public class ObservableGame extends Observable{
         setChanged();
         notifyObservers();
     }
-    public void change() {
-        
-        setChanged();
-        notifyObservers();
-    }
     
     public void awaitArcherAttck(){
+        
         jogo.setEstado(jogo.getEstado().archerAttck());
         setChanged();
         notifyObservers();
     }
+    
+    public void awaitBoilingWater(){
+        
+        jogo.setEstado(jogo.getEstado().boilingWater());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitCloseCombat(){
+        
+        jogo.setEstado(jogo.getEstado().closeCombat());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitRally(){
+        
+        jogo.setEstado(jogo.getEstado().rally());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitTunnelMovement(){
+        
+        jogo.setEstado(jogo.getEstado().tunnel());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitCoupure(){
+        
+        jogo.setEstado(jogo.getEstado().coupure());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitSupplyRaid(){
+        
+        jogo.setEstado(jogo.getEstado().supplyRaid());
+        setChanged();
+        notifyObservers();
+    }
+    public void awaitSabotage(){
+        
+        jogo.setEstado(jogo.getEstado().sabotage());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void attackTower(){
+        
+        jogo.setEstado(jogo.getEstado().tower());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void attackAriete(){
+        
+        jogo.setEstado(jogo.getEstado().ariete());
+        setChanged();
+        notifyObservers();
+    }
+    public void attackEscadas(){
+        
+        jogo.setEstado(jogo.getEstado().escadas());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void normalRally(){
+        
+        jogo.setEstado(jogo.getEstado().normalRally());
+        setChanged();
+        notifyObservers();
+    }
+    public void superRally(){
+        
+        jogo.setEstado(jogo.getEstado().superRally());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void enterTunnel(){
+        jogo.setEstado(jogo.getEstado().enterTunnel());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void freeMove(){
+        jogo.setEstado(jogo.getEstado().freeMove());
+        setChanged();
+        notifyObservers();
+    }
+    public void fastMove(){
+        jogo.setEstado(jogo.getEstado().fastMove());
+        setChanged();
+        notifyObservers();
+    }
+    
     
     public void updateObservers(){
         setChanged();

@@ -46,7 +46,7 @@ public class AwaitArchersAttack extends EstadoAdapter{
     }
     
     @Override
-    public IEstado ariete(){
+    public IEstado escadas(){
         dadosJogo.rollDice();
         if(dadosJogo.getEnemyTracks().getEscada() != 4){
             if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(3)> dadosJogo.getEnemyTracks().getEscadaStrengh()){
@@ -68,7 +68,7 @@ public class AwaitArchersAttack extends EstadoAdapter{
     }
     
     @Override
-    public IEstado escadas(){
+    public IEstado ariete(){
         dadosJogo.rollDice();
         if(dadosJogo.getEnemyTracks().getAriete() != 4){
             if(dadosJogo.getDice() + dadosJogo.getBonusEvent(0) + dadosJogo.getBonusEnemy(2)> dadosJogo.getEnemyTracks().getArieteStrengh()){

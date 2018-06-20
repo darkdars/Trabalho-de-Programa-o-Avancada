@@ -33,6 +33,10 @@ public interface IEstado {
         IEstado rally();
         IEstado tunnel();
         
+        IEstado coupure();
+        IEstado supplyRaid();
+        IEstado sabotage();
+        
         /***** AwaitArchersAttack/  AwaitBoilingWatter / AwaitCloseCombat *****/
         IEstado tower();
         IEstado ariete();

@@ -28,6 +28,7 @@ public class ButtonMouseListener implements MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
+        button.setBackground(Color.white);
     }
 
     @Override
