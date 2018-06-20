@@ -5,7 +5,9 @@
  */
 package iu.grafico;
 
+import iu.grafico.gui.GameButtonsPanel;
 import java.util.Observable;
+import javax.swing.JPanel;
 import logicaJogo.Jogo;
 import logicaJogo.estados.AwaitEnd;
 import logicaJogo.estados.AwaitTopCard;
@@ -132,5 +134,29 @@ public class ObservableGame extends Observable{
     public void setEstadoAction(int opcao){
         jogo.setEstado(jogo.getEstado().playerAction(opcao, 0));
     }
+    
+    public void cancel() {
+        jogo.setEstado(jogo.getEstado().cancel());
+        
+        setChanged();
+        notifyObservers();
+    }
+    public void change() {
+        
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void awaitArcherAttck(){
+        jogo.setEstado(jogo.getEstado().archerAttck());
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void updateObservers(){
+        setChanged();
+        notifyObservers();
+    }
+    
     
 }

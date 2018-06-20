@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,8 +25,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import logicaJogo.estados.AwaitArchersAttack;
+import logicaJogo.estados.AwaitBoilingWatter;
+import logicaJogo.estados.AwaitCloseCombat;
 import logicaJogo.estados.AwaitPlayerAction;
+import logicaJogo.estados.AwaitRally;
 import logicaJogo.estados.AwaitTopCard;
+import logicaJogo.estados.AwaitTunnel;
 
 /**
  *
@@ -68,7 +74,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     public GameButtonsPanel(ObservableGame g) {
         this.game = g;
         game.addObserver(this);
-        
+  
         setupComponents();
 
         setPreferredSize(new Dimension(330,500));
@@ -83,6 +89,18 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         playerActionButtons();
         setPlayerActionButtons();
         setPlayerActionButtonsListeners();
+        
+        attackButtons();
+        setAttackButtons();
+        setAttackButtonsListeners ();
+        
+        rallyButtons();
+        setRallyButtons();
+        setRallyButtonsListeners ();
+        
+        tunnelButtons();
+        setTunnelButtons();
+        setTunnelButtonsListeners ();
 
     }
 
@@ -122,6 +140,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         playerActionButtons.add(sabotageB);
         this.add(playerActionButtons, gridBagConstraints);
         
+        
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         nextCardB = new JButton("Draw Next Card");
@@ -136,16 +155,13 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         cancelB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.getEstado().cancel();
+                game.cancel();
             }
          });
-        
-        
-        
     }
     
     private void setPlayerActionButtons() {
-        attackButtons.addMouseListener(new ButtonMouseListener(archerAttackB));
+        archerAttackB.addMouseListener(new ButtonMouseListener(archerAttackB));
         boilingWaterAttackB.addMouseListener(new ButtonMouseListener(boilingWaterAttackB));
         closeCombatB.addMouseListener(new ButtonMouseListener(closeCombatB));
         coupureB.addMouseListener(new ButtonMouseListener(coupureB));
@@ -161,6 +177,9 @@ public class GameButtonsPanel  extends JPanel implements Observer{
             @Override
             public void actionPerformed(ActionEvent ev) {
                 
+                
+                game.awaitArcherAttck();
+                
             }
          });
         boilingWaterAttackB.addActionListener(new ActionListener(){
@@ -214,13 +233,15 @@ public class GameButtonsPanel  extends JPanel implements Observer{
          });
     }
     
+    
+    /****************** AttackButtons ********************/
+    
     private void attackButtons() {
         //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        setLayout(new GridLayout(2,1));
         attackButtons = new JPanel();
         attackButtons.setLayout(new GridLayout(4, 1));
         towerB = new JButton("Attack Torre");
@@ -234,81 +255,182 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         attackButtons.add(arieteB);
         attackButtons.add(escadasB);
         attackButtons.add(cancelB);
-        this.add(attackButtons, gridBagConstraints);       
+        //this.add(attackButtons, gridBagConstraints);       
         
     }
 
     private void setAttackButtons() {
-        towerB.addMouseListener(new ButtonMouseListener(archerAttackB));
-        arieteB.addMouseListener(new ButtonMouseListener(boilingWaterAttackB));
-        escadasB.addMouseListener(new ButtonMouseListener(closeCombatB));
+        towerB.addMouseListener(new ButtonMouseListener(towerB));
+        arieteB.addMouseListener(new ButtonMouseListener(arieteB));
+        escadasB.addMouseListener(new ButtonMouseListener(escadasB));
     }
-
-    /* ============================================== setButtonsActionListeners ============================================== */
 
     private void setAttackButtonsListeners (){
-        archerAttackB.addActionListener(new ActionListener(){
+        towerB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
                 
             }
          });
-        boilingWaterAttackB.addActionListener(new ActionListener(){
+        arieteB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
             }
          });
-        closeCombatB.addActionListener(new ActionListener(){
+        escadasB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-            }
-         });
-        coupureB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(4);
-            }
-         });
-        rallyTrops.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                
-            }
-         });
-        tunnelMovementB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(6);
-            }
-         });
-        supplyRaidB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(7);
-            }
-         });
-        sabotageB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                game.setEstadoAction(8);
-            }
-         });
-        nextCardB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                if(game.getEstado() instanceof AwaitPlayerAction)
-                        game.skipCard();
-                if(game.getEstado() instanceof AwaitTopCard )
-                        game.NextCard();
             }
          });
     }
+    
+    /****************** RallyButtons ********************/
+    
+    private void rallyButtons() {
+        //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        rallyButtons = new JPanel();
+        rallyButtons.setLayout(new GridLayout(4, 1));
+        normalRallyB = new JButton("Normal Rally");
+        normalRallyB.setBackground(Color.white);
+        superRallyB = new JButton("Royal Rally");
+        superRallyB.setBackground(Color.white);
+        
+        rallyButtons.add(normalRallyB);
+        rallyButtons.add(superRallyB);
+        rallyButtons.add(cancelB);
+        //this.add(rallyButtons, gridBagConstraints);       
+        
+    }
+
+    private void setRallyButtons() {
+        normalRallyB.addMouseListener(new ButtonMouseListener(normalRallyB));
+        superRallyB.addMouseListener(new ButtonMouseListener(superRallyB));
+    }
+
+    private void setRallyButtonsListeners (){
+        normalRallyB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                
+            }
+         });
+        superRallyB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+    }
+    
+    /****************** TunnelButtons ********************/
+    
+    private void tunnelButtons() {
+        //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        tunelButtons = new JPanel();
+        tunelButtons.setLayout(new GridLayout(4, 1));
+        enterTunnelB = new JButton("Enter Tunnel");
+        enterTunnelB.setBackground(Color.white);
+        freeMoveB = new JButton("Free Move");
+        freeMoveB.setBackground(Color.white);
+        fastMoveB = new JButton("FastMove");
+        fastMoveB.setBackground(Color.white);
+        
+        tunelButtons.add(enterTunnelB);
+        tunelButtons.add(freeMoveB);
+        tunelButtons.add(fastMoveB);
+        tunelButtons.add(cancelB);
+        //this.add(tunelButtons, gridBagConstraints);       
+        
+    }
+
+    private void setTunnelButtons() {
+        enterTunnelB.addMouseListener(new ButtonMouseListener(enterTunnelB));
+        freeMoveB.addMouseListener(new ButtonMouseListener(freeMoveB));
+        fastMoveB.addMouseListener(new ButtonMouseListener(fastMoveB));
+    }
+
+    private void setTunnelButtonsListeners (){
+        enterTunnelB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+                
+            }
+         });
+        freeMoveB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+        fastMoveB.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ev) {
+            }
+         });
+    }
+    
+    public void changePlayerAction(){
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        this.removeAll();
+        this.add( playerActionButtons, gridBagConstraints);
+        this.add( nextCardB, gridBagConstraints);
+        //this.add
+    }
+    
+    public void changeAttack(){
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        this.removeAll();
+        this.add( attackButtons, gridBagConstraints);
+        this.add( cancelB, gridBagConstraints);
+        //this.add
+    }
+    
+    public void changeRally(){
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        this.removeAll();
+        this.add( rallyButtons,gridBagConstraints);
+        this.add( cancelB, gridBagConstraints);
+        //this.add
+    }
+    
+    public void changeTunnel(){
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        this.removeAll();
+        this.add(tunelButtons, gridBagConstraints);
+        this.add( cancelB, gridBagConstraints);
+    }
+    
+    
+    
 
     /* ================================================== Overrides ================================================== */
 
     @Override
     public void update(Observable o, Object arg) {
-        setVisible(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard);
+        if(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard){
+            changePlayerAction();
+            setVisible(true);
+        }
+        else if(game.getEstado() instanceof AwaitArchersAttack || game.getEstado() instanceof AwaitBoilingWatter || game.getEstado() instanceof AwaitCloseCombat){
+            changeAttack();
+            setVisible(true);
+        }
+        else if(game.getEstado() instanceof AwaitRally){
+            changeRally();
+            setVisible(true);
+        }
+        else if(game.getEstado() instanceof AwaitTunnel){
+            changeTunnel();
+            setVisible(true);
+        }
+        else
+            setVisible( false );
         revalidate();
         repaint();
     }

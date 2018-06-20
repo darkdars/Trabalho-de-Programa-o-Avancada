@@ -18,8 +18,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import logicaJogo.estados.AwaitArchersAttack;
+import logicaJogo.estados.AwaitBoilingWatter;
+import logicaJogo.estados.AwaitCloseCombat;
 import logicaJogo.estados.AwaitPlayerAction;
+import logicaJogo.estados.AwaitRally;
 import logicaJogo.estados.AwaitTopCard;
+import logicaJogo.estados.AwaitTunnel;
 
 /**
  *
@@ -73,7 +78,7 @@ public class GameLogo extends JPanel implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        setVisible(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard);
+        setVisible(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard || game.getEstado() instanceof AwaitArchersAttack || game.getEstado() instanceof AwaitBoilingWatter || game.getEstado() instanceof AwaitCloseCombat || game.getEstado() instanceof AwaitRally || game.getEstado() instanceof AwaitTunnel);
         revalidate();
         repaint();
     }

@@ -69,22 +69,22 @@ public class AwaitTopCard extends EstadoAdapter{
              
              }
                
-         }else{
+        }else{
              if(dadosJogo.getEventoAtual().getEnemyString(0) == "sword"){
-                 //Obter unidades mais lentas
-                 for(int i = 0; i < 3;i++){
-               
-                     if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
-                        dadosJogo.getEnemyTracks().updateEscada(-1);
-                        dadosJogo.getEnemyTracks().updateAriete(-1);
-                        dadosJogo.getEnemyTracks().updateTorre(-1);    
-                    }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() != dadosJogo.getEnemyTracks().getAriete())){
+                //Obter unidades mais lentas
+                //for(int i = 0; i < 3;i++){
+
+                    if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                       dadosJogo.getEnemyTracks().updateEscada(-1);
+                       dadosJogo.getEnemyTracks().updateAriete(-1);
+                       dadosJogo.getEnemyTracks().updateTorre(-1);    
+                    }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() != dadosJogo.getEnemyTracks().getAriete())){
                         dadosJogo.getEnemyTracks().updateAriete(-1);
                         dadosJogo.getEnemyTracks().updateEscada(-1);   
-                    }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                    }else if((dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
                         dadosJogo.getEnemyTracks().updateAriete(-1);
                         dadosJogo.getEnemyTracks().updateTorre(-1);    
-                    }else if((dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() == dadosJogo.getEnemyTracks().getAriete())){
+                    }else if((dadosJogo.getEnemyTracks().getEscada() == dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() != dadosJogo.getEnemyTracks().getAriete())){
                         dadosJogo.getEnemyTracks().updateEscada(-1);
                         dadosJogo.getEnemyTracks().updateTorre(-1);    
                     }else if((dadosJogo.getEnemyTracks().getEscada() >= dadosJogo.getEnemyTracks().getTorre() &&  dadosJogo.getEnemyTracks().getEscada() >= dadosJogo.getEnemyTracks().getAriete())){
@@ -94,22 +94,22 @@ public class AwaitTopCard extends EstadoAdapter{
                     }else if((dadosJogo.getEnemyTracks().getEscada() <= dadosJogo.getEnemyTracks().getAriete() && dadosJogo.getEnemyTracks().getTorre() <= dadosJogo.getEnemyTracks().getAriete())){
                         dadosJogo.getEnemyTracks().updateAriete(-1);    
                     }
-                 }
+                //}
                               
-             }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "tower"){
-                 dadosJogo.getEnemyTracks().updateTorre(-1);
-             }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ladder"){
-                 dadosJogo.getEnemyTracks().updateEscada(-1);
-             }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ram"){
-                 dadosJogo.getEnemyTracks().updateAriete(-1);
-             }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "none"){
-                 //return new AwaitPlayerAction(dadosJogo);
-             }
-             
-             }
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "tower"){
+                dadosJogo.getEnemyTracks().updateTorre(-1);
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ladder"){
+                dadosJogo.getEnemyTracks().updateEscada(-1);
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ram"){
+                dadosJogo.getEnemyTracks().updateAriete(-1);
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "none"){
+                //return new AwaitPlayerAction(dadosJogo);
+            }
+
+        }
              
       
-         return this;
+        return this;
      
 }
      
