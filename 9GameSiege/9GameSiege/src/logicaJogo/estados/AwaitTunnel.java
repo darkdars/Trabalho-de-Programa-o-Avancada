@@ -41,6 +41,7 @@ public class AwaitTunnel extends EstadoAdapter{
         if((dadosJogo.getStatusCard().getTunel() > 1 && dadosJogo.getStatusCard().isTunelDir()) || (dadosJogo.getStatusCard().getTunel() < 4 && !dadosJogo.getStatusCard().isTunelDir())){
             dadosJogo.getStatusCard().updateTunel(1);
             dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
+            dadosJogo.getStatusCard().setMantimentosRoubadosTunel();
             dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
         }else{
                 dadosJogo.setTexto("As tropas nao se encontram dentro do tunel.");
@@ -62,6 +63,7 @@ public class AwaitTunnel extends EstadoAdapter{
             else if(!dadosJogo.getStatusCard().isTunelDir()){
                 dadosJogo.getStatusCard().setTunel(1);
                 dadosJogo.getStatusCard().setTunelDir(true);
+                dadosJogo.getStatusCard().setMantimentosRoubadosTunel();
                 dadosJogo.setTexto("As tropas estao no(a) " + dadosJogo.getStatusCard().getTunelString() + " .");
             }
             dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);

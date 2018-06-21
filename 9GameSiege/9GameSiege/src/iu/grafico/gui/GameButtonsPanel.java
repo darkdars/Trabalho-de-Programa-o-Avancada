@@ -433,21 +433,18 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         emptyPanel();
         this.add( attackButtons);
         this.add( cancelB);
-        //this.add
     }
     
     public void changeRally(){
         emptyPanel();
         this.add(rallyButtons);
         this.add(cancelB);
-        //this.add
     }
     
     public void changeTunnel(){
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
-        this.removeAll();
-        this.add(tunelButtons, gridBagConstraints);
-        this.add( cancelB, gridBagConstraints);
+        emptyPanel();
+        this.add(tunelButtons);
+        this.add(cancelB);
     }
     
     public void buttonEffects(Color color){

@@ -124,6 +124,16 @@ public class StatusCard {
     public void setTunelDir(boolean tunelDir) {
         this.tunelDir = tunelDir;
     }
+    
+    public void setMantimentosRoubadosTunel(){
+        if(tunel == 1){
+            mantimentos += mantimentosRoubados;
+            mantimentosRoubados = 0;
+        }
+        if(mantimentos > 4){
+            mantimentos = 4;
+        }
+    }
 }
 
 

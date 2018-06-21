@@ -178,6 +178,10 @@ public class StatusCardPanel extends JPanel implements Observer {
                 g.drawImage(getImagem(game,3),375,541,40,40,null);
                 g.drawRect(375,541,40,40);
                 break;
+            default:
+                g.drawImage(getImagem(game,3),1500,1500,40,40,null);
+                g.drawRect(375,541,40,40);
+                break;
         }        
     }
 

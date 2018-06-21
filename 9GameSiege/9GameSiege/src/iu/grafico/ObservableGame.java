@@ -143,9 +143,6 @@ public class ObservableGame extends Observable{
     
     public void checkPoints() {
         jogo.setEstado(jogo.getEstado().checkPoints());
-       /* if(jogo.getEstado() instanceof AwaitPlayerAction){
-            jogo.setEstado(jogo.getEstado().winLosePhase());
-        }*/
         if(jogo.getEstado() instanceof AwaitEndDayPhase){
             jogo.setEstado(jogo.getEstado().winLosePhase());
         }

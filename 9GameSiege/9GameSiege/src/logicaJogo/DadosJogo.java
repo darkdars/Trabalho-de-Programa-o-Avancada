@@ -341,4 +341,6 @@ public class DadosJogo {
             this.bonusEvent[i]=0;
         }
     }
+    
+    
 }
