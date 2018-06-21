@@ -10,6 +10,8 @@ import java.util.Observable;
 import javax.swing.JPanel;
 import logicaJogo.Jogo;
 import logicaJogo.estados.AwaitEnd;
+import logicaJogo.estados.AwaitEndDayPhase;
+import logicaJogo.estados.AwaitPlayerAction;
 import logicaJogo.estados.AwaitTopCard;
 import logicaJogo.estados.IEstado;
 
@@ -129,6 +131,24 @@ public class ObservableGame extends Observable{
 
     public int getRaidSupplies() {
         return jogo.getDadosJogo().getStatusCard().getMantimentosRoubados();
+    }
+    
+    public int getActionPoints() {
+        return jogo.getDadosJogo().getJogadasDisp();
+    }
+    
+    public int getDay() {
+        return jogo.getDadosJogo().getDia();
+    }
+    
+    public void checkPoints() {
+        jogo.setEstado(jogo.getEstado().checkPoints());
+       /* if(jogo.getEstado() instanceof AwaitPlayerAction){
+            jogo.setEstado(jogo.getEstado().winLosePhase());
+        }*/
+        if(jogo.getEstado() instanceof AwaitEndDayPhase){
+            jogo.setEstado(jogo.getEstado().winLosePhase());
+        }
     }
     
     public void setEstadoAction(int opcao){

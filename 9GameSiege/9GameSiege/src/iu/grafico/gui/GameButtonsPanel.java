@@ -40,7 +40,6 @@ import logicaJogo.estados.AwaitTunnel;
 public class GameButtonsPanel  extends JPanel implements Observer{
 
     private ObservableGame game;
-    private JButton resolve, resolve2cards, b1, b2;
    
     private JButton archerAttackB;
     private JButton boilingWaterAttackB;
@@ -69,6 +68,10 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     private JPanel tunelButtons;
     
     private JButton cancelB;
+    
+    private JPanel textP;
+    private JLabel actionPointsL;
+    private JLabel dayL;
     
 
     public GameButtonsPanel(ObservableGame g) {
@@ -106,11 +109,26 @@ public class GameButtonsPanel  extends JPanel implements Observer{
 
     private void playerActionButtons() {
         //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        setLayout(new GridLayout(3,1));
         
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        setLayout(new GridLayout(2,1));
+        
+        textP = new JPanel();
+        textP.setLayout(new BoxLayout(textP, BoxLayout.Y_AXIS));
+        textP.setBackground(Color.darkGray);
+        textP.setPreferredSize(new Dimension(250,250));
+        
+        
+        actionPointsL = new JLabel("Action Points : " + game.getActionPoints(), JLabel.CENTER);
+        actionPointsL.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+       
+        dayL = new JLabel("Day : " + game.getDay(), JLabel.CENTER);
+        dayL.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+        actionPointsL.setForeground(Color.white);
+        dayL.setForeground(Color.white);
+        
+        
         playerActionButtons = new JPanel();
         playerActionButtons.setLayout(new GridLayout(4,2));
         archerAttackB = new JButton("Archer Attack");
@@ -138,16 +156,15 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         playerActionButtons.add(tunnelMovementB);
         playerActionButtons.add(supplyRaidB);
         playerActionButtons.add(sabotageB);
-        this.add(playerActionButtons, gridBagConstraints);
+        
+        this.add(playerActionButtons);
         
         
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
         nextCardB = new JButton("Draw Next Card");
         nextCardB.setAlignmentX(Component.CENTER_ALIGNMENT);
         nextCardB.setBackground(Color.white);
 
-        this.add(nextCardB, gridBagConstraints);
+        this.add(nextCardB);
         
         cancelB = new JButton("Cancel");
         cancelB.setBackground(Color.white);
@@ -176,54 +193,63 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         archerAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitArcherAttck();
             }
          });
         boilingWaterAttackB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitBoilingWater();
             }
          });
         closeCombatB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitCloseCombat();
             }
          });
         coupureB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitCoupure();
             }
          });
         rallyTrops.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
-                game.awaitRally();                
+                game.checkPoints();
+                game.awaitRally();              
             }
          });
         tunnelMovementB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitTunnelMovement();
             }
          });
         supplyRaidB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitSupplyRaid();
             }
          });
         sabotageB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                game.checkPoints();
                 game.awaitSabotage();
             }
          });
         nextCardB.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ev) {
+                buttonEffects(Color.white);
                 if(game.getEstado() instanceof AwaitPlayerAction)
                         game.skipCard();
                 if(game.getEstado() instanceof AwaitTopCard )
@@ -382,27 +408,38 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     
     /****************** ChangeButtons ********************/
     
-    public void changePlayerAction(){
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    private void emptyPanel(){
         this.removeAll();
-        this.add( playerActionButtons, gridBagConstraints);
-        this.add( nextCardB, gridBagConstraints);
-        //this.add
+        textP.removeAll();
+        dayL.setText("Dia : " + game.getDay() );
+        actionPointsL.setText("Action Points : " + game.getActionPoints());
+        textP.add(Box.createVerticalGlue());
+        textP.add(dayL);
+        textP.add(Box.createVerticalStrut(10));
+        textP.add(actionPointsL);
+        textP.add(Box.createVerticalStrut(20));
+        
+        
+        this.add(textP);
+    }
+    
+    public void changePlayerAction(){
+        emptyPanel();
+        this.add(playerActionButtons);
+        this.add(nextCardB);
     }
     
     public void changeAttack(){
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
-        this.removeAll();
-        this.add( attackButtons, gridBagConstraints);
-        this.add( cancelB, gridBagConstraints);
+        emptyPanel();
+        this.add( attackButtons);
+        this.add( cancelB);
         //this.add
     }
     
     public void changeRally(){
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
-        this.removeAll();
-        this.add( rallyButtons,gridBagConstraints);
-        this.add( cancelB, gridBagConstraints);
+        emptyPanel();
+        this.add(rallyButtons);
+        this.add(cancelB);
         //this.add
     }
     
@@ -413,7 +450,17 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         this.add( cancelB, gridBagConstraints);
     }
     
-    
+    public void buttonEffects(Color color){
+        
+        archerAttackB.setBackground(color);
+        boilingWaterAttackB.setBackground(color);
+        closeCombatB.setBackground(color);
+        coupureB.setBackground(color);
+        rallyTrops.setBackground(color);
+        tunnelMovementB.setBackground(color);
+        supplyRaidB.setBackground(color);
+        sabotageB.setBackground(color);
+    }
     
 
     /* ================================================== update ================================================== */
@@ -421,6 +468,8 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         if(game.getEstado() instanceof AwaitPlayerAction || game.getEstado() instanceof AwaitTopCard){
+            if(game.getActionPoints()<=0)
+                buttonEffects(Color.red);
             changePlayerAction();
             setVisible(true);
         }

@@ -36,7 +36,7 @@ public class AwaitRally extends EstadoAdapter{
     @Override
     public IEstado superRally(){
         dadosJogo.rollDice();
-        if(dadosJogo.getStatusCard().getMantimentosRoubados() < 0)
+        if(dadosJogo.getStatusCard().getMantimentosRoubados() <= 0)
             return new AwaitPlayerAction(dadosJogo);
         
         if(dadosJogo.getStatusCard().getMoral() < 4){

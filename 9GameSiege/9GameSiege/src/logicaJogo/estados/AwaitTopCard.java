@@ -54,23 +54,23 @@ public class AwaitTopCard extends EstadoAdapter{
          
          //Ver se é preciso condicoes para decrementar
          
-         if(dadosJogo.getEventoAtual().getEnemySize() > 1){
-                
-             for(int i = 0; i < dadosJogo.getEventoAtual().getEnemySize();i++){
-                 
-                 if(dadosJogo.getEventoAtual().getEnemyString(i) == "tower"){
-                     dadosJogo.getEnemyTracks().updateTorre(-1);
-                 }else if(dadosJogo.getEventoAtual().getEnemyString(i) == "ram"){
-                     dadosJogo.getEnemyTracks().updateAriete(-1);
-                 }else if(dadosJogo.getEventoAtual().getEnemyString(i) == "ladder"){
-                     dadosJogo.getEnemyTracks().updateEscada(-1);
-                 }
-             
-             
-             }
+        if(dadosJogo.getEventoAtual().getEnemySize() > 1){
+
+            for(int i = 0; i < dadosJogo.getEventoAtual().getEnemySize();i++){
+
+                if(dadosJogo.getEventoAtual().getEnemyString(i).equals( "tower")){
+                    dadosJogo.getEnemyTracks().updateTorre(-1);
+                }else if(dadosJogo.getEventoAtual().getEnemyString(i).equals( "ram")){
+                    dadosJogo.getEnemyTracks().updateAriete(-1);
+                }else if(dadosJogo.getEventoAtual().getEnemyString(i).equals( "ladder")){
+                    dadosJogo.getEnemyTracks().updateEscada(-1);
+                }
+
+
+            }
                
         }else{
-             if(dadosJogo.getEventoAtual().getEnemyString(0) == "sword"){
+             if(dadosJogo.getEventoAtual().getEnemyString(0).equals("sword")){
                 //Obter unidades mais lentas
                 //for(int i = 0; i < 3;i++){
 
@@ -96,14 +96,14 @@ public class AwaitTopCard extends EstadoAdapter{
                     }
                 //}
                               
-            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "tower"){
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0).equals("tower")){
                 dadosJogo.getEnemyTracks().updateTorre(-1);
-            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ladder"){
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0).equals("ladder")){
                 dadosJogo.getEnemyTracks().updateEscada(-1);
-            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "ram"){
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0).equals("ram")){
                 dadosJogo.getEnemyTracks().updateAriete(-1);
-            }else if(dadosJogo.getEventoAtual().getEnemyString(0) == "none"){
-                //return new AwaitPlayerAction(dadosJogo);
+            }else if(dadosJogo.getEventoAtual().getEnemyString(0).equals("none")){
+                return this;
             }
 
         }

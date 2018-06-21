@@ -361,6 +361,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
     public IEstado tunnel(){
         return new AwaitTunnel(dadosJogo);
     }
+    
     @Override
     public IEstado coupure(){
         dadosJogo.rollDice();
@@ -369,8 +370,9 @@ public class AwaitPlayerAction extends EstadoAdapter{
                 dadosJogo.getStatusCard().updateMuralha(1);
                 dadosJogo.setTexto("A muralha foi reparada com sucesso. Ficou com o valor " + dadosJogo.getStatusCard().getMuralha() + ".");
             }else{
-                dadosJogo.setTexto("Houve um assidente que levou a falha da recuperacao da muralha.");
+                dadosJogo.setTexto("Houve um acidente que levou a falha da recuperacao da muralha.");
             }
+            dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
         }else{
                 dadosJogo.setTexto("A muralha encontra-se sem dano.");
         } 
@@ -398,6 +400,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     dadosJogo.getStatusCard().setMantimentosRoubados(0);
                     dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
                 }
+                dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
             }else{
                     dadosJogo.setTexto("As tropas encontram-se sobrecarregadas, nao conseguem roubar mais mantimentos.");
             }
@@ -424,6 +427,7 @@ public class AwaitPlayerAction extends EstadoAdapter{
                     dadosJogo.getStatusCard().setMantimentosRoubados(0);
                     dadosJogo.setTexto("As tropas foram capturadas, perdeu todos os mantimentos roubados e vai ter de enviar novas tropas. Devido a perda dos soldados a moral e reduzida por 1.");
                 }
+                dadosJogo.setJogadasDisp(dadosJogo.getJogadasDisp() - 1);
             }else{
                     dadosJogo.setTexto("As tropas nao conseguem atacar. Tente mais tarde");
             }
@@ -437,4 +441,12 @@ public class AwaitPlayerAction extends EstadoAdapter{
         return this;
     }
     
+    @Override
+    public IEstado checkPoints(){
+        if(dadosJogo.getJogadasDisp() <= 0){
+            dadosJogo.setListaCards(dadosJogo.getListaCards() + 1);
+            return new AwaitEndDayPhase(dadosJogo);        
+        }
+        return this;
+    }
 }

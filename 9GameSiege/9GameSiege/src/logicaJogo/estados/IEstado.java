@@ -32,6 +32,7 @@ public interface IEstado {
         IEstado closeCombat();
         IEstado rally();
         IEstado tunnel();
+        IEstado checkPoints();
         
         IEstado coupure();
         IEstado supplyRaid();
