@@ -72,6 +72,7 @@ public class GameButtonsPanel  extends JPanel implements Observer{
     private JPanel textP;
     private JLabel actionPointsL;
     private JLabel dayL;
+    private JLabel dice;
     
 
     public GameButtonsPanel(ObservableGame g) {
@@ -118,6 +119,9 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         textP.setPreferredSize(new Dimension(250,250));
         
         
+        dice = new JLabel("Dice : " + game.getDado(), JLabel.CENTER);
+        dice.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
         actionPointsL = new JLabel("Action Points : " + game.getActionPoints(), JLabel.CENTER);
         actionPointsL.setAlignmentX(Component.CENTER_ALIGNMENT);
         
@@ -125,8 +129,10 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         dayL = new JLabel("Day : " + game.getDay(), JLabel.CENTER);
         dayL.setAlignmentX(Component.CENTER_ALIGNMENT);
         
+        
         actionPointsL.setForeground(Color.white);
         dayL.setForeground(Color.white);
+        dice.setForeground(Color.white);
         
         
         playerActionButtons = new JPanel();
@@ -413,8 +419,10 @@ public class GameButtonsPanel  extends JPanel implements Observer{
         textP.removeAll();
         dayL.setText("Dia : " + game.getDay() );
         actionPointsL.setText("Action Points : " + game.getActionPoints());
+        dice.setText("Dice: " + game.getDado());
         textP.add(Box.createVerticalGlue());
         textP.add(dayL);
+        textP.add(dice);
         textP.add(Box.createVerticalStrut(10));
         textP.add(actionPointsL);
         textP.add(Box.createVerticalStrut(20));

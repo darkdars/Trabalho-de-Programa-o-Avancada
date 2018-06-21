@@ -270,5 +270,9 @@ public class ObservableGame extends Observable{
         notifyObservers();
     }
     
+    public int getDado(){
+        return jogo.getDadosJogo().getDice();
+    }
+    
     
 }
