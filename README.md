@@ -1,6 +1,6 @@
-# Trabalho-de-Paa
+#  9 Card-Siege
 
-Trabalho realizado em java para a cadeira de Programação Avançada. Jogo 9 card siege
+Work developed in java for the class of Advanced Programming of the game 9 card siege.
 
 ## Getting Started
 
@@ -73,15 +73,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **José Silva**
+* **Carlos André**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Carlos André
